@@ -1,0 +1,14 @@
+join cthulu left [animation="Fade In"]
+cthulu: Do I know you people?...
+cthulu: Why are you here?
+leave cthulu [animation="Fade Out"]
+join john_johnson right [animation="Fade In"]
+- 1. Answer, Mr C. Cthulu
+	john_johnson: Gooday sir, I am here to take out the trash
+	join cthulu left
+	cthulu: Not another one...
+	[signal arg="scene_1_1_option_1"]
+- 2. Stay Silent
+	join cthulu left
+	cthulu: Nothing changes...nothing
+	[signal arg="scene_1_1_option_2"]
