@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://djc7ehlc3lv7h"]
+
+[ext_resource type="Script" path="res://scenes/cthulu/cthulu.gd" id="1_iu8tl"]
+[ext_resource type="Texture2D" uid="uid://beu5y6exxt2k6" path="res://assets/textures/businessman-svgrepo-com.svg" id="1_rae51"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wgu5t"]
+radius = 260.094
+
+[node name="Cthulu" type="Node2D"]
+script = ExtResource("1_iu8tl")
+
+[node name="CthuluTexture" type="Sprite2D" parent="."]
+position = Vector2(329, 313)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_rae51")
+
+[node name="ChatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatDetection"]
+position = Vector2(329, 322)
+shape = SubResource("CircleShape2D_wgu5t")
+
+[connection signal="body_entered" from="ChatDetection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="ChatDetection" to="." method="_on_chat_detection_body_exited"]
