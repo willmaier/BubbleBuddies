@@ -22,13 +22,19 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="PlayerUI" parent="." instance=ExtResource("4_2dsax")]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_right = 0.0
-offset_top = 595.0
-offset_bottom = 595.0
+offset_left = 6.0
+offset_top = 591.0
+offset_right = 6.0
+offset_bottom = 591.0
 grow_horizontal = 1
 grow_vertical = 0
 size_flags_vertical = 8
 
+[connection signal="enemy_attacked" from="." to="Enemies/EnemyFighter" method="_on_combat_enemy_attacked"]
+[connection signal="player_attacked" from="." to="PlayerFighter" method="_on_combat_player_attacked"]
+[connection signal="enemy_attack" from="Enemies/EnemyFighter" to="." method="_on_enemy_fighter_enemy_attack"]
 [connection signal="player_attack" from="CombatMenu" to="." method="_on_combat_menu_player_attack"]
