@@ -24,3 +24,6 @@ func _on_combat_player_attacked(damage):
 	player_health -= damage
 	print("Player now has ", player_health, " health")
 	PlayerUI.updateUI(player_health)
+	
+	if player_health <= 0:
+		playerDeath()

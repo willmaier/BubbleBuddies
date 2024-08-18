@@ -17,7 +17,7 @@ func _ready():
 
 func updateUI(health):
 	print("updating UI...")
-	print("UI should say " , Player.player_health)
+	#print("UI should say " , Player.player_health)
 	health_label.text = str(health)
 	#max_health.text = str(Player.player_max_health)
 	#max_health.text = str(Player.player_fuel)
