@@ -1,16 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://b51e0bppnl2dw"]
+[gd_scene load_steps=6 format=3 uid="uid://b51e0bppnl2dw"]
 
 [ext_resource type="PackedScene" uid="uid://dpknhhlhvqnx8" path="res://scenes/player_fighter/player_fighter.tscn" id="1_lku47"]
+[ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_su2we"]
 [ext_resource type="PackedScene" uid="uid://b8b3f4lsyv2vm" path="res://scenes/enemy_fighter/enemy_fighter.tscn" id="2_5hg5b"]
 [ext_resource type="PackedScene" uid="uid://ddjlivy5yxrdt" path="res://scenes/ui/combat_menu/combat_menu.tscn" id="3_yqac7"]
 [ext_resource type="PackedScene" uid="uid://ct5nra18uaj64" path="res://scenes/ui/player_ui/player_ui.tscn" id="4_2dsax"]
 
 [node name="Combat" type="Node2D"]
+script = ExtResource("1_su2we")
 
 [node name="PlayerFighter" parent="." instance=ExtResource("1_lku47")]
 position = Vector2(256, 363)
 
-[node name="EnemyFighter" parent="." instance=ExtResource("2_5hg5b")]
+[node name="Enemies" type="Node" parent="."]
+
+[node name="EnemyFighter" parent="Enemies" instance=ExtResource("2_5hg5b")]
 position = Vector2(868, 361)
 
 [node name="CombatMenu" parent="." instance=ExtResource("3_yqac7")]
@@ -26,3 +30,5 @@ offset_bottom = 595.0
 grow_horizontal = 1
 grow_vertical = 0
 size_flags_vertical = 8
+
+[connection signal="player_attack" from="CombatMenu" to="." method="_on_combat_menu_player_attack"]
