@@ -31,6 +31,13 @@ directories/dch_directory={
 directories/dtl_directory={
 "cthulu_scene_one": "res://addons/dialogic/characters/cthulu_scene_one.dtl"
 }
+layout/style_list=[]
+layout/default_style="Default"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 
