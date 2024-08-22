@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnpg31emln1u2"]
+
+[ext_resource type="Texture2D" uid="uid://c17g0veycc708" path="res://icon.svg" id="1_n0ysn"]
+[ext_resource type="PackedScene" uid="uid://bch40v5urc3er" path="res://scenes/world/overworld_player.tscn" id="1_xeegi"]
+
+[node name="Overworld" type="Node2D"]
+
+[node name="Shop" type="Sprite2D" parent="."]
+position = Vector2(100, 300)
+texture = ExtResource("1_n0ysn")
+
+[node name="Garage" type="Sprite2D" parent="."]
+position = Vector2(500, 300)
+texture = ExtResource("1_n0ysn")
+
+[node name="Fight" type="Sprite2D" parent="."]
+position = Vector2(900, 300)
+texture = ExtResource("1_n0ysn")
+
+[node name="OverworldPlayer" parent="." instance=ExtResource("1_xeegi")]
+position = Vector2(500, 400)

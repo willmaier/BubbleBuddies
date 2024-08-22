@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://drnieg5ykp4a7"]
+[gd_scene load_steps=4 format=3 uid="uid://drnieg5ykp4a7"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_7o0bu"]
 [ext_resource type="Texture2D" uid="uid://bd7sql6t1hjga" path="res://assets/textures/superheroe-svgrepo-com.svg" id="1_j4fwt"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_of4ig"]
+radius = 80.0
+height = 180.0
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_7o0bu")
+metadata/_edit_group_ = true
 
 [node name="PlayerTexture" type="Sprite2D" parent="."]
-position = Vector2(841, 353)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_j4fwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_of4ig")

@@ -5,7 +5,6 @@ extends Node2D
 @export var player_max_health: int = 10
 @export var player_fuel: int = 10
 @export var player_max_fuel: int = 10
-@export var player_shield = 5
 
 var player_ui: Control
 

@@ -1,10 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvu4gsig13o7q"]
+[gd_scene load_steps=7 format=3 uid="uid://cvu4gsig13o7q"]
 
 [ext_resource type="PackedScene" uid="uid://djc7ehlc3lv7h" path="res://scenes/cthulu/cthulu.tscn" id="1_2k4qv"]
+[ext_resource type="Script" path="res://scenes/world/world.gd" id="1_vg7da"]
 [ext_resource type="PackedScene" uid="uid://drnieg5ykp4a7" path="res://scenes/player/player.tscn" id="2_trjp0"]
+[ext_resource type="Texture2D" uid="uid://cgnkcyemawf21" path="res://assets/textures/wrench.png" id="4_jg65k"]
+[ext_resource type="Texture2D" uid="uid://bpwc2g4s8e2lm" path="res://assets/textures/fight.png" id="5_amise"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fmrb"]
+size = Vector2(128, 130)
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_vg7da")
 
 [node name="Player" parent="." instance=ExtResource("2_trjp0")]
+position = Vector2(867, 337)
 
 [node name="Cthulu" parent="." instance=ExtResource("1_2k4qv")]
+
+[node name="GarageIcon" type="Node2D" parent="."]
+position = Vector2(1079, 69)
+metadata/_edit_group_ = true
+
+[node name="GarageArea" type="Area2D" parent="GarageIcon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GarageIcon/GarageArea"]
+shape = SubResource("RectangleShape2D_5fmrb")
+
+[node name="Sprite2D" type="Sprite2D" parent="GarageIcon"]
+scale = Vector2(0.223633, 0.223633)
+texture = ExtResource("4_jg65k")
+
+[node name="BattleIcon" type="Node2D" parent="."]
+position = Vector2(1081, 571)
+metadata/_edit_group_ = true
+
+[node name="BattleArea" type="Area2D" parent="BattleIcon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleIcon/BattleArea"]
+shape = SubResource("RectangleShape2D_5fmrb")
+
+[node name="Sprite2D" type="Sprite2D" parent="BattleIcon"]
+scale = Vector2(0.223633, 0.223633)
+texture = ExtResource("5_amise")
+
+[connection signal="body_entered" from="GarageIcon/GarageArea" to="." method="_on_garage_area_body_entered"]
+[connection signal="body_exited" from="GarageIcon/GarageArea" to="." method="_on_garage_area_body_exited"]
+[connection signal="body_entered" from="BattleIcon/BattleArea" to="." method="_on_battle_area_body_entered"]
+[connection signal="body_exited" from="BattleIcon/BattleArea" to="." method="_on_battle_area_body_exited"]

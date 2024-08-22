@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddjlivy5yxrdt"]
+
+[ext_resource type="Texture2D" uid="uid://btmw161ncmbwa" path="res://assets/textures/button.png" id="1_0snia"]
+[ext_resource type="Script" path="res://scenes/ui/combat_menu/combat_menu.gd" id="1_v0t7e"]
+
+[node name="CombatMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v0t7e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Move1Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_direction = 1
+layout_mode = 2
+text = "Punch"
+icon = ExtResource("1_0snia")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="HBoxContainer/Move1Button" to="." method="_on_move_1_button_pressed"]
