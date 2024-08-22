@@ -13,8 +13,6 @@ func _ready():
 	#max_fuel = $GridContainer/MaxFuel
 	updateUI(Player.player_health)
 
-
-
 func updateUI(health):
 	print("updating UI...")
 	#print("UI should say " , Player.player_health)

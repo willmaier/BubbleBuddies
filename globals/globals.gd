@@ -17,8 +17,6 @@ func enemyTurn():
 	#enemy_attack.emit()
 	player_turn = false
 	print("enemy turn")
-	
-	
 
 func attackEnemy(damage):
 	pass
