@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0t5elbvkvvcp"]
+
+[ext_resource type="Texture2D" uid="uid://btmw161ncmbwa" path="res://assets/textures/button.png" id="1_upmq0"]
+[ext_resource type="Script" path="res://scenes/battle/ability_button.gd" id="2_mymrt"]
+[ext_resource type="Script" path="res://custom_resources/ability.gd" id="3_47ksv"]
+
+[sub_resource type="Resource" id="Resource_nynh7"]
+script = ExtResource("3_47ksv")
+name = "Peck"
+type = 0
+target = 3
+value = 3
+
+[node name="AbilityButton" type="Button"]
+offset_right = 75.0
+offset_bottom = 50.0
+icon = ExtResource("1_upmq0")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_mymrt")
+ability = SubResource("Resource_nynh7")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

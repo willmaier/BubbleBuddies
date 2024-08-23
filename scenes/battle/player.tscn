@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bsawolfw0iwo5" path="res://assets/textures/gear/wings/wing_base.png" id="3_3ptxd"]
 [ext_resource type="Texture2D" uid="uid://c6ceucr3fgp0c" path="res://assets/textures/gear/legs/foot_base.png" id="4_wwqy3"]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" groups=["Player"]]
 script = ExtResource("1_82cnu")
 metadata/_edit_group_ = true
 

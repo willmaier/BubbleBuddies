@@ -65,4 +65,5 @@ func start_choosing():
 
 func _on_ability_1_pressed():
 	abilities.hide()
+	# if ability 1 is single target, start choosing
 	start_choosing()
