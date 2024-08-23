@@ -36,4 +36,34 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Move2Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_direction = 1
+layout_mode = 2
+text = "Punch"
+icon = ExtResource("1_0snia")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move3Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_direction = 1
+layout_mode = 2
+text = "Punch"
+icon = ExtResource("1_0snia")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move4Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_direction = 1
+layout_mode = 2
+text = "Punch"
+icon = ExtResource("1_0snia")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="pressed" from="HBoxContainer/Move1Button" to="." method="_on_move_1_button_pressed"]

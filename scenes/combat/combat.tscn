@@ -12,14 +12,15 @@ script = ExtResource("1_su2we")
 [node name="PlayerFighter" parent="." instance=ExtResource("1_lku47")]
 position = Vector2(256, 363)
 
-[node name="Enemies" type="Node" parent="."]
-
-[node name="EnemyFighter" parent="Enemies" instance=ExtResource("2_5hg5b")]
+[node name="EnemyFighter" parent="." instance=ExtResource("2_5hg5b")]
 position = Vector2(868, 361)
+
+[node name="Enemies" type="Node" parent="."]
 
 [node name="CombatMenu" parent="." instance=ExtResource("3_yqac7")]
 offset_right = 1152.0
 offset_bottom = 648.0
+metadata/_edit_lock_ = true
 
 [node name="PlayerUI" parent="." instance=ExtResource("4_2dsax")]
 visible = false
@@ -34,7 +35,7 @@ grow_horizontal = 1
 grow_vertical = 0
 size_flags_vertical = 8
 
-[connection signal="enemy_attacked" from="." to="Enemies/EnemyFighter" method="_on_combat_enemy_attacked"]
+[connection signal="enemy_attacked" from="." to="EnemyFighter" method="_on_combat_enemy_attacked"]
 [connection signal="player_attacked" from="." to="PlayerFighter" method="_on_combat_player_attacked"]
-[connection signal="enemy_attack" from="Enemies/EnemyFighter" to="." method="_on_enemy_fighter_enemy_attack"]
+[connection signal="enemy_attack" from="EnemyFighter" to="." method="_on_enemy_fighter_enemy_attack"]
 [connection signal="player_attack" from="CombatMenu" to="." method="_on_combat_menu_player_attack"]

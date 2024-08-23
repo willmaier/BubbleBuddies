@@ -18,6 +18,9 @@ func _process(_delta):
 		_attack(attack_damage)
 		Globals.player_turn = true
 
+func turn():
+	print("Enemy has made their turn")
+
 func _updateUI():
 	health_text.text = str(health)
 	max_health_text.text = str(max_health)

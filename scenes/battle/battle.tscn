@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj0xsjw3x3v1y"]
+
+[ext_resource type="PackedScene" uid="uid://fxjn3ggyo7mt" path="res://scenes/battle/enemy_group.tscn" id="1_8h2mb"]
+[ext_resource type="PackedScene" uid="uid://dylx5548fckm6" path="res://scenes/battle/player.tscn" id="2_a7wio"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnemyGroup" parent="." instance=ExtResource("1_8h2mb")]
+position = Vector2(625, 296)
+
+[node name="Player" parent="." instance=ExtResource("2_a7wio")]
+position = Vector2(219, 249)
+scale = Vector2(0.5, 0.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Abilities" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 371.0
+grow_vertical = 0
+
+[node name="Ability 1" type="Button" parent="CanvasLayer/Abilities"]
+layout_mode = 2
+text = "Attack 1"
+
+[node name="Ability 2" type="Button" parent="CanvasLayer/Abilities"]
+layout_mode = 2
+text = "Attack 2"
+
+[node name="Ability 3" type="Button" parent="CanvasLayer/Abilities"]
+layout_mode = 2
+text = "Attack 3"
+
+[node name="Ability 4" type="Button" parent="CanvasLayer/Abilities"]
+layout_mode = 2
+text = "Attack 4
+"
+
+[node name="Ability 5" type="Button" parent="CanvasLayer/Abilities"]
+layout_mode = 2
+text = "Attack 5
+"
+
+[connection signal="next_player" from="EnemyGroup" to="Player" method="_on_enemy_group_next_player"]
+[connection signal="pressed" from="CanvasLayer/Abilities/Ability 1" to="EnemyGroup" method="_on_ability_1_pressed"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/enemy_fighter/enemy_fighter.gd" id="1_0a8qu"]
 [ext_resource type="Texture2D" uid="uid://c17g0veycc708" path="res://icon.svg" id="1_55vks"]
 
-[node name="EnemyFighter" type="Node2D"]
+[node name="EnemyFighter" type="Node2D" groups=["Enemies"]]
 script = ExtResource("1_0a8qu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
