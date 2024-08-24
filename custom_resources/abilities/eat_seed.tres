@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=2 format=3 uid="uid://cf101e5p2ml13"]
+
+[ext_resource type="Script" path="res://custom_resources/ability.gd" id="1_8e6br"]
+
+[resource]
+script = ExtResource("1_8e6br")
+name = "Eat Seed"
+type = 1
+target = 0
+value = 1

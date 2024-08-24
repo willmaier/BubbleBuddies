@@ -1,7 +1,7 @@
 class_name Ability
 extends Resource
 
-enum Type {ATTACK, SKILL}
+enum Type {ATTACK, HEAL, SKILL}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 
 @export_group("Ability Details")

@@ -54,7 +54,7 @@ func switch_focus(x, y):
 
 func show_abilities():
 	abilities.show()
-	abilities.find_child("Ability 3").grab_focus()
+	#abilities.find_child("Ability 3").grab_focus()
 
 func reset_focus():
 	index = 0

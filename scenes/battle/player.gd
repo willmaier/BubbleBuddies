@@ -17,6 +17,9 @@ var health: int = 100:
 func take_damage(value):
 	health -= value
 
+func heal(value):
+	health += value
+
 func updateUI():
 	hp_text = str(health)
 	health_bar.value = health 

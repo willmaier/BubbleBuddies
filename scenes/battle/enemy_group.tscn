@@ -13,3 +13,5 @@ script = ExtResource("1_lpp2o")
 [node name="Enemy3" parent="." instance=ExtResource("2_r4i5n")]
 
 [connection signal="target_chosen" from="Enemy" to="." method="_on_enemy_target_chosen"]
+[connection signal="target_chosen" from="Enemy2" to="." method="_on_enemy_target_chosen"]
+[connection signal="target_chosen" from="Enemy3" to="." method="_on_enemy_target_chosen"]

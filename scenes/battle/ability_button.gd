@@ -9,9 +9,11 @@ var active: bool = false
 func _on_pressed():
 	if (ability.target == 0):
 		targets.assign(get_tree().get_nodes_in_group("Player"))
+		for target in targets:
+			$"..".do_ability(target, ability.type, ability.value)
 		#print(targets)
 
-	if (ability.target == 1):
+	if (ability.target == 1 and !Globals.is_targeting):
 		print("Choose target...")
 		Globals.is_targeting = true
 		# check for player or enemy
@@ -26,7 +28,9 @@ func _on_pressed():
 			targets.append($"../../../EnemyGroup"._on_target_chosen())
 		print(targets)
 		for target in targets:
-			target.take_damage(ability.value)
+			# send this to Abilities (HBoxContainer)
+			$"..".do_ability(target, ability.type, ability.value)
+			#target.take_damage(ability.value)
 			print(target.health)
 		# pick single enemy
 
@@ -34,7 +38,8 @@ func _on_pressed():
 		print("target: all enemies")
 		for enemy in get_tree().get_nodes_in_group("Enemy"):
 			targets.append(enemy)
-		print(targets)
+		for target in targets:
+			$"..".do_ability(target, ability.type, ability.value)
 
 	if (ability.target == 3):
 		
