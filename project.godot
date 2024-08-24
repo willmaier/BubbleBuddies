@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-Globals="*res://scenes/globals.gd"
+Globals="*res://globals/globals.gd"
 PlayerUI="*res://scenes/ui/player_ui/player_ui.tscn"
 Player="*res://scenes/player_fighter/player_fighter.gd"
 

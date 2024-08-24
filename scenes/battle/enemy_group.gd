@@ -6,6 +6,8 @@ var is_acting: bool = false
 var index: int = 0
 
 signal next_player
+signal target_chosen
+var chosen_target: Node2D
 
 @onready var abilities = $"../CanvasLayer/Abilities"
 
@@ -67,3 +69,13 @@ func _on_ability_1_pressed():
 	abilities.hide()
 	# if ability 1 is single target, start choosing
 	start_choosing()
+
+func _on_enemy_target_chosen(target):
+	#print(target)
+	chosen_target = target
+	target_chosen.emit()
+	
+
+func _on_target_chosen():
+	#print("target locked: ", chosen_target)
+	return chosen_target

@@ -4,12 +4,12 @@
 [ext_resource type="Script" path="res://scenes/battle/ability_button.gd" id="2_mymrt"]
 [ext_resource type="Script" path="res://custom_resources/ability.gd" id="3_47ksv"]
 
-[sub_resource type="Resource" id="Resource_nynh7"]
+[sub_resource type="Resource" id="Resource_aqchd"]
 script = ExtResource("3_47ksv")
-name = "Peck"
+name = "Punch"
 type = 0
-target = 3
-value = 3
+target = 1
+value = 4
 
 [node name="AbilityButton" type="Button"]
 offset_right = 75.0
@@ -18,6 +18,6 @@ icon = ExtResource("1_upmq0")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_mymrt")
-ability = SubResource("Resource_nynh7")
+ability = SubResource("Resource_aqchd")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

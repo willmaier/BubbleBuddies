@@ -8,6 +8,7 @@ signal enemy_attack
 
 # fight scene variables
 var player_turn: bool = true
+var is_targeting: bool = false
 
 func fightStart():
 	#player_ui = PlayerUI
