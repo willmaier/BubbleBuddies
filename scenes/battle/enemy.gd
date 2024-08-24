@@ -35,3 +35,5 @@ func _on_click_area_input_event(viewport, event, shape_idx):
 		target_chosen.emit(self)
 		Globals.is_targeting = false
 
+func _on_click_area_mouse_entered():
+	pass # Replace with function body.
