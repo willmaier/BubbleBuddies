@@ -27,13 +27,18 @@ func focus():
 func unfocus():
 	_focus.hide()
 
-
 func _on_click_area_input_event(viewport, event, shape_idx):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Globals.is_targeting:
 		#print(Globals.is_targeting)
 		# emit self to 
 		target_chosen.emit(self)
+		unfocus()
 		Globals.is_targeting = false
 
 func _on_click_area_mouse_entered():
-	pass # Replace with function body.
+	if Globals.is_targeting:
+		focus()
+
+func _on_click_area_mouse_exited():
+	if Globals.is_targeting:
+		unfocus()

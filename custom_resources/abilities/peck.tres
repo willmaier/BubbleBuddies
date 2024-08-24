@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=2 format=3 uid="uid://b6umrxca75e2i"]
+
+[ext_resource type="Script" path="res://custom_resources/ability.gd" id="1_8giw4"]
+
+[resource]
+script = ExtResource("1_8giw4")
+name = "Peck"
+type = 0
+target = 1
+value = 1

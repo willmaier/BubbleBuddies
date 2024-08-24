@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dylx5548fckm6"]
+[gd_scene load_steps=7 format=3 uid="uid://dylx5548fckm6"]
 
 [ext_resource type="Script" path="res://scenes/battle/player.gd" id="1_82cnu"]
 [ext_resource type="Texture2D" uid="uid://cstixvwogxchu" path="res://assets/textures/gear/torsos/torso_base.png" id="1_lg6n6"]
 [ext_resource type="Texture2D" uid="uid://c0o7ir2ra6a0s" path="res://assets/textures/gear/helmets/helmet_base.png" id="2_0cpox"]
 [ext_resource type="Texture2D" uid="uid://bsawolfw0iwo5" path="res://assets/textures/gear/wings/wing_base.png" id="3_3ptxd"]
 [ext_resource type="Texture2D" uid="uid://c6ceucr3fgp0c" path="res://assets/textures/gear/legs/foot_base.png" id="4_wwqy3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfkm6"]
+size = Vector2(439, 462)
 
 [node name="Player" type="Node2D" groups=["Player"]]
 script = ExtResource("1_82cnu")
@@ -83,3 +86,11 @@ text = "/"
 [node name="MaxFuel" type="Label" parent="PlayerUI"]
 layout_mode = 2
 text = "100"
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(28.5, 87)
+shape = SubResource("RectangleShape2D_jfkm6")
+
+[connection signal="input_event" from="ClickArea" to="." method="_on_click_area_input_event"]

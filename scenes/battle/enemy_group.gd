@@ -74,6 +74,7 @@ func _on_enemy_target_chosen(target):
 	#print(target)
 	chosen_target = target
 	target_chosen.emit()
+	Globals.character_chosen(chosen_target)
 	
 
 func _on_target_chosen():
