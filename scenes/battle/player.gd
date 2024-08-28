@@ -9,6 +9,11 @@ extends Node2D
 
 signal target_chosen(target)
 
+@export var is_weak: bool = false
+@export var is_strong: bool = false
+@export var is_burning: bool = false
+@export var is_frozen: bool = false
+
 var health: int = 100:
 	set(value):
 		health = value
