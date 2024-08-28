@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bj0xsjw3x3v1y"]
+[gd_scene load_steps=9 format=3 uid="uid://bj0xsjw3x3v1y"]
 
 [ext_resource type="PackedScene" uid="uid://fxjn3ggyo7mt" path="res://scenes/battle/enemy_group.tscn" id="1_8h2mb"]
 [ext_resource type="PackedScene" uid="uid://dylx5548fckm6" path="res://scenes/battle/player.tscn" id="2_a7wio"]
 [ext_resource type="PackedScene" uid="uid://d0t5elbvkvvcp" path="res://scenes/battle/ability_button.tscn" id="3_3he0t"]
 [ext_resource type="Script" path="res://scenes/battle/Abilities.gd" id="3_k2f8n"]
 [ext_resource type="Resource" uid="uid://dbslncylmbquo" path="res://custom_resources/abilities/swipe.tres" id="5_nnjns"]
+[ext_resource type="Resource" uid="uid://354alf7trns6" path="res://custom_resources/abilities/taunt.tres" id="6_7sjea"]
 [ext_resource type="Resource" uid="uid://cf101e5p2ml13" path="res://custom_resources/abilities/eat_seed.tres" id="6_t3t6q"]
+[ext_resource type="Resource" uid="uid://btshqufrbiamn" path="res://custom_resources/abilities/buff.tres" id="6_wkl1a"]
 
 [node name="Battle" type="Node2D"]
 
@@ -44,6 +46,16 @@ ability = ExtResource("5_nnjns")
 layout_mode = 2
 text = "HEAL FOR 1"
 ability = ExtResource("6_t3t6q")
+
+[node name="AbilityButton4" parent="CanvasLayer/Abilities" instance=ExtResource("3_3he0t")]
+layout_mode = 2
+text = "APPLY WEAK"
+ability = ExtResource("6_7sjea")
+
+[node name="AbilityButton5" parent="CanvasLayer/Abilities" instance=ExtResource("3_3he0t")]
+layout_mode = 2
+text = "APPLY STRONG"
+ability = ExtResource("6_wkl1a")
 
 [connection signal="next_player" from="EnemyGroup" to="Player" method="_on_enemy_group_next_player"]
 [connection signal="target_chosen" from="EnemyGroup" to="EnemyGroup" method="_on_target_chosen"]

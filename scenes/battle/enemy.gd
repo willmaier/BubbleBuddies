@@ -8,14 +8,40 @@ signal target_chosen(target)
 
 @export var max_health: int = 10
 
+@export var is_weak: bool = false
+@export var is_strong: bool = false
+@export var is_burning: bool = false
+@export var is_frozen: bool = false
+
 var health: int = 10:
 	set(value):
 		health = value
 		updateUI()
 
+func _process(_delta):
+	if (is_weak):
+		$Status/Weak.visible = true
+	else:
+		$Status/Weak.visible = false
+	if (is_strong):
+		$Status/Strong.visible = true
+	else:
+		$Status/Strong.visible = false
+	if (is_burning):
+		$Status/Burning.visible = true
+	else:
+		$Status/Burning.visible = false
+	if (is_frozen):
+		$Status/Frozen.visible = true
+	else:
+		$Status/Frozen.visible = false
+
 func take_damage(value):
 	health -= value
 	print(health)
+
+func heal(value):
+	health += value
 
 func updateUI():
 	#progress_bar.value = health
