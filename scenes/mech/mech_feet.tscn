@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7ul6m37j8lqm"]
+
+[ext_resource type="Texture2D" uid="uid://c32b2kda2u1ib" path="res://assets/Art/GEAR/FOOT/foot_base.png" id="1_5lgot"]
+
+[node name="MechFeet" type="Node2D"]
+
+[node name="MechFeetImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_5lgot")

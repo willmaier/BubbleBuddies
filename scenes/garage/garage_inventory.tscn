@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbqm68bpwuae3"]
+
+[ext_resource type="Script" path="res://scenes/garage/garage_inventory.gd" id="1_vrom3"]
+
+[node name="GarageInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrom3")
+
+[node name="GarageInventoryTabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[node name="Helmets" type="TabBar" parent="GarageInventoryTabContainer"]
+layout_mode = 2
+
+[node name="HelmetGridContainer" type="GridContainer" parent="GarageInventoryTabContainer/Helmets"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 97.0
+offset_right = 1024.0
+offset_bottom = 225.0
+columns = 5
+
+[node name="EquipHelmetButton" type="Button" parent="GarageInventoryTabContainer/Helmets"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 353.0
+offset_right = 768.0
+offset_bottom = 481.0
+text = "Equip"
+
+[node name="Torso" type="TabBar" parent="GarageInventoryTabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="TorsoGridContainer" type="GridContainer" parent="GarageInventoryTabContainer/Torso"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 97.0
+offset_right = 1024.0
+offset_bottom = 225.0
+columns = 5
+
+[node name="TorsoHelmetButton" type="Button" parent="GarageInventoryTabContainer/Torso"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 353.0
+offset_right = 768.0
+offset_bottom = 481.0
+text = "Equip"
+
+[node name="Wing" type="TabBar" parent="GarageInventoryTabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="WingGridContainer" type="GridContainer" parent="GarageInventoryTabContainer/Wing"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 5
+
+[node name="EquipWingButton" type="Button" parent="GarageInventoryTabContainer/Wing"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 353.0
+offset_right = 768.0
+offset_bottom = 481.0
+text = "Equip"
+
+[node name="Feet" type="TabBar" parent="GarageInventoryTabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="FeetGridContainer" type="GridContainer" parent="GarageInventoryTabContainer/Feet"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 5
+
+[node name="EquipFeetButton" type="Button" parent="GarageInventoryTabContainer/Feet"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 353.0
+offset_right = 768.0
+offset_bottom = 481.0
+text = "Equip"
+
+[connection signal="pressed" from="GarageInventoryTabContainer/Helmets/EquipHelmetButton" to="." method="_on_equip_helmet_button_pressed"]

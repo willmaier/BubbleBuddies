@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dned0nahasgk5"]
+
+[ext_resource type="Texture2D" uid="uid://fom8e8ux6a3q" path="res://assets/Art/GEAR/TORSO/torso_base.png" id="1_ksfox"]
+
+[node name="MechTorso" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ksfox")
