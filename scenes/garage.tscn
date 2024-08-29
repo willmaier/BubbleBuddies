@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcebw4stk54tv"]
+[gd_scene load_steps=5 format=3 uid="uid://bcebw4stk54tv"]
 
 [ext_resource type="PackedScene" uid="uid://drnieg5ykp4a7" path="res://scenes/player/player.tscn" id="1_ak78x"]
 [ext_resource type="Script" path="res://scenes/garage/garage.gd" id="1_puq2h"]
 [ext_resource type="Texture2D" uid="uid://57its02gxsuv" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/IMG_9157.png" id="2_cvgoo"]
+[ext_resource type="AudioStream" uid="uid://dnpp8148qnwbh" path="res://assets/Audio/Music/amb-garage.ogg" id="4_pax12"]
 
 [node name="Garage" type="Node2D"]
 script = ExtResource("1_puq2h")
@@ -37,5 +38,9 @@ offset_top = 5.0
 offset_right = 1127.0
 offset_bottom = 36.0
 text = "Save"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pax12")
+autoplay = true
 
 [connection signal="pressed" from="MenuBar/Battle" to="." method="_on_battle_pressed"]

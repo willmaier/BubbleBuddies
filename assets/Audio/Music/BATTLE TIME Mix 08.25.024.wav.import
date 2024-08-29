@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://eseynrfkr7yv"
+path="res://.godot/imported/BATTLE TIME Mix 08.25.024.wav-82a77b6c5d8fa814bccf5c3ecaaae1ed.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Music/BATTLE TIME Mix 08.25.024.wav"
+dest_files=["res://.godot/imported/BATTLE TIME Mix 08.25.024.wav-82a77b6c5d8fa814bccf5c3ecaaae1ed.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

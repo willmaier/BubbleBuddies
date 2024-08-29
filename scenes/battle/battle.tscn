@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bj0xsjw3x3v1y"]
+[gd_scene load_steps=11 format=3 uid="uid://bj0xsjw3x3v1y"]
 
 [ext_resource type="PackedScene" uid="uid://fxjn3ggyo7mt" path="res://scenes/battle/enemy_group.tscn" id="1_8h2mb"]
+[ext_resource type="Texture2D" uid="uid://cp2ekqtyf6jf8" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/211890-a-crosswalk-across-a-new-york-city-street-with-tax.jpg" id="1_24dl7"]
 [ext_resource type="PackedScene" uid="uid://dylx5548fckm6" path="res://scenes/battle/player.tscn" id="2_a7wio"]
 [ext_resource type="PackedScene" uid="uid://d0t5elbvkvvcp" path="res://scenes/battle/ability_button.tscn" id="3_3he0t"]
 [ext_resource type="Script" path="res://scenes/battle/Abilities.gd" id="3_k2f8n"]
@@ -8,12 +9,17 @@
 [ext_resource type="Resource" uid="uid://354alf7trns6" path="res://custom_resources/abilities/taunt.tres" id="6_7sjea"]
 [ext_resource type="Resource" uid="uid://cf101e5p2ml13" path="res://custom_resources/abilities/eat_seed.tres" id="6_t3t6q"]
 [ext_resource type="Resource" uid="uid://btshqufrbiamn" path="res://custom_resources/abilities/buff.tres" id="6_wkl1a"]
+[ext_resource type="AudioStream" uid="uid://eseynrfkr7yv" path="res://assets/Audio/Music/BATTLE TIME Mix 08.25.024.wav" id="9_un654"]
 
 [node name="Battle" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -21.0
+offset_top = -74.0
+offset_right = 1153.0
+offset_bottom = 659.0
+texture = ExtResource("1_24dl7")
+expand_mode = 1
 
 [node name="EnemyGroup" parent="." instance=ExtResource("1_8h2mb")]
 position = Vector2(625, 296)
@@ -61,6 +67,10 @@ ability = ExtResource("6_wkl1a")
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Overworld"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_un654")
+autoplay = true
 
 [connection signal="next_player" from="EnemyGroup" to="Player" method="_on_enemy_group_next_player"]
 [connection signal="target_chosen" from="EnemyGroup" to="EnemyGroup" method="_on_target_chosen"]

@@ -38,6 +38,7 @@ func _process(_delta):
 
 func take_damage(value):
 	health -= value
+	$SFX/Hit1.play()
 	print(health)
 
 func heal(value):
