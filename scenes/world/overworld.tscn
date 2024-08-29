@@ -5,11 +5,11 @@
 
 [node name="Overworld" type="Node2D"]
 
-[node name="Shop" type="Sprite2D" parent="."]
+[node name="Garage" type="Sprite2D" parent="."]
 position = Vector2(100, 300)
 texture = ExtResource("1_n0ysn")
 
-[node name="Garage" type="Sprite2D" parent="."]
+[node name="Shop" type="Sprite2D" parent="."]
 position = Vector2(500, 300)
 texture = ExtResource("1_n0ysn")
 

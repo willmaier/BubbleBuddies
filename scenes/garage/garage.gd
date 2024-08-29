@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func _on_battle_pressed():
-	get_tree().change_scene_to_file("res://scenes/world/world.tscn")
+	get_tree().change_scene_to_file("res://scenes/world/overworld.tscn")

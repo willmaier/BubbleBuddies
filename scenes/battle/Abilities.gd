@@ -31,3 +31,7 @@ func do_ability(target, type, value):
 				target.is_strong = true
 				
 	# CHANGE TO ENEMY TURN
+
+
+func _on_overworld_pressed():
+	get_tree().change_scene_to_file("res://scenes/world/overworld.tscn")
