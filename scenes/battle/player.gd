@@ -26,7 +26,7 @@ func heal(value):
 	health += value
 
 func updateUI():
-	hp_text = str(health)
+	hp_text.text = str(health)
 	health_bar.value = health 
 
 func _on_enemy_group_next_player():

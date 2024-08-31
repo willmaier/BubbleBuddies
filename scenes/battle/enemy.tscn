@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgcph4lqfqoic"]
+[gd_scene load_steps=9 format=3 uid="uid://dgcph4lqfqoic"]
 
 [ext_resource type="Script" path="res://scenes/battle/enemy.gd" id="1_7lakh"]
 [ext_resource type="Texture2D" uid="uid://c17g0veycc708" path="res://icon.svg" id="1_knepa"]
 [ext_resource type="Texture2D" uid="uid://dkkajiu6feqrx" path="res://assets/textures/arrow.png" id="3_0jrxn"]
 [ext_resource type="Texture2D" uid="uid://cxevjpioi2yob" path="res://assets/textures/weak.png" id="4_2hvca"]
 [ext_resource type="Texture2D" uid="uid://dk1180d6d6uam" path="res://assets/textures/strong.png" id="5_4ylvd"]
+[ext_resource type="Theme" uid="uid://bmxxtjvornsya" path="res://scenes/battle/player_ui_theme.tres" id="6_5ylm8"]
 [ext_resource type="AudioStream" uid="uid://sbhkvw37lwr8" path="res://assets/Audio/SFX/hit1.ogg" id="6_pac7o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljfmf"]
@@ -73,6 +74,7 @@ metadata/_edit_group_ = true
 
 [node name="HPText" type="Label" parent="GridContainer"]
 layout_mode = 2
+theme = ExtResource("6_5ylm8")
 text = "Health:"
 
 [node name="ProgressBar" type="ProgressBar" parent="GridContainer"]
@@ -83,15 +85,20 @@ max_value = 10.0
 
 [node name="HP" type="Label" parent="GridContainer"]
 layout_mode = 2
+theme = ExtResource("6_5ylm8")
 text = "10"
+horizontal_alignment = 1
 
 [node name="slash" type="Label" parent="GridContainer"]
 layout_mode = 2
+theme = ExtResource("6_5ylm8")
 text = "/"
 
 [node name="MaxHP" type="Label" parent="GridContainer"]
 layout_mode = 2
+theme = ExtResource("6_5ylm8")
 text = "10"
+horizontal_alignment = 1
 
 [node name="ClickArea" type="Area2D" parent="."]
 
