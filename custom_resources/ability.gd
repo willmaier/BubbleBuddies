@@ -9,6 +9,8 @@ enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 @export var type: Type
 @export var target: Target
 @export var value: int
+@export var target_text: String
+@export var desc: String
 
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY 

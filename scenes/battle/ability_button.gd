@@ -5,6 +5,9 @@ var active: bool = false
 
 @onready var targets: Array[Node2D] = []
 
+func _ready():
+	tooltip_text = ability.name+"\n"+"Target(s): "+str(ability.target_text)+"\n"+"Damage: "+str(ability.value)+"\n"+ability.desc
+	
 
 func _on_pressed():
 	if (ability.target == 0):
