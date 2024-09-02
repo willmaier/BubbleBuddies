@@ -1,15 +1,89 @@
 extends Node2D
 
+#RESOURCES
+@export var _gear_resource : GearResource
 
-# Called when the node enters the scene tree for the first time.
+#DYNAMIC SCENE
+@onready var mech = preload("res://scenes/battle/player.tscn")
+@onready var purchase_slot = preload("res://scenes/garage/garage_item_slot.tscn")
+
+#UI-COMPONENTS
+@onready var garage_ui = $GarageUICanvas
+@onready var inventoy_grid_container = $GarageUICanvas/TabContainer/Parts/PartsRect/ItemGridContainer
+@onready var purchase_grid_container = $GarageUICanvas/TabContainer/Store/PurchaseRect/ItemGridContainer
+
+#VARS
+@onready var gear_store = [
+	_gear_resource.helmets_array,
+	_gear_resource.foot_array,
+	_gear_resource.torso_array,
+	_gear_resource.wings_array
+]
+
+#MOVE TO PLAYER RESOURCE
+@onready var player_inventory = [
+	[],
+	[],
+	[],
+	[]
+]
+
+#SIGNALS
+signal purchase_item_signal(item)
+
+var purchase_item = {}
+var selected_item = {}
+
 func _ready():
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
+func _input(event):
+	if event.is_action_pressed("workshop_menu"):
+		garage_ui.visible = !garage_ui.visible
 
 func _on_battle_pressed():
 	get_tree().change_scene_to_file("res://scenes/world/overworld.tscn")
+
+func _on_purchase_item_list_item_clicked(index, _at_position, _mouse_button_index):
+	clear_grid_container(purchase_grid_container)
+	gear_store[index].map(func(item):
+		allocate_slot_item(item, purchase_slot, purchase_grid_container)
+	)
+
+func clear_grid_container(container):
+	while container.get_child_count() > 0:
+		var child = container.get_child(0)
+		container.remove_child(child)
+		child.queue_free()
+
+func allocate_slot_item(item, slot_type, container):
+	var slot = slot_type.instantiate()
+	slot.set_item(item)
+	container.add_child(slot)
+	
+func equip_purchase_item(item):
+	purchase_item = item
+	emit_signal("purchase_item_signal", purchase_item)
+
+
+func _on_purchase_pressed():
+	if purchase_item["category"] == "helmets":
+		player_inventory[0].append(purchase_item)
+	if purchase_item["category"] == "feet":
+		player_inventory[1].append(purchase_item)
+	if purchase_item["category"] == "torsos":
+		player_inventory[2].append(purchase_item)
+	if purchase_item["category"] == "wings":
+		player_inventory[3].append(purchase_item)
+		
+
+func _on_garage_item_list_item_clicked(index, at_position, mouse_button_index):
+	clear_grid_container(inventoy_grid_container)
+	if player_inventory[index] != []:
+		player_inventory[index].map(func(item):
+			allocate_slot_item(item, purchase_slot, inventoy_grid_container)
+		)

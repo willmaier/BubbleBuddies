@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnugapnpukdsf"]
+
+[ext_resource type="Script" path="res://scenes/garage/garage_item_slot.gd" id="1_vknvr"]
+[ext_resource type="Script" path="res://scenes/garage/garage_item_slot_item_icon.gd" id="2_e3t6b"]
+[ext_resource type="Script" path="res://scenes/garage/garage_item_slot_item_button.gd" id="2_r2nvi"]
+
+[node name="Slot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vknvr")
+
+[node name="Outer" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Inner" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+
+[node name="SlotButton" type="Button" parent="Inner"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+script = ExtResource("2_r2nvi")
+
+[node name="SlotIemIcon" type="Sprite2D" parent="Inner"]
+position = Vector2(24, 24)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("2_e3t6b")
+
+[connection signal="set_slot_texture" from="." to="Inner/SlotIemIcon" method="_on_slot_set_slot_texture"]
+[connection signal="equip_slot_item" from="Inner/SlotButton" to="." method="_on_slot_button_equip_slot_item"]
+[connection signal="pressed" from="Inner/SlotButton" to="Inner/SlotButton" method="_on_pressed"]

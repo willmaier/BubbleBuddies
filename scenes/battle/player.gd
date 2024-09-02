@@ -14,6 +14,7 @@ signal target_chosen(target)
 @export var is_burning: bool = false
 @export var is_frozen: bool = false
 
+
 var health: int = 100:
 	set(value):
 		health = value
@@ -40,3 +41,4 @@ func _on_click_area_input_event(viewport, event, shape_idx):
 
 func player_chosen():
 	return self
+			
