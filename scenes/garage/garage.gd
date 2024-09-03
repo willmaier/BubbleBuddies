@@ -33,6 +33,9 @@ enum ItemSelectionType {HELMET,FEET,TORSOS,WINGS}
 
 #SIGNALS
 signal purchase_item_signal(item)
+signal clear_purchase_item_signal
+
+signal selected_item_signal(item)
 
 var purchase_item = {}
 var selected_item = {}
@@ -82,17 +85,28 @@ func equip_purchase_item(item):
 
 func equip_selected_item(item):
 	selected_item = item
-	emit_signal("selected_item_signal", selected_item)
+	emit_signal("selected_item_signal", item)
 	
 func _on_purchase_pressed():
 	if purchase_item["category"] == "helmets":
 		player_inventory[ItemSelectionType.HELMET].append(purchase_item)
+		emit_signal("clear_purchase_item_signal")
+		purchase_item = {}
+		
 	elif purchase_item["category"] == "feet":
 		player_inventory[ItemSelectionType.FEET].append(purchase_item)
+		emit_signal("clear_purchase_item_signal")
+		purchase_item = {}
+		
 	elif purchase_item["category"] == "torsos":
 		player_inventory[ItemSelectionType.TORSOS].append(purchase_item)
+		emit_signal("clear_purchase_item_signal")
+		purchase_item = {}
+		
 	elif purchase_item["category"] == "wings":
 		player_inventory[ItemSelectionType.WINGS].append(purchase_item)
+		emit_signal("clear_purchase_item_signal")
+		purchase_item = {}
 	
 
 
