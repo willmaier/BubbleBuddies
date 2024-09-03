@@ -426,6 +426,7 @@ texture = ExtResource("2_cvgoo")
 expand_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_ak78x")]
+process_mode = 3
 position = Vector2(584, 496)
 
 [node name="MenuBar" type="MenuBar" parent="."]
@@ -455,6 +456,7 @@ stream = ExtResource("4_pax12")
 autoplay = true
 
 [node name="GarageUICanvas" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TabContainer" type="TabContainer" parent="GarageUICanvas"]
 offset_right = 1152.0
@@ -554,6 +556,7 @@ text = "Save Changes"
 layout_mode = 2
 
 [node name="Purchase" type="Button" parent="GarageUICanvas/TabContainer/Store"]
+layout_mode = 0
 offset_left = 832.0
 offset_top = 353.0
 offset_right = 1088.0
@@ -562,6 +565,7 @@ text = "Purchase"
 script = ExtResource("30_lvytt")
 
 [node name="PurchaseRect" type="ColorRect" parent="GarageUICanvas/TabContainer/Store"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 33.0
 offset_right = 192.0
@@ -594,6 +598,7 @@ theme_override_constants/v_separation = 64
 columns = 5
 
 [node name="PurchaseOuter" type="ColorRect" parent="GarageUICanvas/TabContainer/Store"]
+layout_mode = 0
 offset_left = 640.0
 offset_top = 281.0
 offset_right = 768.0
@@ -612,6 +617,7 @@ scale = Vector2(0.1, 0.1)
 script = ExtResource("30_cj5u0")
 
 [node name="Stats" type="ColorRect" parent="GarageUICanvas/TabContainer/Store"]
+layout_mode = 0
 offset_left = 832.0
 offset_top = 177.0
 offset_right = 1088.0

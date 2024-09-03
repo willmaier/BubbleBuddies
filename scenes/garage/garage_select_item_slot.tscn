@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://rqpneguia05o"]
+
+[ext_resource type="Script" path="res://scenes/garage/garage_select_item_slot.gd" id="1_gtjq2"]
+[ext_resource type="Script" path="res://scenes/garage/garage_select_item_button.gd" id="2_bcjei"]
+[ext_resource type="Script" path="res://scenes/garage/garage_select_item_icon.gd" id="3_0fdmr"]
+
+[node name="SelectItemSlot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gtjq2")
+
+[node name="OuterSelectRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="InnerSelectRect" type="ColorRect" parent="OuterSelectRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 120.0
+offset_bottom = 120.0
+
+[node name="SelectSlotButton" type="Button" parent="OuterSelectRect/InnerSelectRect"]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 112.0
+script = ExtResource("2_bcjei")
+
+[node name="SelectItemIcon" type="Sprite2D" parent="OuterSelectRect/InnerSelectRect"]
+position = Vector2(56, 56)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("3_0fdmr")
+
+[connection signal="set_slot_texture" from="." to="OuterSelectRect/InnerSelectRect/SelectItemIcon" method="_on_select_item_slot_set_slot_texture"]
+[connection signal="select_slot_item" from="OuterSelectRect/InnerSelectRect/SelectSlotButton" to="." method="_on_select_slot_button_select_slot_item"]
