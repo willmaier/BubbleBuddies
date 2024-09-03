@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dylx5548fckm6"]
+[gd_scene load_steps=15 format=3 uid="uid://dylx5548fckm6"]
 
 [ext_resource type="Script" path="res://scenes/battle/player.gd" id="1_82cnu"]
 [ext_resource type="Texture2D" uid="uid://cstixvwogxchu" path="res://assets/textures/gear/torsos/torso_base.png" id="1_lg6n6"]
 [ext_resource type="Texture2D" uid="uid://c0o7ir2ra6a0s" path="res://assets/textures/gear/helmets/helmet_base.png" id="2_0cpox"]
+[ext_resource type="Resource" uid="uid://547jk7m1ide1" path="res://resources/player/player_resource.tres" id="2_ndwox"]
 [ext_resource type="Texture2D" uid="uid://bsawolfw0iwo5" path="res://assets/textures/gear/wings/wing_base.png" id="3_3ptxd"]
 [ext_resource type="Texture2D" uid="uid://c6ceucr3fgp0c" path="res://assets/textures/gear/legs/foot_base.png" id="4_wwqy3"]
 [ext_resource type="Theme" uid="uid://bmxxtjvornsya" path="res://scenes/battle/player_ui_theme.tres" id="6_g32u0"]
@@ -26,24 +27,25 @@ size = Vector2(439, 462)
 
 [node name="Player" type="Node2D" groups=["Player"]]
 script = ExtResource("1_82cnu")
+_player_resource = ExtResource("2_ndwox")
 metadata/_edit_group_ = true
 
-[node name="Torso" type="Sprite2D" parent="."]
+[node name="Torso" type="Sprite2D" parent="." groups=["MechParts"]]
 position = Vector2(0, 100)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_lg6n6")
 
-[node name="Helmet" type="Sprite2D" parent="."]
+[node name="Helmet" type="Sprite2D" parent="." groups=["MechParts"]]
 position = Vector2(150, -25)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_0cpox")
 
-[node name="Wing" type="Sprite2D" parent="."]
+[node name="Wing" type="Sprite2D" parent="." groups=["MechParts"]]
 position = Vector2(10, 75)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_3ptxd")
 
-[node name="Legs" type="Sprite2D" parent="."]
+[node name="Legs" type="Sprite2D" parent="." groups=["MechParts"]]
 position = Vector2(0, 225)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_wwqy3")

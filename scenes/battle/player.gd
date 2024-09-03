@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var _player_resource : PlayerResource
+
 @onready var hp_text = $PlayerUI/HP
 @onready var health_bar = $PlayerUI/Health
 @onready var fuel_text = $PlayerUI/Fuel2

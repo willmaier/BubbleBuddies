@@ -9,14 +9,17 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -16.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gtjq2")
 
 [node name="OuterSelectRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 128.0
-offset_bottom = 128.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 80.0
 
 [node name="InnerSelectRect" type="ColorRect" parent="OuterSelectRect"]
 layout_mode = 1
@@ -25,22 +28,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -56.0
-offset_top = -56.0
-offset_right = 56.0
-offset_bottom = 56.0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SelectItemIcon" type="Sprite2D" parent="OuterSelectRect/InnerSelectRect"]
-position = Vector2(56, 56)
+position = Vector2(24, 24)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("3_0fdmr")
 
 [node name="SelectSlotButton" type="Button" parent="OuterSelectRect/InnerSelectRect"]
 layout_mode = 0
-offset_right = 112.0
-offset_bottom = 112.0
+offset_right = 48.0
+offset_bottom = 48.0
 script = ExtResource("2_bcjei")
 
 [connection signal="set_slot_texture" from="." to="OuterSelectRect/InnerSelectRect/SelectItemIcon" method="_on_select_item_slot_set_slot_texture"]

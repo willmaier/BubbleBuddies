@@ -2,14 +2,14 @@ extends Node2D
 
 #RESOURCES
 @export var _gear_resource : GearResource
-
+@export var _player_resource : PlayerResource
 #DYNAMIC SCENE/COMPONENTS
-@onready var mech = preload("res://scenes/battle/player.tscn")
 @onready var purchase_slot = preload("res://scenes/garage/garage_item_slot.tscn")
 @onready var select_slot = preload("res://scenes/garage/garage_select_item_slot.tscn")
 
 #UI-COMPONENTS
 @onready var garage_ui = $GarageUICanvas
+
 @onready var inventoy_grid_container = $GarageUICanvas/TabContainer/Parts/PartsRect/ItemGridContainer
 @onready var purchase_grid_container = $GarageUICanvas/TabContainer/Store/PurchaseRect/ItemGridContainer
 
@@ -25,11 +25,21 @@ enum ItemSelectionType {HELMET,FEET,TORSOS,WINGS}
 
 #MOVE TO PLAYER RESOURCE OR AUTOLOAD SINGLETON
 @onready var player_inventory = [
-	[],
-	[],
-	[],
-	[]
+	_player_resource.helmet_inventory,
+	_player_resource.feet_inventory,
+	_player_resource.torso_inventory,
+	_player_resource.wing_inventory
 ]
+
+@onready var default_mech_helmet = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Helmet
+@onready var default_mech_legs = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Legs
+@onready var default_mech_wings = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Wing
+@onready var default_mech_torso = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Torso
+
+@onready var mech_torso = default_mech_torso
+@onready var mech_helmet = default_mech_helmet
+@onready var mech_wings = default_mech_wings
+@onready var mech_legs = default_mech_legs
 
 #SIGNALS
 signal purchase_item_signal(item)
@@ -40,12 +50,6 @@ signal selected_item_signal(item)
 var purchase_item = {}
 var selected_item = {}
 
-func _ready():
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func _input(event):
 	if event.is_action_pressed("workshop_menu"):
@@ -108,6 +112,3 @@ func _on_purchase_pressed():
 		emit_signal("clear_purchase_item_signal")
 		purchase_item = {}
 	
-
-
-

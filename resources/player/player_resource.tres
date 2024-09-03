@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=2 format=3 uid="uid://547jk7m1ide1"]
+
+[ext_resource type="Script" path="res://resources/player/player_resource.gd" id="1_r0fdx"]
+
+[resource]
+script = ExtResource("1_r0fdx")
+health = 100
+fuel = 100
+armor = 0
+attack = 2
+defence = 3
+armor_damage = 0
+xp = 0
+coin = 0
+combined_health_bonuses = 0
+combined_defence_bonuses = 0
+combined_attack_bonuses = 0
+helmet_inventory = []
+torso_inventory = []
+feet_inventory = []
+wing_inventory = []
+item_inventory = []
+helmet = "base"
+torso = "base"
+wing = "base"
+foot = "base"

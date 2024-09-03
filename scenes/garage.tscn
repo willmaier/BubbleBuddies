@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bcebw4stk54tv"]
+[gd_scene load_steps=41 format=3 uid="uid://bcebw4stk54tv"]
 
 [ext_resource type="PackedScene" uid="uid://drnieg5ykp4a7" path="res://scenes/player/player.tscn" id="1_ak78x"]
 [ext_resource type="Script" path="res://scenes/garage/garage.gd" id="1_puq2h"]
@@ -30,10 +30,12 @@
 [ext_resource type="Texture2D" uid="uid://7haur2036sq1" path="res://assets/Art/GEAR/WING/wing_leaf.png" id="25_agwoj"]
 [ext_resource type="Texture2D" uid="uid://dt2uaeqdjqqi7" path="res://assets/Art/GEAR/WING/wing_metal.png" id="26_sqbg6"]
 [ext_resource type="Script" path="res://scenes/garage/garage_purchase_item_icon.gd" id="30_cj5u0"]
+[ext_resource type="PackedScene" uid="uid://dylx5548fckm6" path="res://scenes/battle/player.tscn" id="30_cwkpw"]
 [ext_resource type="Script" path="res://scenes/garage/garage_select_item_swap_icon.gd" id="30_he66b"]
 [ext_resource type="Script" path="res://scenes/garage/garage_purchase_item_button.gd" id="30_lvytt"]
 [ext_resource type="Script" path="res://scenes/garage/garage_item_name.gd" id="30_ndyef"]
 [ext_resource type="Script" path="res://scenes/garage/garage_select_item_name.gd" id="31_57fck"]
+[ext_resource type="Resource" uid="uid://547jk7m1ide1" path="res://resources/player/player_resource.tres" id="31_hpm8u"]
 [ext_resource type="Script" path="res://scenes/garage/garage_item_attack.gd" id="31_i25fu"]
 [ext_resource type="Script" path="res://scenes/garage/garage_item_defence.gd" id="32_unlwj"]
 [ext_resource type="Script" path="res://scenes/garage/garage_item_armor.gd" id="33_muqf5"]
@@ -420,6 +422,7 @@ foot_array = [{
 [node name="Garage" type="Node2D" groups=["GarageRoot"]]
 script = ExtResource("1_puq2h")
 _gear_resource = SubResource("Resource_7dnbk")
+_player_resource = ExtResource("31_hpm8u")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1148.0
@@ -466,6 +469,17 @@ tab_alignment = 1
 
 [node name="Parts" type="TabBar" parent="GarageUICanvas/TabContainer"]
 layout_mode = 2
+
+[node name="MechDisplayArea" type="ColorRect" parent="GarageUICanvas/TabContainer/Parts"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 289.0
+offset_right = 768.0
+offset_bottom = 481.0
+
+[node name="Player" parent="GarageUICanvas/TabContainer/Parts/MechDisplayArea" instance=ExtResource("30_cwkpw")]
+position = Vector2(120, 72)
+scale = Vector2(0.3, 0.3)
 
 [node name="PartsRect" type="ColorRect" parent="GarageUICanvas/TabContainer/Parts"]
 layout_mode = 1
@@ -547,6 +561,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 script = ExtResource("31_57fck")
 
 [node name="AttackLabel" type="RichTextLabel" parent="GarageUICanvas/TabContainer/Parts/Stats"]
+layout_mode = 0
 offset_top = 24.0
 offset_right = 128.0
 offset_bottom = 48.0
@@ -554,6 +569,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "ATTACK:"
 
 [node name="Attack" type="RichTextLabel" parent="GarageUICanvas/TabContainer/Parts/Stats"]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 24.0
 offset_right = 248.0
@@ -562,6 +578,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 script = ExtResource("31_i25fu")
 
 [node name="DefenceLabel" type="RichTextLabel" parent="GarageUICanvas/TabContainer/Parts/Stats"]
+layout_mode = 0
 offset_top = 48.0
 offset_right = 128.0
 offset_bottom = 72.0
@@ -569,6 +586,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "DEFENCE:"
 
 [node name="Defence" type="RichTextLabel" parent="GarageUICanvas/TabContainer/Parts/Stats"]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 48.0
 offset_right = 248.0
@@ -577,6 +595,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 script = ExtResource("31_i25fu")
 
 [node name="ArmorLabel" type="RichTextLabel" parent="GarageUICanvas/TabContainer/Parts/Stats"]
+layout_mode = 0
 offset_top = 72.0
 offset_right = 128.0
 offset_bottom = 96.0
@@ -584,6 +603,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "ARMOR:"
 
 [node name="Armor" type="RichTextLabel" parent="GarageUICanvas/TabContainer/Parts/Stats"]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 72.0
 offset_right = 248.0
