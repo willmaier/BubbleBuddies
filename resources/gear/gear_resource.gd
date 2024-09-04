@@ -12,7 +12,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/HELMET/helmet_base.png"),
 		"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"peck" : 0,
+		"swipe": 2,
+		"taunt": 0
 	},
 	"halloween":{
 		"name": "halloween",
@@ -20,7 +23,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/HELMET/helmet_halloween.png"),
 	   	"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"peck" : 0,
+		"swipe": 0,
+		"taunt": 4
 	},
 	"metal":{
 		"name": "metal",
@@ -28,7 +34,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/HELMET/helmet_metal.png"),
 		"attack": 1,
 		"defense": 5,
-		"armor": 5
+		"armor": 5,
+		"peck" : 5,
+		"swipe": 0,
+		"taunt": 0
 	},
 	"plushie":{
 		"name": "plushie",
@@ -36,7 +45,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/HELMET/helmet_plushie.png"),
 		"attack": 5,
  		"defense": 2,
-		"armor": 2
+		"armor": 2,
+		"peck" : 0,
+		"swipe": 5,
+		"taunt": 0
 	},
 	"pot": {
 		"name": "pot",
@@ -44,7 +56,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/HELMET/helmet_pot.png"),
 		"attack": 3,
 		"defense": 4,
-		"armor": 5
+		"armor": 5,
+		"peck" : 0,
+		"swipe": 5,
+		"taunt": 0
 	},
 	"snowman": {
 		"name": "snowman",
@@ -53,6 +68,9 @@ class_name GearResource
 		"attack": 5,
 		"defense": -1,
 	   	"armor": -1,
+		"peck" : 0,
+		"swipe": 0,
+		"taunt": 4
 	}   
 }
 
@@ -66,7 +84,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/TORSO/torso_base.png"),
 		"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"peck" : 0,
+		"swipe": 0,
+		"taunt": 0
 	},
 	"bread":{
 		"name": "bread",
@@ -74,7 +95,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/TORSO/torso_bread.png"),
 	   	"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"peck" : 0,
+		"swipe": 2,
+		"taunt": 0
 	},
 	"cardboard":{
 		"name": "cardboard",
@@ -82,7 +106,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/TORSO/torso_cardboard.png"),
 		"attack": 1,
 		"defense": 5,
-		"armor": 5
+		"armor": 5,
+		"peck" : 3,
+		"swipe": 0,
+		"taunt": 0
 	},
 	"crystal":{
 		"name": "crystal",
@@ -90,7 +117,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/TORSO/torso_crystal.png"),
 		"attack": 5,
  		"defense": 2,
-		"armor": 2
+		"armor": 2,
+		"peck" : 0,
+		"swipe": 4,
+		"taunt": 0
 	},
 	"metal": {
 		"name": "metal",
@@ -98,7 +128,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/TORSO/torso_metal.png"),
 		"attack": 3,
 		"defense": 4,
-		"armor": 5
+		"armor": 5,
+		"peck" : 0,
+		"swipe": 5,
+		"taunt": 0
 	},
 	"trash": {
 		"name": "trash",
@@ -107,6 +140,9 @@ class_name GearResource
 		"attack": 5,
 		"defense": -1,
 	   	"armor": -1,
+		"peck" : 0,
+		"swipe": 0,
+		"taunt": 5
 	}   
 }
 
@@ -120,7 +156,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/WING/wing_base.png"),
 		"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"peck" : 0,
+		"swipe": 0,
+		"taunt": 0
 	},
 	"buffalo":{
 		"name": "buffalo",
@@ -128,7 +167,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/WING/wing_buffalo.png"),
 	   	"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"peck" : 0,
+		"swipe": 0,
+		"taunt": 3
 	},
 	"crayon":{
 		"name": "crayon",
@@ -136,7 +178,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/WING/wing_crayon.png"),
 		"attack": 1,
 		"defense": 3,
-		"armor": 1
+		"armor": 1,
+		"peck" : 0,
+		"swipe": 4,
+		"taunt": 0,
 	},
 	"icepop":{
 		"name": "icepop",
@@ -144,7 +189,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/WING/wing_icepop.png"),
 		"attack": 5,
  		"defense": 2,
-		"armor": 2
+		"armor": 2,
+		"peck" : 0,
+		"swipe": 5,
+		"taunt": 0
 	},
 	"leaf": {
 		"name": "leaf",
@@ -152,7 +200,10 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/WING/wing_leaf.png"),
 		"attack": 3,
 		"defense": 4,
-		"armor": 5
+		"armor": 5,
+		"peck" : 0,
+		"swipe": 0,
+		"taunt": 5
 	},
 	"metal": {
 		"name": "metal",
@@ -161,6 +212,9 @@ class_name GearResource
 		"attack": 5,
 		"defense": -1,
 	   	"armor": -1,
+		"peck" : 0,
+		"swipe": 5,
+		"taunt": 0
 	}   
 }
 

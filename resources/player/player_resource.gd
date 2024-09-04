@@ -71,11 +71,13 @@ func _apply_buffs():
 	calculate_defense_buffs()
 	
 func calculate_attack_buffs():
+	combined_attack_bonuses = 0
 	for item in equipped_gear:
 		combined_attack_bonuses += item.attack
 	attack += combined_attack_bonuses
 		
 func calculate_defense_buffs():
+	combined_defence_bonuses = 0
 	for item in equipped_gear:
 		combined_defence_bonuses += item.defense
 	defence += combined_defence_bonuses
@@ -92,3 +94,4 @@ func swap_player_item(new_item):
 		foot = new_item["name"]
 	else:
 		print("Error occurred")
+	print(helmet, torso, wing, foot)

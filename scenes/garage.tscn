@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bcebw4stk54tv"]
+[gd_scene load_steps=42 format=3 uid="uid://bcebw4stk54tv"]
 
 [ext_resource type="PackedScene" uid="uid://drnieg5ykp4a7" path="res://scenes/player/player.tscn" id="1_ak78x"]
 [ext_resource type="Script" path="res://scenes/garage/garage.gd" id="1_puq2h"]
@@ -37,6 +37,7 @@
 [ext_resource type="Script" path="res://scenes/garage/garage_select_item_name.gd" id="31_57fck"]
 [ext_resource type="Resource" uid="uid://547jk7m1ide1" path="res://resources/player/player_resource.tres" id="31_hpm8u"]
 [ext_resource type="Script" path="res://scenes/garage/garage_item_attack.gd" id="31_i25fu"]
+[ext_resource type="Resource" uid="uid://bkolucn4lsnqe" path="res://resources/gear/gear_resource.tres" id="32_cld48"]
 [ext_resource type="Script" path="res://scenes/garage/garage_item_defence.gd" id="32_unlwj"]
 [ext_resource type="Script" path="res://scenes/garage/garage_item_armor.gd" id="33_muqf5"]
 
@@ -49,7 +50,10 @@ helmet_dictionary = {
 "category": "helmets",
 "defense": 4,
 "image": ExtResource("5_pm5ky"),
-"name": "base"
+"name": "base",
+"peck": 0,
+"swipe": 2,
+"taunt": 0
 },
 "halloween": {
 "armor": 1,
@@ -57,7 +61,10 @@ helmet_dictionary = {
 "category": "helmets",
 "defense": 4,
 "image": ExtResource("9_aie7a"),
-"name": "halloween"
+"name": "halloween",
+"peck": 0,
+"swipe": 0,
+"taunt": 4
 },
 "metal": {
 "armor": 5,
@@ -65,7 +72,10 @@ helmet_dictionary = {
 "category": "helmets",
 "defense": 5,
 "image": ExtResource("10_nxria"),
-"name": "metal"
+"name": "metal",
+"peck": 5,
+"swipe": 0,
+"taunt": 0
 },
 "plushie": {
 "armor": 2,
@@ -73,7 +83,10 @@ helmet_dictionary = {
 "category": "helmets",
 "defense": 2,
 "image": ExtResource("11_i8wnd"),
-"name": "plushie"
+"name": "plushie",
+"peck": 0,
+"swipe": 5,
+"taunt": 0
 },
 "pot": {
 "armor": 5,
@@ -81,7 +94,10 @@ helmet_dictionary = {
 "category": "helmets",
 "defense": 4,
 "image": ExtResource("12_qei88"),
-"name": "pot"
+"name": "pot",
+"peck": 0,
+"swipe": 5,
+"taunt": 0
 },
 "snowman": {
 "armor": -1,
@@ -89,7 +105,10 @@ helmet_dictionary = {
 "category": "helmets",
 "defense": -1,
 "image": ExtResource("13_5n8c6"),
-"name": "snowman"
+"name": "snowman",
+"peck": 0,
+"swipe": 0,
+"taunt": 4
 }
 }
 helmet_names = ["base", "halloween", "metal", "plushie", "pot", "snowman"]
@@ -100,7 +119,10 @@ torso_dictionary = {
 "category": "torsos",
 "defense": 4,
 "image": ExtResource("7_vou3i"),
-"name": "base"
+"name": "base",
+"peck": 0,
+"swipe": 0,
+"taunt": 0
 },
 "bread": {
 "armor": 1,
@@ -108,7 +130,10 @@ torso_dictionary = {
 "category": "torsos",
 "defense": 4,
 "image": ExtResource("16_ws103"),
-"name": "bread"
+"name": "bread",
+"peck": 0,
+"swipe": 2,
+"taunt": 0
 },
 "cardboard": {
 "armor": 5,
@@ -116,7 +141,10 @@ torso_dictionary = {
 "category": "torsos",
 "defense": 5,
 "image": ExtResource("17_4oji2"),
-"name": "cardboard"
+"name": "cardboard",
+"peck": 3,
+"swipe": 0,
+"taunt": 0
 },
 "crystal": {
 "armor": 2,
@@ -124,7 +152,10 @@ torso_dictionary = {
 "category": "torsos",
 "defense": 2,
 "image": ExtResource("18_nuun1"),
-"name": "crystal"
+"name": "crystal",
+"peck": 0,
+"swipe": 4,
+"taunt": 0
 },
 "metal": {
 "armor": 5,
@@ -132,7 +163,10 @@ torso_dictionary = {
 "category": "torsos",
 "defense": 4,
 "image": ExtResource("19_vie4n"),
-"name": "metal"
+"name": "metal",
+"peck": 0,
+"swipe": 5,
+"taunt": 0
 },
 "trash": {
 "armor": -1,
@@ -140,7 +174,10 @@ torso_dictionary = {
 "category": "torsos",
 "defense": -1,
 "image": ExtResource("20_blf66"),
-"name": "trash"
+"name": "trash",
+"peck": 0,
+"swipe": 0,
+"taunt": 5
 }
 }
 torso_names = ["base", "bread", "cardboard", "crystal", "metal", "trash"]
@@ -151,7 +188,10 @@ wing_dictionary = {
 "category": "wings",
 "defense": 4,
 "image": ExtResource("8_njkat"),
-"name": "base"
+"name": "base",
+"peck": 0,
+"swipe": 0,
+"taunt": 0
 },
 "buffalo": {
 "armor": 1,
@@ -159,7 +199,10 @@ wing_dictionary = {
 "category": "wings",
 "defense": 4,
 "image": ExtResource("22_1vgp2"),
-"name": "buffalo"
+"name": "buffalo",
+"peck": 0,
+"swipe": 0,
+"taunt": 3
 },
 "crayon": {
 "armor": 1,
@@ -167,7 +210,10 @@ wing_dictionary = {
 "category": "wings",
 "defense": 3,
 "image": ExtResource("23_lls7j"),
-"name": "crayon"
+"name": "crayon",
+"peck": 0,
+"swipe": 4,
+"taunt": 0
 },
 "icepop": {
 "armor": 2,
@@ -175,7 +221,10 @@ wing_dictionary = {
 "category": "wings",
 "defense": 2,
 "image": ExtResource("24_gq8cj"),
-"name": "icepop"
+"name": "icepop",
+"peck": 0,
+"swipe": 5,
+"taunt": 0
 },
 "leaf": {
 "armor": 5,
@@ -183,7 +232,10 @@ wing_dictionary = {
 "category": "wings",
 "defense": 4,
 "image": ExtResource("25_agwoj"),
-"name": "leaf"
+"name": "leaf",
+"peck": 0,
+"swipe": 0,
+"taunt": 5
 },
 "metal": {
 "armor": -1,
@@ -191,7 +243,10 @@ wing_dictionary = {
 "category": "wings",
 "defense": -1,
 "image": ExtResource("26_sqbg6"),
-"name": "metal"
+"name": "metal",
+"peck": 0,
+"swipe": 5,
+"taunt": 0
 }
 }
 wing_names = ["base", "buffalo", "crayon", "icepop", "leaf", "metal"]
@@ -480,6 +535,7 @@ offset_bottom = 481.0
 [node name="Player" parent="GarageUICanvas/TabContainer/Parts/MechDisplayArea" instance=ExtResource("30_cwkpw")]
 position = Vector2(120, 72)
 scale = Vector2(0.3, 0.3)
+_gear_resource = ExtResource("32_cld48")
 
 [node name="PartsRect" type="ColorRect" parent="GarageUICanvas/TabContainer/Parts"]
 layout_mode = 1
@@ -510,8 +566,8 @@ layout_mode = 0
 offset_left = 192.0
 offset_right = 512.0
 offset_bottom = 128.0
-theme_override_constants/h_separation = 128
-theme_override_constants/v_separation = 128
+theme_override_constants/h_separation = 64
+theme_override_constants/v_separation = 64
 columns = 5
 
 [node name="PartsOuter" type="ColorRect" parent="GarageUICanvas/TabContainer/Parts"]
@@ -774,5 +830,7 @@ script = ExtResource("33_muqf5")
 [connection signal="selected_item_signal" from="." to="GarageUICanvas/TabContainer/Parts/Stats/Armor" method="_on_garage_selected_item_signal"]
 [connection signal="pressed" from="MenuBar/Battle" to="." method="_on_battle_pressed"]
 [connection signal="item_clicked" from="GarageUICanvas/TabContainer/Parts/PartsRect/GarageItemList" to="." method="_on_garage_item_list_item_clicked"]
+[connection signal="pressed" from="GarageUICanvas/TabContainer/Parts/PartsOuter/SwapperInner/SwapperButton" to="." method="_on_swapper_button_pressed"]
+[connection signal="pressed" from="GarageUICanvas/TabContainer/Parts/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="GarageUICanvas/TabContainer/Store/Purchase" to="." method="_on_purchase_pressed"]
 [connection signal="item_clicked" from="GarageUICanvas/TabContainer/Store/PurchaseRect/PurchaseItemList" to="." method="_on_purchase_item_list_item_clicked"]

@@ -3,17 +3,19 @@ extends Node2D
 #RESOURCES
 @export var _gear_resource : GearResource
 @export var _player_resource : PlayerResource
+
+@onready var player = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player
+
 #DYNAMIC SCENE/COMPONENTS
 @onready var purchase_slot = preload("res://scenes/garage/garage_item_slot.tscn")
 @onready var select_slot = preload("res://scenes/garage/garage_select_item_slot.tscn")
 
 #UI-COMPONENTS
 @onready var garage_ui = $GarageUICanvas
-
 @onready var inventoy_grid_container = $GarageUICanvas/TabContainer/Parts/PartsRect/ItemGridContainer
 @onready var purchase_grid_container = $GarageUICanvas/TabContainer/Store/PurchaseRect/ItemGridContainer
 
-#VARS
+#STORE
 @onready var gear_store = [
 	_gear_resource.helmets_array,
 	_gear_resource.foot_array,
@@ -23,23 +25,13 @@ extends Node2D
 
 enum ItemSelectionType {HELMET,FEET,TORSOS,WINGS}
 
-#MOVE TO PLAYER RESOURCE OR AUTOLOAD SINGLETON
+#
 @onready var player_inventory = [
 	_player_resource.helmet_inventory,
 	_player_resource.feet_inventory,
 	_player_resource.torso_inventory,
 	_player_resource.wing_inventory
 ]
-
-@onready var default_mech_helmet = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Helmet
-@onready var default_mech_legs = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Legs
-@onready var default_mech_wings = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Wing
-@onready var default_mech_torso = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Torso
-
-@onready var mech_torso = default_mech_torso
-@onready var mech_helmet = default_mech_helmet
-@onready var mech_wings = default_mech_wings
-@onready var mech_legs = default_mech_legs
 
 #SIGNALS
 signal purchase_item_signal(item)
@@ -112,3 +104,14 @@ func _on_purchase_pressed():
 		emit_signal("clear_purchase_item_signal")
 		purchase_item = {}
 	
+func swap_gear(item):
+	PlayerState.swap_player_item(item)
+	player.broadcast()
+
+func _on_swapper_button_pressed():
+	swap_gear(selected_item)
+
+func _on_save_pressed():
+	PlayerState.verify_save_directory()
+	if PlayerState.can_access():
+		PlayerState.save_player_data()

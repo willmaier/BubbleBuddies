@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvu4gsig13o7q"]
+[gd_scene load_steps=8 format=3 uid="uid://cvu4gsig13o7q"]
 
 [ext_resource type="PackedScene" uid="uid://djc7ehlc3lv7h" path="res://scenes/cthulu/cthulu.tscn" id="1_2k4qv"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_vg7da"]
 [ext_resource type="PackedScene" uid="uid://drnieg5ykp4a7" path="res://scenes/player/player.tscn" id="2_trjp0"]
 [ext_resource type="Texture2D" uid="uid://cgnkcyemawf21" path="res://assets/textures/wrench.png" id="4_jg65k"]
 [ext_resource type="Texture2D" uid="uid://bpwc2g4s8e2lm" path="res://assets/textures/fight.png" id="5_amise"]
+[ext_resource type="Script" path="res://scenes/world/save_loader.gd" id="6_4xfl6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fmrb"]
 size = Vector2(128, 130)
@@ -42,6 +43,11 @@ shape = SubResource("RectangleShape2D_5fmrb")
 [node name="Sprite2D" type="Sprite2D" parent="BattleIcon"]
 scale = Vector2(0.223633, 0.223633)
 texture = ExtResource("5_amise")
+
+[node name="Utilities" type="Node" parent="."]
+
+[node name="SaveLoader" type="Node" parent="Utilities"]
+script = ExtResource("6_4xfl6")
 
 [connection signal="body_entered" from="GarageIcon/GarageArea" to="." method="_on_garage_area_body_entered"]
 [connection signal="body_exited" from="GarageIcon/GarageArea" to="." method="_on_garage_area_body_exited"]

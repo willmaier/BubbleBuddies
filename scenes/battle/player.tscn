@@ -1,14 +1,476 @@
-[gd_scene load_steps=15 format=3 uid="uid://dylx5548fckm6"]
+[gd_scene load_steps=45 format=3 uid="uid://dylx5548fckm6"]
 
 [ext_resource type="Script" path="res://scenes/battle/player.gd" id="1_82cnu"]
 [ext_resource type="Texture2D" uid="uid://cstixvwogxchu" path="res://assets/textures/gear/torsos/torso_base.png" id="1_lg6n6"]
 [ext_resource type="Texture2D" uid="uid://c0o7ir2ra6a0s" path="res://assets/textures/gear/helmets/helmet_base.png" id="2_0cpox"]
 [ext_resource type="Resource" uid="uid://547jk7m1ide1" path="res://resources/player/player_resource.tres" id="2_ndwox"]
 [ext_resource type="Texture2D" uid="uid://bsawolfw0iwo5" path="res://assets/textures/gear/wings/wing_base.png" id="3_3ptxd"]
+[ext_resource type="Texture2D" uid="uid://c32b2kda2u1ib" path="res://assets/Art/GEAR/FOOT/foot_base.png" id="3_kgtcw"]
+[ext_resource type="Script" path="res://scenes/battle/player_torso.gd" id="4_j6a01"]
+[ext_resource type="Texture2D" uid="uid://thevg1tc5smb" path="res://assets/Art/GEAR/FOOT/foot_bone.png" id="4_oikyo"]
 [ext_resource type="Texture2D" uid="uid://c6ceucr3fgp0c" path="res://assets/textures/gear/legs/foot_base.png" id="4_wwqy3"]
+[ext_resource type="Texture2D" uid="uid://cjgy176j040ew" path="res://assets/Art/GEAR/FOOT/foot_candycane.png" id="5_6drm5"]
 [ext_resource type="Theme" uid="uid://bmxxtjvornsya" path="res://scenes/battle/player_ui_theme.tres" id="6_g32u0"]
+[ext_resource type="Script" path="res://scenes/battle/player_helmet.gd" id="6_ghq2v"]
 [ext_resource type="Texture2D" uid="uid://t55wr4gk8688" path="res://assets/textures/health_bar200x200.png" id="6_keqo0"]
+[ext_resource type="Texture2D" uid="uid://b2n7erpx56oex" path="res://assets/Art/GEAR/FOOT/foot_metal.png" id="6_ojjjc"]
 [ext_resource type="Texture2D" uid="uid://dcysucfiqp4g0" path="res://assets/textures/fuel_bar200x200.png" id="7_cyitl"]
+[ext_resource type="Texture2D" uid="uid://dtjd6q2h1m3f6" path="res://assets/Art/GEAR/FOOT/foot_pbc.png" id="7_hwty5"]
+[ext_resource type="Texture2D" uid="uid://cv7rpjhc2ufmo" path="res://assets/Art/GEAR/FOOT/foot_sticksnstones.png" id="8_0sjts"]
+[ext_resource type="Script" path="res://scenes/battle/player_wing.gd" id="8_b28mb"]
+[ext_resource type="Texture2D" uid="uid://cw8603m3icj14" path="res://assets/Art/GEAR/HELMET/helmet_base.png" id="9_pac2p"]
+[ext_resource type="Texture2D" uid="uid://66afcxywu1lr" path="res://assets/Art/GEAR/HELMET/helmet_halloween.png" id="10_ddv8a"]
+[ext_resource type="Script" path="res://scenes/battle/player_legs.gd" id="10_yty4r"]
+[ext_resource type="Texture2D" uid="uid://cc03jktvtnu7k" path="res://assets/Art/GEAR/HELMET/helmet_metal.png" id="11_yjahy"]
+[ext_resource type="Texture2D" uid="uid://cxgvptgs6wemc" path="res://assets/Art/GEAR/HELMET/helmet_plushie.png" id="12_vq3bc"]
+[ext_resource type="Texture2D" uid="uid://1iwuvix4npnx" path="res://assets/Art/GEAR/HELMET/helmet_pot.png" id="13_gn5at"]
+[ext_resource type="Texture2D" uid="uid://dllby270uce52" path="res://assets/Art/GEAR/HELMET/helmet_snowman.png" id="14_78u1g"]
+[ext_resource type="Script" path="res://resources/gear/gear_resource.gd" id="15_65muo"]
+[ext_resource type="Texture2D" uid="uid://fom8e8ux6a3q" path="res://assets/Art/GEAR/TORSO/torso_base.png" id="16_4mcax"]
+[ext_resource type="Texture2D" uid="uid://qtdlhpd8dcq4" path="res://assets/Art/GEAR/TORSO/torso_bread.png" id="17_sb6re"]
+[ext_resource type="Texture2D" uid="uid://282cl8c4v7hs" path="res://assets/Art/GEAR/TORSO/torso_cardboard.png" id="18_6ntq4"]
+[ext_resource type="Texture2D" uid="uid://blr5ssjg3y75o" path="res://assets/Art/GEAR/TORSO/torso_crystal.png" id="19_2xhn8"]
+[ext_resource type="Texture2D" uid="uid://dyhnplhbapduk" path="res://assets/Art/GEAR/TORSO/torso_metal.png" id="20_57s5j"]
+[ext_resource type="Texture2D" uid="uid://ebxckwxa7oyl" path="res://assets/Art/GEAR/TORSO/torso_trash.png" id="21_e37ri"]
+[ext_resource type="Texture2D" uid="uid://c1kad1amwftbl" path="res://assets/Art/GEAR/WING/wing_base.png" id="22_eyvaa"]
+[ext_resource type="Texture2D" uid="uid://yak8aalba1ue" path="res://assets/Art/GEAR/WING/wing_buffalo.png" id="23_7klqw"]
+[ext_resource type="Texture2D" uid="uid://twaabtarfn8g" path="res://assets/Art/GEAR/WING/wing_crayon.png" id="24_5ur4p"]
+[ext_resource type="Texture2D" uid="uid://dikpjlwbqvkth" path="res://assets/Art/GEAR/WING/wing_icepop.png" id="25_e5f22"]
+[ext_resource type="Texture2D" uid="uid://7haur2036sq1" path="res://assets/Art/GEAR/WING/wing_leaf.png" id="26_ltayp"]
+[ext_resource type="Texture2D" uid="uid://dt2uaeqdjqqi7" path="res://assets/Art/GEAR/WING/wing_metal.png" id="27_fu8kb"]
+
+[sub_resource type="Resource" id="Resource_ldmn5"]
+script = ExtResource("15_65muo")
+helmet_dictionary = {
+"base": {
+"armor": 1,
+"attack": 2,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("9_pac2p"),
+"name": "base",
+"peck": 0,
+"swipe": 2,
+"taunt": 0
+},
+"halloween": {
+"armor": 1,
+"attack": 2,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("10_ddv8a"),
+"name": "halloween",
+"peck": 0,
+"swipe": 0,
+"taunt": 4
+},
+"metal": {
+"armor": 5,
+"attack": 1,
+"category": "helmets",
+"defense": 5,
+"image": ExtResource("11_yjahy"),
+"name": "metal",
+"peck": 5,
+"swipe": 0,
+"taunt": 0
+},
+"plushie": {
+"armor": 2,
+"attack": 5,
+"category": "helmets",
+"defense": 2,
+"image": ExtResource("12_vq3bc"),
+"name": "plushie",
+"peck": 0,
+"swipe": 5,
+"taunt": 0
+},
+"pot": {
+"armor": 5,
+"attack": 3,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("13_gn5at"),
+"name": "pot",
+"peck": 0,
+"swipe": 5,
+"taunt": 0
+},
+"snowman": {
+"armor": -1,
+"attack": 5,
+"category": "helmets",
+"defense": -1,
+"image": ExtResource("14_78u1g"),
+"name": "snowman",
+"peck": 0,
+"swipe": 0,
+"taunt": 4
+}
+}
+helmet_names = ["base", "halloween", "metal", "plushie", "pot", "snowman"]
+torso_dictionary = {
+"base": {
+"armor": 1,
+"attack": 2,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("16_4mcax"),
+"name": "base",
+"peck": 0,
+"swipe": 0,
+"taunt": 0
+},
+"bread": {
+"armor": 1,
+"attack": 2,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("17_sb6re"),
+"name": "bread",
+"peck": 0,
+"swipe": 2,
+"taunt": 0
+},
+"cardboard": {
+"armor": 5,
+"attack": 1,
+"category": "torsos",
+"defense": 5,
+"image": ExtResource("18_6ntq4"),
+"name": "cardboard",
+"peck": 3,
+"swipe": 0,
+"taunt": 0
+},
+"crystal": {
+"armor": 2,
+"attack": 5,
+"category": "torsos",
+"defense": 2,
+"image": ExtResource("19_2xhn8"),
+"name": "crystal",
+"peck": 0,
+"swipe": 4,
+"taunt": 0
+},
+"metal": {
+"armor": 5,
+"attack": 3,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("20_57s5j"),
+"name": "metal",
+"peck": 0,
+"swipe": 5,
+"taunt": 0
+},
+"trash": {
+"armor": -1,
+"attack": 5,
+"category": "torsos",
+"defense": -1,
+"image": ExtResource("21_e37ri"),
+"name": "trash",
+"peck": 0,
+"swipe": 0,
+"taunt": 5
+}
+}
+torso_names = ["base", "bread", "cardboard", "crystal", "metal", "trash"]
+wing_dictionary = {
+"base": {
+"armor": 1,
+"attack": 2,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("22_eyvaa"),
+"name": "base",
+"peck": 0,
+"swipe": 0,
+"taunt": 0
+},
+"buffalo": {
+"armor": 1,
+"attack": 2,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("23_7klqw"),
+"name": "buffalo",
+"peck": 0,
+"swipe": 0,
+"taunt": 3
+},
+"crayon": {
+"armor": 1,
+"attack": 1,
+"category": "wings",
+"defense": 3,
+"image": ExtResource("24_5ur4p"),
+"name": "crayon",
+"peck": 0,
+"swipe": 4,
+"taunt": 0
+},
+"icepop": {
+"armor": 2,
+"attack": 5,
+"category": "wings",
+"defense": 2,
+"image": ExtResource("25_e5f22"),
+"name": "icepop",
+"peck": 0,
+"swipe": 5,
+"taunt": 0
+},
+"leaf": {
+"armor": 5,
+"attack": 3,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("26_ltayp"),
+"name": "leaf",
+"peck": 0,
+"swipe": 0,
+"taunt": 5
+},
+"metal": {
+"armor": -1,
+"attack": 5,
+"category": "wings",
+"defense": -1,
+"image": ExtResource("27_fu8kb"),
+"name": "metal",
+"peck": 0,
+"swipe": 5,
+"taunt": 0
+}
+}
+wing_names = ["base", "buffalo", "crayon", "icepop", "leaf", "metal"]
+foot_dictionary = {
+"base": {
+"armor": 1,
+"attack": 2,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("3_kgtcw"),
+"name": "base"
+},
+"bone": {
+"armor": 1,
+"attack": 2,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("4_oikyo"),
+"name": "bone"
+},
+"candy_cane": {
+"armor": 1,
+"attack": 1,
+"category": "feet",
+"defense": 3,
+"image": ExtResource("5_6drm5"),
+"name": "candy_cane"
+},
+"metal": {
+"armor": 2,
+"attack": 5,
+"category": "feet",
+"defense": 2,
+"image": ExtResource("6_ojjjc"),
+"name": "metal"
+},
+"pvc": {
+"armor": 5,
+"attack": 3,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("7_hwty5"),
+"name": "pvc"
+},
+"sticksnstones": {
+"armor": -1,
+"attack": 5,
+"category": "feet",
+"defense": -1,
+"image": ExtResource("8_0sjts"),
+"name": "sticksnstones"
+}
+}
+foot_names = ["base", "bone", "candy_cane", "metal", "pvc", "sticksnstones"]
+helmets_array = [{
+"armor": 1,
+"attack": 2,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("9_pac2p"),
+"name": "base"
+}, {
+"armor": 1,
+"attack": 2,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("10_ddv8a"),
+"name": "halloween"
+}, {
+"armor": 5,
+"attack": 1,
+"category": "helmets",
+"defense": 5,
+"image": ExtResource("11_yjahy"),
+"name": "metal"
+}, {
+"armor": 2,
+"attack": 5,
+"category": "helmets",
+"defense": 2,
+"image": ExtResource("12_vq3bc"),
+"name": "plushie"
+}, {
+"armor": 5,
+"attack": 3,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("13_gn5at"),
+"name": "pot"
+}, {
+"armor": -1,
+"attack": 5,
+"category": "helmets",
+"defense": -1,
+"image": ExtResource("14_78u1g"),
+"name": "snowman"
+}]
+torso_array = [{
+"armor": 1,
+"attack": 2,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("16_4mcax"),
+"name": "base"
+}, {
+"armor": 1,
+"attack": 2,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("17_sb6re"),
+"name": "bread"
+}, {
+"armor": 5,
+"attack": 1,
+"category": "torsos",
+"defense": 5,
+"image": ExtResource("18_6ntq4"),
+"name": "cardboard"
+}, {
+"armor": 2,
+"attack": 5,
+"category": "torsos",
+"defense": 2,
+"image": ExtResource("19_2xhn8"),
+"name": "crystal"
+}, {
+"armor": 5,
+"attack": 3,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("20_57s5j"),
+"name": "metal"
+}, {
+"armor": -1,
+"attack": 5,
+"category": "torsos",
+"defense": -1,
+"image": ExtResource("21_e37ri"),
+"name": "trash"
+}]
+wings_array = [{
+"armor": 1,
+"attack": 2,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("22_eyvaa"),
+"name": "base"
+}, {
+"armor": 1,
+"attack": 2,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("23_7klqw"),
+"name": "buffalo"
+}, {
+"armor": 1,
+"attack": 1,
+"category": "wings",
+"defense": 3,
+"image": ExtResource("24_5ur4p"),
+"name": "crayon"
+}, {
+"armor": 2,
+"attack": 5,
+"category": "wings",
+"defense": 2,
+"image": ExtResource("25_e5f22"),
+"name": "icepop"
+}, {
+"armor": 5,
+"attack": 3,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("26_ltayp"),
+"name": "leaf"
+}, {
+"armor": -1,
+"attack": 5,
+"category": "wings",
+"defense": -1,
+"image": ExtResource("27_fu8kb"),
+"name": "metal"
+}]
+foot_array = [{
+"armor": 1,
+"attack": 2,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("3_kgtcw"),
+"name": "base"
+}, {
+"armor": 1,
+"attack": 2,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("4_oikyo"),
+"name": "bone"
+}, {
+"armor": 1,
+"attack": 1,
+"category": "feet",
+"defense": 3,
+"image": ExtResource("5_6drm5"),
+"name": "candy_cane"
+}, {
+"armor": 2,
+"attack": 5,
+"category": "feet",
+"defense": 2,
+"image": ExtResource("6_ojjjc"),
+"name": "metal"
+}, {
+"armor": 5,
+"attack": 3,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("7_hwty5"),
+"name": "pvc"
+}, {
+"armor": -1,
+"attack": 5,
+"category": "feet",
+"defense": -1,
+"image": ExtResource("8_0sjts"),
+"name": "sticksnstones"
+}]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wxf5"]
 texture = ExtResource("6_keqo0")
@@ -28,27 +490,32 @@ size = Vector2(439, 462)
 [node name="Player" type="Node2D" groups=["Player"]]
 script = ExtResource("1_82cnu")
 _player_resource = ExtResource("2_ndwox")
+_gear_resource = SubResource("Resource_ldmn5")
 metadata/_edit_group_ = true
 
 [node name="Torso" type="Sprite2D" parent="." groups=["MechParts"]]
 position = Vector2(0, 100)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_lg6n6")
+script = ExtResource("4_j6a01")
 
 [node name="Helmet" type="Sprite2D" parent="." groups=["MechParts"]]
 position = Vector2(150, -25)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_0cpox")
+script = ExtResource("6_ghq2v")
 
 [node name="Wing" type="Sprite2D" parent="." groups=["MechParts"]]
 position = Vector2(10, 75)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_3ptxd")
+script = ExtResource("8_b28mb")
 
 [node name="Legs" type="Sprite2D" parent="." groups=["MechParts"]]
 position = Vector2(0, 225)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_wwqy3")
+script = ExtResource("10_yty4r")
 
 [node name="PlayerUI" type="GridContainer" parent="."]
 offset_left = -300.0
@@ -125,4 +592,8 @@ horizontal_alignment = 1
 position = Vector2(28.5, 87)
 shape = SubResource("RectangleShape2D_jfkm6")
 
+[connection signal="swap_helmet_texture" from="." to="Helmet" method="_on_player_swap_helmet_texture"]
+[connection signal="swap_leg_texture" from="." to="Legs" method="_on_player_swap_leg_texture"]
+[connection signal="swap_torso_texture" from="." to="Torso" method="_on_player_swap_torso_texture"]
+[connection signal="swap_wing_texture" from="." to="Wing" method="_on_player_swap_wing_texture"]
 [connection signal="input_event" from="ClickArea" to="." method="_on_click_area_input_event"]
