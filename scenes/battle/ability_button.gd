@@ -60,4 +60,5 @@ func _on_pressed():
 			# target.skill()
 
 	targets.clear()
-	change_turn.emit()
+	if (Globals.player_turn):
+		change_turn.emit()

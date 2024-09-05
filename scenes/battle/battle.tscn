@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bj0xsjw3x3v1y"]
+[gd_scene load_steps=14 format=3 uid="uid://bj0xsjw3x3v1y"]
 
 [ext_resource type="PackedScene" uid="uid://fxjn3ggyo7mt" path="res://scenes/battle/enemy_group.tscn" id="1_8h2mb"]
 [ext_resource type="Texture2D" uid="uid://cp2ekqtyf6jf8" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/211890-a-crosswalk-across-a-new-york-city-street-with-tax.jpg" id="1_24dl7"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dylx5548fckm6" path="res://scenes/battle/player.tscn" id="2_a7wio"]
 [ext_resource type="PackedScene" uid="uid://d0t5elbvkvvcp" path="res://scenes/battle/ability_button.tscn" id="3_3he0t"]
 [ext_resource type="Script" path="res://scenes/battle/Abilities.gd" id="3_k2f8n"]
+[ext_resource type="Resource" uid="uid://dxsriksdrrq1o" path="res://custom_resources/enemy_abilities/hit_for_one.tres" id="4_lgafp"]
+[ext_resource type="Resource" uid="uid://dxyg7korety3h" path="res://custom_resources/enemy_abilities/hit_self.tres" id="5_8ebnl"]
 [ext_resource type="Resource" uid="uid://dbslncylmbquo" path="res://custom_resources/abilities/swipe.tres" id="5_nnjns"]
 [ext_resource type="Resource" uid="uid://354alf7trns6" path="res://custom_resources/abilities/taunt.tres" id="6_7sjea"]
 [ext_resource type="Resource" uid="uid://cf101e5p2ml13" path="res://custom_resources/abilities/eat_seed.tres" id="6_t3t6q"]
@@ -26,6 +28,15 @@ expand_mode = 1
 
 [node name="EnemyGroup" parent="." instance=ExtResource("1_8h2mb")]
 position = Vector2(625, 296)
+
+[node name="Enemy" parent="EnemyGroup" index="0"]
+move = ExtResource("4_lgafp")
+
+[node name="Enemy2" parent="EnemyGroup" index="1"]
+move = ExtResource("5_8ebnl")
+
+[node name="Enemy3" parent="EnemyGroup" index="2"]
+move = ExtResource("5_8ebnl")
 
 [node name="Player" parent="." instance=ExtResource("2_a7wio")]
 position = Vector2(219, 249)

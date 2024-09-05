@@ -24,6 +24,7 @@ var health: int = 100:
 
 func take_damage(value):
 	health -= value
+	print("Player's health is now: ", health)
 
 func heal(value):
 	health += value
