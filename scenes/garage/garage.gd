@@ -55,19 +55,31 @@ var with_mechanic: bool = false
 var at_bench: bool = false
 
 func _process(_delta):
-	if Input.is_action_just_pressed("dialogic_default_action") and with_mechanic:
+	if Input.is_action_just_pressed("dialogic_default_action") and with_mechanic and !$Player.is_paused:
 		$Player.is_paused = true
 		print("talk to mechanic!")
 		# replace the await below with Dialogic
-		await get_tree().create_timer(2).timeout
+		if ($Player.is_paused):
+			pass
+			Dialogic.start("first-timeline")
+			#$Player.is_paused = false
+	await Dialogic.timeline_ended
+	$Player.is_paused = false
+	#print($Player.is_paused)
+		#if Dialogic.VAR.done_talking == true:
+			#$Player.is_paused = false
 
-	if Input.is_action_just_pressed("dialogic_default_action") and at_bench:
+	if Input.is_action_just_pressed("talk") and at_bench:
+		print("OPEN GARAGE MENU")
 		$Player.is_paused = true
 		garage_ui.visible = true
 	
 	if Input.is_action_just_pressed("esc") and at_bench:
 		$Player.is_paused = false
 		garage_ui.visible = false
+
+func after_dialogue(timeline_name):
+	print("free to go")
 
 func _input(event):
 	if event.is_action_pressed("workshop_menu"):
@@ -143,6 +155,8 @@ func _on_mechanic_body_exited(body):
 func _on_bench_body_entered(body):
 	$BenchPointer.visible = true
 	at_bench = true
+	print($Player.is_paused)
+	print(at_bench)
 
 func _on_bench_body_exited(body):
 	$BenchPointer.visible = false
