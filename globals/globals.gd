@@ -12,6 +12,7 @@ var player_turn: bool = true
 var is_targeting: bool = false
 var chosen
 
+
 func fightStart():
 	#player_ui = PlayerUI
 	pass
