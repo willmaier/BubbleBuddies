@@ -50,6 +50,24 @@ signal selected_item_signal(item)
 var purchase_item = {}
 var selected_item = {}
 
+#ENVIRONMENT VARIABLES
+var with_mechanic: bool = false
+var at_bench: bool = false
+
+func _process(_delta):
+	if Input.is_action_just_pressed("dialogic_default_action") and with_mechanic:
+		$Player.is_paused = true
+		print("talk to mechanic!")
+		# replace the await below with Dialogic
+		await get_tree().create_timer(2).timeout
+
+	if Input.is_action_just_pressed("dialogic_default_action") and at_bench:
+		$Player.is_paused = true
+		garage_ui.visible = true
+	
+	if Input.is_action_just_pressed("esc") and at_bench:
+		$Player.is_paused = false
+		garage_ui.visible = false
 
 func _input(event):
 	if event.is_action_pressed("workshop_menu"):
@@ -112,3 +130,21 @@ func _on_purchase_pressed():
 		emit_signal("clear_purchase_item_signal")
 		purchase_item = {}
 	
+
+func _on_mechanic_body_entered(body):
+	$MechanicPointer.visible = true
+	with_mechanic = true
+
+
+func _on_mechanic_body_exited(body):
+	$MechanicPointer.visible = false 
+	with_mechanic = false
+
+func _on_bench_body_entered(body):
+	$BenchPointer.visible = true
+	at_bench = true
+
+func _on_bench_body_exited(body):
+	$BenchPointer.visible = false
+	at_bench = false
+

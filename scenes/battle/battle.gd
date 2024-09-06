@@ -1,5 +1,9 @@
 extends Node2D
 
+func _process(_delta):
+	if Input.is_action_just_pressed("esc"):
+		$PauseMenu.show()
+
 func _on_ability_button_change_turn():
 	Globals.player_turn = false
 	print("it is enemy turn now")
@@ -13,6 +17,7 @@ func _on_ability_button_change_turn():
 	print("player's turn!")
 	
 	if ($EnemyGroup.get_child_count() == 0):
+		$Victory.visible = true
 		print("WINNER")
 	Globals.player_turn = true
 	#enemy turn

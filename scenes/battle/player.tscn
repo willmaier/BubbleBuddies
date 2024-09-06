@@ -69,13 +69,15 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
 theme = SubResource("Theme_4ys76")
-value = 100.0
+max_value = 20.0
+value = 20.0
 show_percentage = false
 
 [node name="HP" type="Label" parent="PlayerUI"]
 layout_mode = 2
 theme = ExtResource("6_g32u0")
-text = "100"
+text = "20
+"
 horizontal_alignment = 1
 
 [node name="slash" type="Label" parent="PlayerUI"]
@@ -86,7 +88,8 @@ text = "/"
 [node name="MaxHP" type="Label" parent="PlayerUI"]
 layout_mode = 2
 theme = ExtResource("6_g32u0")
-text = "100"
+text = "20
+"
 horizontal_alignment = 1
 
 [node name="FuelText" type="Label" parent="PlayerUI"]

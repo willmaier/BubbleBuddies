@@ -7,7 +7,7 @@ extends Node2D
 @onready var fuel_text = $PlayerUI/Fuel2
 @onready var fuel_bar = $PlayerUI/Fuel
 
-@export var max_health: int = 100
+@export var max_health: int = 20
 
 signal target_chosen(target)
 
@@ -17,7 +17,7 @@ signal target_chosen(target)
 @export var is_frozen: bool = false
 
 
-var health: int = 100:
+var health: int = 20:
 	set(value):
 		health = value
 		updateUI()
