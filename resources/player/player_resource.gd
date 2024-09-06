@@ -94,4 +94,4 @@ func swap_player_item(new_item):
 		foot = new_item["name"]
 	else:
 		print("Error occurred")
-	print(helmet, torso, wing, foot)
+	#print(helmet, torso, wing, foot)

@@ -1,8 +1,10 @@
 extends Node2D
 
 #RESOURCES
-@export var _gear_resource : GearResource
-@export var _player_resource : PlayerResource
+#@export var _gear_resource : GearResource
+#@export var _player_resource : PlayerResource
+
+@onready var _gear_resource = GearResource.new()
 
 @onready var player = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player
 
@@ -25,12 +27,13 @@ extends Node2D
 
 enum ItemSelectionType {HELMET,FEET,TORSOS,WINGS}
 
-#
+@onready var playLoadData = PlayerState.load_or_create()
+
 @onready var player_inventory = [
-	_player_resource.helmet_inventory,
-	_player_resource.feet_inventory,
-	_player_resource.torso_inventory,
-	_player_resource.wing_inventory
+	playLoadData.helmet_inventory,
+	playLoadData.feet_inventory,
+	playLoadData.torso_inventory,
+	playLoadData.wing_inventory
 ]
 
 #SIGNALS
@@ -42,6 +45,8 @@ signal selected_item_signal(item)
 var purchase_item = {}
 var selected_item = {}
 
+func _ready():
+	pass
 
 func _input(event):
 	if event.is_action_pressed("workshop_menu"):
@@ -103,15 +108,30 @@ func _on_purchase_pressed():
 		player_inventory[ItemSelectionType.WINGS].append(purchase_item)
 		emit_signal("clear_purchase_item_signal")
 		purchase_item = {}
+		
+	PlayerState.write_state(playLoadData)
+	PlayerState.save_player_data()
 	
 func swap_gear(item):
-	PlayerState.swap_player_item(item)
-	player.broadcast()
+	var parts = player.get_children()
+	if item["category"] == "torsos":
+		parts[0].texture = item["image"]
+		
+	if item["category"] == "helmets":
+		parts[1].texture = item["image"]
+
+	if item["category"] == "wings":
+		parts[2].texture = item["image"]
+
+	if item["category"] == "feet":
+		parts[3].texture = item["image"]
+	
+	playLoadData.swap_player_item(item)
+
 
 func _on_swapper_button_pressed():
 	swap_gear(selected_item)
 
 func _on_save_pressed():
-	PlayerState.verify_save_directory()
-	if PlayerState.can_access():
-		PlayerState.save_player_data()
+	PlayerState.write_state(playLoadData)
+	PlayerState.save_player_data()

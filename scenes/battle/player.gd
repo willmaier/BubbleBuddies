@@ -1,7 +1,9 @@
 extends Node2D
 
-@export var _player_resource : PlayerResource
-@export var _gear_resource : GearResource
+#@export var _player_resource : PlayerResource
+#@export var _gear_resource : GearResource
+
+@onready var _gear_resource = GearResource.new()
 
 @onready var hp_text = $PlayerUI/HP
 @onready var health_bar = $PlayerUI/Health
@@ -24,10 +26,9 @@ signal swap_torso_texture(torso)
 signal swap_leg_texture(leg)
 signal swap_wing_texture(wing)
 
-@onready var playerLoadData 
+@onready var playerLoadData = PlayerState.load_or_create()
 
 func _ready():
-	load_or_init_state()
 	broadcast()
 	
 var health: int = 100:
@@ -73,13 +74,3 @@ func broadcast():
 	playerLoadData._equip_active_gear(_gear_resource)
 	playerLoadData._apply_buffs()
 	change_player_images()
-
-func load_or_init_state():
-	if PlayerState.can_access():
-		PlayerState.load_player_data()
-		playerLoadData = PlayerState.get_player_data()
-	else:
-		PlayerState.verify_save_directory()
-		PlayerState.save_player_data()
-		playerLoadData = PlayerState.get_player_data()
-	
