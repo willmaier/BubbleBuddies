@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bcebw4stk54tv"]
+[gd_scene load_steps=46 format=3 uid="uid://bcebw4stk54tv"]
 
 [ext_resource type="PackedScene" uid="uid://drnieg5ykp4a7" path="res://scenes/player/player.tscn" id="1_ak78x"]
 [ext_resource type="Script" path="res://scenes/garage/garage.gd" id="1_puq2h"]
@@ -427,6 +427,9 @@ size = Vector2(293, 184.375)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0xkx"]
 size = Vector2(250, 231)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygttg"]
+size = Vector2(119, 214)
+
 [node name="Garage" type="Node2D" groups=["GarageRoot"]]
 script = ExtResource("1_puq2h")
 _gear_resource = SubResource("Resource_7dnbk")
@@ -800,6 +803,20 @@ position = Vector2(1001, 278)
 rotation = 1.5708
 scale = Vector2(0.218685, 0.218685)
 texture = ExtResource("41_tfi6q")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(-57, 494)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+shape = SubResource("RectangleShape2D_ygttg")
+
+[node name="Walls2" type="StaticBody2D" parent="."]
+position = Vector2(1191, 481)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls2"]
+shape = SubResource("RectangleShape2D_ygttg")
 
 [connection signal="clear_purchase_item_signal" from="." to="GarageUICanvas/TabContainer/Store/PurchaseOuter/PurchaseInner/ItemIcon" method="_on_garage_clear_purchase_item_signal"]
 [connection signal="clear_purchase_item_signal" from="." to="GarageUICanvas/TabContainer/Store/Stats/Name" method="_on_garage_clear_purchase_item_signal"]

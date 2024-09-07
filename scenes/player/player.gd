@@ -21,5 +21,6 @@ func _process(delta):
 	if Input.is_action_pressed("right") and !is_paused:
 		position.x += PLAYER_MOVEMENT_SPEED * delta
 
+	move_and_collide(velocity)
 func player():
 	pass
