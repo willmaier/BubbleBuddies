@@ -1,17 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://djqnnhn4kq51g"]
+[gd_scene load_steps=6 format=3 uid="uid://djqnnhn4kq51g"]
 
 [ext_resource type="Script" path="res://scenes/flea_market/flea_market.gd" id="1_i6ro0"]
-[ext_resource type="Texture2D" uid="uid://c1fa77p0nj3u5" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/IMG_9141.png" id="1_xr4ih"]
-[ext_resource type="PackedScene" uid="uid://drnieg5ykp4a7" path="res://scenes/player/player.tscn" id="2_8cw8r"]
+[ext_resource type="Texture2D" uid="uid://ed0m61hbxf1n" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/IMG_9158.png" id="2_b4gmd"]
+[ext_resource type="PackedScene" uid="uid://c8hjnbaea0q6w" path="res://scenes/flea_market/flea_market_player.tscn" id="2_wyc8q"]
+[ext_resource type="PackedScene" uid="uid://y8afuemi435l" path="res://scenes/flea_market/flea.tscn" id="4_1fta5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_biayx"]
+size = Vector2(989, 80)
 
 [node name="FleaMarket" type="Node2D"]
 script = ExtResource("1_i6ro0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1152.0
-offset_bottom = 640.0
-texture = ExtResource("1_xr4ih")
+offset_bottom = 664.0
+texture = ExtResource("2_b4gmd")
+expand_mode = 1
 
-[node name="Player" parent="." instance=ExtResource("2_8cw8r")]
-position = Vector2(1152, 896)
+[node name="FleaMarketPlayer" parent="." instance=ExtResource("2_wyc8q")]
+position = Vector2(520, 496)
+scale = Vector2(0.886801, 0.999438)
 collision_mask = 16
+
+[node name="Floor" type="StaticBody2D" parent="."]
+visible = false
+scale = Vector2(10.6105, -18.3982)
+collision_layer = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor"]
+scale = Vector2(1.21141, 1.02437)
+polygon = PackedVector2Array(11.8254, -17.4037, -4.97912, -16.9792, -4.35673, 3.39584, 95.2257, 3.39584, 95.2257, -16.9792, 89.0018, -25.4688, 26.7628, -25.4688, 10.5806, -25.4688, 6.84629, -25.4688, 0.62239, -25.0443, 0.62239, -34.3829, 89.0018, -34.3829, 89.0018, -25.8933, 95.2257, -16.9792, 94.6033, -36.5053, -4.97912, -37.7788, -4.97912, -16.9792)
+
+[node name="SeedFleaSalesMan" parent="." instance=ExtResource("4_1fta5")]
+position = Vector2(216, 328)
+
+[node name="FuelFleaSalesMan" parent="." instance=ExtResource("4_1fta5")]
+position = Vector2(536, 326)
+
+[node name="JunkFleaSalesMan" parent="." instance=ExtResource("4_1fta5")]
+position = Vector2(872, 327)
+
+[node name="FleaTableSurface" type="StaticBody2D" parent="."]
+collision_layer = 32
+collision_mask = 64
+
+[node name="FleaFloor" type="CollisionShape2D" parent="FleaTableSurface"]
+position = Vector2(569.5, 440)
+shape = SubResource("RectangleShape2D_biayx")
+
+[node name="FleaMarketMainMenu" type="MenuBar" parent="."]
+offset_left = 15.0
+offset_top = 602.0
+offset_right = 406.0
+offset_bottom = 642.0
+
+[node name="Overworld" type="Button" parent="FleaMarketMainMenu"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 5.0
+offset_right = 311.0
+offset_bottom = 36.0
+text = "Overworld"
+
+[connection signal="pressed" from="FleaMarketMainMenu/Overworld" to="." method="_on_overworld_pressed"]

@@ -1,20 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b04on64owbjx1"]
-
-[ext_resource type="Texture2D" uid="uid://c17g0veycc708" path="res://icon.svg" id="1_xqe2l"]
+[gd_scene load_steps=2 format=3 uid="uid://b04on64owbjx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypi55"]
-size = Vector2(103.543, 5.61602)
+size = Vector2(104.726, 5.61602)
 
 [node name="Floor" type="StaticBody2D"]
 disable_mode = 1
 collision_layer = 16
 
 [node name="FloorCollision" type="CollisionShape2D" parent="."]
-position = Vector2(576.5, 625.5)
+position = Vector2(576, 625.5)
 scale = Vector2(10.981, -9.08115)
 shape = SubResource("RectangleShape2D_ypi55")
-
-[node name="FloorImage" type="Sprite2D" parent="."]
-position = Vector2(561.5, 625.5)
-scale = Vector2(9.17969, 0.445312)
-texture = ExtResource("1_xqe2l")

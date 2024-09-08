@@ -5,6 +5,10 @@ extends Node2D
 
 @onready var _gear_resource = GearResource.new()
 
+@onready var playerLoadData = PlayerState.load_or_create()
+
+@onready var equipped_gear
+
 @onready var hp_text = $PlayerUI/HP
 @onready var health_bar = $PlayerUI/Health
 @onready var fuel_text = $PlayerUI/Fuel2
@@ -26,7 +30,6 @@ signal swap_torso_texture(torso)
 signal swap_leg_texture(leg)
 signal swap_wing_texture(wing)
 
-@onready var playerLoadData = PlayerState.load_or_create()
 
 func _ready():
 	broadcast()
@@ -73,4 +76,5 @@ func change_player_images():
 func broadcast():
 	playerLoadData._equip_active_gear(_gear_resource)
 	playerLoadData._apply_buffs()
+	equipped_gear = playerLoadData.equipped_gear
 	change_player_images()

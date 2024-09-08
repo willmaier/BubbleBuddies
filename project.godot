@@ -85,6 +85,7 @@ workshop_menu={
 2d_physics/layer_1="player"
 2d_physics/layer_5="flea_market_floor"
 2d_physics/layer_6="flea_market_stall"
+2d_physics/layer_7="flea"
 
 [rendering]
 
