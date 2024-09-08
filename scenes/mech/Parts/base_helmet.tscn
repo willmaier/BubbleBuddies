@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://do5jqgvox05jo"]
+
+[ext_resource type="PackedScene" uid="uid://cid1c38wyqgog" path="res://scenes/mech/gear.tscn" id="1_8jjlk"]
+[ext_resource type="Texture2D" uid="uid://cw8603m3icj14" path="res://assets/Art/GEAR/HELMET/helmet_base.png" id="2_pfoai"]
+[ext_resource type="Resource" uid="uid://b6umrxca75e2i" path="res://custom_resources/abilities/peck.tres" id="3_bybdv"]
+
+[node name="Gear" instance=ExtResource("1_8jjlk")]
+texture = ExtResource("2_pfoai")
+ability = ExtResource("3_bybdv")

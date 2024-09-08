@@ -32,8 +32,8 @@ directories/dtl_directory={
 "first-timeline": "res://addons/dialogic/Resources/first-timeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://addons/dialogic/custom_style.tres"]
+layout/default_style="res://addons/dialogic/custom_style.tres"
 variables={
 "done_talking": false
 }

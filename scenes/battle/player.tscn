@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dylx5548fckm6"]
+[gd_scene load_steps=17 format=3 uid="uid://dylx5548fckm6"]
 
 [ext_resource type="Script" path="res://scenes/battle/player.gd" id="1_82cnu"]
 [ext_resource type="Texture2D" uid="uid://cstixvwogxchu" path="res://assets/textures/gear/torsos/torso_base.png" id="1_lg6n6"]
@@ -9,6 +9,19 @@
 [ext_resource type="Theme" uid="uid://bmxxtjvornsya" path="res://scenes/battle/player_ui_theme.tres" id="6_g32u0"]
 [ext_resource type="Texture2D" uid="uid://t55wr4gk8688" path="res://assets/textures/health_bar200x200.png" id="6_keqo0"]
 [ext_resource type="Texture2D" uid="uid://dcysucfiqp4g0" path="res://assets/textures/fuel_bar200x200.png" id="7_cyitl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fb7c"]
+bg_color = Color(0.384314, 0.658824, 0.733333, 0.901961)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 25.0
+expand_margin_top = 25.0
+expand_margin_right = 25.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="Theme" id="Theme_cypwy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wxf5"]
 texture = ExtResource("6_keqo0")
@@ -50,12 +63,22 @@ position = Vector2(0, 225)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_wwqy3")
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = -300.0
+offset_top = -650.0
+offset_right = 350.0
+offset_bottom = -400.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7fb7c")
+
 [node name="PlayerUI" type="GridContainer" parent="."]
 offset_left = -300.0
-offset_top = 600.0
+offset_top = -600.0
 offset_right = -3.0
-offset_bottom = 658.0
+offset_bottom = -542.0
 scale = Vector2(2, 2)
+theme = SubResource("Theme_cypwy")
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
 columns = 5
 metadata/_edit_group_ = true
 

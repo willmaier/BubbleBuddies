@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://fxjn3ggyo7mt" path="res://scenes/battle/enemy_group.tscn" id="1_8h2mb"]
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_pyt70"]
 [ext_resource type="PackedScene" uid="uid://dylx5548fckm6" path="res://scenes/battle/player.tscn" id="2_a7wio"]
-[ext_resource type="Texture2D" uid="uid://ia2p50cf2ooa" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/IMG_9290.png" id="2_ut7gn"]
+[ext_resource type="Texture2D" uid="uid://cb3fqit16wqlj" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/street.png" id="2_s2lo1"]
 [ext_resource type="PackedScene" uid="uid://d0t5elbvkvvcp" path="res://scenes/battle/ability_button.tscn" id="3_3he0t"]
 [ext_resource type="Script" path="res://scenes/battle/Abilities.gd" id="3_k2f8n"]
 [ext_resource type="Resource" uid="uid://dxsriksdrrq1o" path="res://custom_resources/enemy_abilities/hit_for_one.tres" id="4_lgafp"]
@@ -23,11 +23,12 @@ offset_left = -27.0
 offset_top = -64.0
 offset_right = 1147.0
 offset_bottom = 669.0
-texture = ExtResource("2_ut7gn")
+texture = ExtResource("2_s2lo1")
 expand_mode = 1
 
 [node name="EnemyGroup" parent="." instance=ExtResource("1_8h2mb")]
-position = Vector2(625, 296)
+position = Vector2(625, 493)
+metadata/_edit_group_ = true
 
 [node name="Enemy" parent="EnemyGroup" index="0"]
 move = ExtResource("4_lgafp")
@@ -39,7 +40,7 @@ move = ExtResource("5_8ebnl")
 move = ExtResource("5_8ebnl")
 
 [node name="Player" parent="." instance=ExtResource("2_a7wio")]
-position = Vector2(219, 249)
+position = Vector2(231, 444)
 scale = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -48,11 +49,13 @@ scale = Vector2(0.5, 0.5)
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = 126.0
-offset_right = 564.0
-offset_bottom = 166.0
+offset_left = -2.0
+offset_top = -54.0
+offset_right = 562.0
+offset_bottom = -14.0
 grow_vertical = 2
 script = ExtResource("3_k2f8n")
+metadata/_edit_group_ = true
 
 [node name="AbilityButton" parent="CanvasLayer/Abilities" instance=ExtResource("3_3he0t")]
 layout_mode = 2
