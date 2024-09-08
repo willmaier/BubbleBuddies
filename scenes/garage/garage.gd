@@ -73,7 +73,7 @@ func _on_purchase_item_list_item_clicked(index, _at_position, _mouse_button_inde
 		allocate_slot_item(item, purchase_slot, purchase_grid_container)
 	)
 	
-func _on_garage_item_list_item_clicked(index, at_position, mouse_button_index):
+func _on_garage_item_list_item_clicked(index, at_position, _mouse_button_index):
 	clear_grid_container(inventoy_grid_container)
 	if player_inventory[index] != []:
 		player_inventory[index].map(func(item):
@@ -92,25 +92,22 @@ func _on_purchase_pressed():
 	if purchase_item["category"] == "helmets":
 		player_inventory[ItemSelectionType.HELMET].append(purchase_item)
 		emit_signal("clear_purchase_item_signal")
-		purchase_item = {}
 		
 	elif purchase_item["category"] == "feet":
 		player_inventory[ItemSelectionType.FEET].append(purchase_item)
 		emit_signal("clear_purchase_item_signal")
-		purchase_item = {}
 		
 	elif purchase_item["category"] == "torsos":
 		player_inventory[ItemSelectionType.TORSOS].append(purchase_item)
 		emit_signal("clear_purchase_item_signal")
-		purchase_item = {}
 		
 	elif purchase_item["category"] == "wings":
 		player_inventory[ItemSelectionType.WINGS].append(purchase_item)
 		emit_signal("clear_purchase_item_signal")
-		purchase_item = {}
 		
 	PlayerState.write_state(playLoadData)
 	PlayerState.save_player_data()
+	purchase_item = {}
 	
 func swap_gear(item):
 	var parts = player.get_children()
@@ -127,7 +124,6 @@ func swap_gear(item):
 		parts[3].texture = item["image"]
 	
 	playLoadData.swap_player_item(item)
-
 
 func _on_swapper_button_pressed():
 	swap_gear(selected_item)

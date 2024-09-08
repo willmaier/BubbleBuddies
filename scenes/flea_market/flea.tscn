@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://y8afuemi435l"]
+
+[ext_resource type="Texture2D" uid="uid://clgqqmy4qck4e" path="res://assets/Art/CHARACTERS/SHOP/character_flea_shop.png" id="1_r4i0f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sv1bj"]
+
+[node name="Flea" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_sv1bj")
+
+[node name="FleaImage" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(33.5, 31.5)
+scale = Vector2(0.101667, 0.13)
+texture = ExtResource("1_r4i0f")

@@ -11,6 +11,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("interact") and go_to_fight:
 		get_tree().change_scene_to_file("res://scenes/combat/combat.tscn")
 
+
 func _on_garage_area_body_entered(body):
 	if (body.name == "Player"):
 		print("ready to go to garage")

@@ -20,6 +20,7 @@ func _process(delta):
 				get_tree().change_scene_to_file("res://scenes/garage.tscn")
 			1:
 				print("go to shop")
+				get_tree().change_scene_to_file("res://scenes/flea_market/flea_market.tscn")
 				
 			2:
 				print("go to battle")

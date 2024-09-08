@@ -13,9 +13,7 @@ class_name GearResource
 		"attack": 2,
 		"defense": 4,
 		"armor": 1,
-		"peck" : 0,
-		"swipe": 2,
-		"taunt": 0
+		"ability": ""
 	},
 	"halloween":{
 		"name": "halloween",
@@ -24,9 +22,7 @@ class_name GearResource
 	   	"attack": 2,
 		"defense": 4,
 		"armor": 1,
-		"peck" : 0,
-		"swipe": 0,
-		"taunt": 4
+		"ability": "res://custom_resources/abilities/eat_seed.tres"
 	},
 	"metal":{
 		"name": "metal",
@@ -35,9 +31,7 @@ class_name GearResource
 		"attack": 1,
 		"defense": 5,
 		"armor": 5,
-		"peck" : 5,
-		"swipe": 0,
-		"taunt": 0
+		"ability": "res://custom_resources/abilities/peck.tres"
 	},
 	"plushie":{
 		"name": "plushie",
@@ -46,9 +40,7 @@ class_name GearResource
 		"attack": 5,
  		"defense": 2,
 		"armor": 2,
-		"peck" : 0,
-		"swipe": 5,
-		"taunt": 0
+		"ability": "res://custom_resources/abilities/swipe.tres"
 	},
 	"pot": {
 		"name": "pot",
@@ -57,9 +49,7 @@ class_name GearResource
 		"attack": 3,
 		"defense": 4,
 		"armor": 5,
-		"peck" : 0,
-		"swipe": 5,
-		"taunt": 0
+		"ability": "res://custom_resources/abilities/buff.tres"
 	},
 	"snowman": {
 		"name": "snowman",
@@ -68,9 +58,7 @@ class_name GearResource
 		"attack": 5,
 		"defense": -1,
 	   	"armor": -1,
-		"peck" : 0,
-		"swipe": 0,
-		"taunt": 4
+		"ability": "res://custom_resources/abilities/taunt.tres"
 	}   
 }
 
@@ -85,9 +73,7 @@ class_name GearResource
 		"attack": 2,
 		"defense": 4,
 		"armor": 1,
-		"peck" : 0,
-		"swipe": 0,
-		"taunt": 0
+		"ability": ""
 	},
 	"bread":{
 		"name": "bread",
@@ -96,9 +82,7 @@ class_name GearResource
 	   	"attack": 2,
 		"defense": 4,
 		"armor": 1,
-		"peck" : 0,
-		"swipe": 2,
-		"taunt": 0
+		"ability": "res://custom_resources/abilities/eat_seed.tres"
 	},
 	"cardboard":{
 		"name": "cardboard",
@@ -107,9 +91,7 @@ class_name GearResource
 		"attack": 1,
 		"defense": 5,
 		"armor": 5,
-		"peck" : 3,
-		"swipe": 0,
-		"taunt": 0
+		"ability": "res://custom_resources/abilities/swipe.tres"
 	},
 	"crystal":{
 		"name": "crystal",
@@ -118,9 +100,7 @@ class_name GearResource
 		"attack": 5,
  		"defense": 2,
 		"armor": 2,
-		"peck" : 0,
-		"swipe": 4,
-		"taunt": 0
+		"ability": "res://custom_resources/abilities/buff.tres"
 	},
 	"metal": {
 		"name": "metal",
@@ -129,9 +109,7 @@ class_name GearResource
 		"attack": 3,
 		"defense": 4,
 		"armor": 5,
-		"peck" : 0,
-		"swipe": 5,
-		"taunt": 0
+		"ability": "res://custom_resources/abilities/swipe.tres"
 	},
 	"trash": {
 		"name": "trash",
@@ -140,9 +118,7 @@ class_name GearResource
 		"attack": 5,
 		"defense": -1,
 	   	"armor": -1,
-		"peck" : 0,
-		"swipe": 0,
-		"taunt": 5
+		"ability": "res://custom_resources/abilities/taunt.tres"
 	}   
 }
 
@@ -157,9 +133,7 @@ class_name GearResource
 		"attack": 2,
 		"defense": 4,
 		"armor": 1,
-		"peck" : 0,
-		"swipe": 0,
-		"taunt": 0
+		"ability": ""
 	},
 	"buffalo":{
 		"name": "buffalo",
@@ -168,9 +142,7 @@ class_name GearResource
 	   	"attack": 2,
 		"defense": 4,
 		"armor": 1,
-		"peck" : 0,
-		"swipe": 0,
-		"taunt": 3
+		"ability": "res://custom_resources/abilities/buff.tres"
 	},
 	"crayon":{
 		"name": "crayon",
@@ -179,9 +151,7 @@ class_name GearResource
 		"attack": 1,
 		"defense": 3,
 		"armor": 1,
-		"peck" : 0,
-		"swipe": 4,
-		"taunt": 0,
+		"ability": "res://custom_resources/abilities/swipe.tres"
 	},
 	"icepop":{
 		"name": "icepop",
@@ -190,9 +160,7 @@ class_name GearResource
 		"attack": 5,
  		"defense": 2,
 		"armor": 2,
-		"peck" : 0,
-		"swipe": 5,
-		"taunt": 0
+		"ability": "res://custom_resources/abilities/buff.tres"
 	},
 	"leaf": {
 		"name": "leaf",
@@ -201,9 +169,7 @@ class_name GearResource
 		"attack": 3,
 		"defense": 4,
 		"armor": 5,
-		"peck" : 0,
-		"swipe": 0,
-		"taunt": 5
+		"ability": "res://custom_resources/abilities/taunt.tres"
 	},
 	"metal": {
 		"name": "metal",
@@ -212,9 +178,7 @@ class_name GearResource
 		"attack": 5,
 		"defense": -1,
 	   	"armor": -1,
-		"peck" : 0,
-		"swipe": 5,
-		"taunt": 0
+		"ability": "res://custom_resources/abilities/peck.tres"
 	}   
 }
 
@@ -227,7 +191,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/FOOT/foot_base.png"),
 		"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"ability": ""
 	},
 	"bone":{
 		"name": "bone",
@@ -235,7 +200,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/FOOT/foot_bone.png"),
 	   	"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"ability": "res://custom_resources/abilities/eat_seed.tres"
 	},
 	"candy_cane":{
 		"name": "candy_cane",
@@ -243,7 +209,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/FOOT/foot_candycane.png"),
 		"attack": 1,
 		"defense": 3,
-		"armor": 1
+		"armor": 1,
+		"ability": "res://custom_resources/abilities/taunt.tres"
 	},
 	"metal":{
 		"name": "metal",
@@ -251,7 +218,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/FOOT/foot_metal.png"),
 		"attack": 5,
  		"defense": 2,
-		"armor": 2
+		"armor": 2,
+		"ability": "res://custom_resources/abilities/peck.tres"
 	},
 	"pvc": {
 		"name": "pvc",
@@ -259,7 +227,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/FOOT/foot_pbc.png"),
 		"attack": 3,
 		"defense": 4,
-		"armor": 5
+		"armor": 5,
+		"ability": "res://custom_resources/abilities/swipe.tres"
 	},
 	"sticksnstones":{
 		"name": "sticksnstones",
@@ -268,6 +237,7 @@ class_name GearResource
 		"attack": 5,
 		"defense": -1,
 	   	"armor": -1,
+		"ability": "res://custom_resources/abilities/taunt.tres"
 	}
 }
 
@@ -281,6 +251,7 @@ class_name GearResource
 		"attack": 2,
 		"defense": 4,
 		"armor": 1,
+		"ability":""
 	},
 	{	
 		"name": "halloween",
@@ -288,7 +259,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/HELMET/helmet_halloween.png"),
 	   	"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"ability": "res://custom_resources/abilities/eat_seed.tres"
 	},
 	{
 		"name": "metal",
@@ -296,7 +268,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/HELMET/helmet_metal.png"),
 		"attack": 1,
 		"defense": 5,
-		"armor": 5
+		"armor": 5,
+		"ability": "res://custom_resources/abilities/peck.tres"
 	},
 	{
 		"name": "plushie",
@@ -304,7 +277,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/HELMET/helmet_plushie.png"),
 		"attack": 5,
  		"defense": 2,
-		"armor": 2
+		"armor": 2,
+		"ability": "res://custom_resources/abilities/swipe.tres"
 	},
 	{
 		"name": "pot",
@@ -312,7 +286,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/HELMET/helmet_pot.png"),
 		"attack": 3,
 		"defense": 4,
-		"armor": 5
+		"armor": 5,
+		"ability": "res://custom_resources/abilities/buff.tres"
 	},
 	{
 		"name": "snowman",
@@ -321,6 +296,7 @@ class_name GearResource
 		"attack": 5,
 		"defense": -1,
 	   	"armor": -1,
+		"ability": "res://custom_resources/abilities/taunt.tres"
 	}
 ]
 
@@ -331,7 +307,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/TORSO/torso_base.png"),
 		"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"ability": ""
 	},
 	{
 		"name":"bread",
@@ -339,14 +316,16 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/TORSO/torso_bread.png"),
 	   	"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"ability": "res://custom_resources/abilities/eat_seed.tres"
 	},
 	{ 	"name": "cardboard",
 		"category": "torsos",
 		"image": preload("res://assets/Art/GEAR/TORSO/torso_cardboard.png"),
 		"attack": 1,
 		"defense": 5,
-		"armor": 5
+		"armor": 5,
+		"ability": "res://custom_resources/abilities/swipe.tres"
 	},
 	{
 		"name": "crystal",
@@ -354,7 +333,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/TORSO/torso_crystal.png"),
 		"attack": 5,
  		"defense": 2,
-		"armor": 2
+		"armor": 2,
+		"ability": "res://custom_resources/abilities/buff.tres"
 	},
 	{
 		"name": "metal",
@@ -362,7 +342,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/TORSO/torso_metal.png"),
 		"attack": 3,
 		"defense": 4,
-		"armor": 5
+		"armor": 5,
+		"ability": "res://custom_resources/abilities/swipe.tres"
 	},
 	{
 		"name": "trash",
@@ -371,6 +352,7 @@ class_name GearResource
 		"attack": 5,
 		"defense": -1,
 	   	"armor": -1,
+		"ability": "res://custom_resources/abilities/taunt.tres"
 	} 
 ]
 
@@ -381,7 +363,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/WING/wing_base.png"),
 		"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"ability": ""
 	},
 	{
 		"name": "buffalo",
@@ -389,7 +372,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/WING/wing_buffalo.png"),
 	   	"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"ability": "res://custom_resources/abilities/buff.tres"
 	},
 	{
 		"name": "crayon",
@@ -397,7 +381,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/WING/wing_crayon.png"),
 		"attack": 1,
 		"defense": 3,
-		"armor": 1
+		"armor": 1,
+		"ability": "res://custom_resources/abilities/swipe.tres"
 	},
 	{
 		"name": "icepop",
@@ -405,7 +390,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/WING/wing_icepop.png"),
 		"attack": 5,
  		"defense": 2,
-		"armor": 2
+		"armor": 2,
+		"ability": "res://custom_resources/abilities/buff.tres"
 	},
 	{
 		"name" : "leaf",
@@ -413,7 +399,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/WING/wing_leaf.png"),
 		"attack": 3,
 		"defense": 4,
-		"armor": 5
+		"armor": 5,
+		"ability": "res://custom_resources/abilities/taunt.tres"
 	},
 	{
 		"name" : "metal",
@@ -422,6 +409,7 @@ class_name GearResource
 		"attack": 5,
 		"defense": -1,
 	   	"armor": -1,
+		"ability": "res://custom_resources/abilities/peck.tres"
 	}   
 ]
 
@@ -431,14 +419,16 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/FOOT/foot_base.png"),
 		"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"ability": ""
 	},
 	{	"name": "bone",
 		"category": "feet",
 		"image": preload("res://assets/Art/GEAR/FOOT/foot_bone.png"),
 	   	"attack": 2,
 		"defense": 4,
-		"armor": 1
+		"armor": 1,
+		"ability": "res://custom_resources/abilities/eat_seed.tres"
 	},
 	{
 		"name" : "candy_cane",
@@ -446,7 +436,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/FOOT/foot_candycane.png"),
 		"attack": 1,
 		"defense": 3,
-		"armor": 1
+		"armor": 1,
+		"ability": "res://custom_resources/abilities/taunt.tres"
 	},
 	{
 		"name" : "metal",
@@ -454,7 +445,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/FOOT/foot_metal.png"),
 		"attack": 5,
  		"defense": 2,
-		"armor": 2
+		"armor": 2,
+		"ability": "res://custom_resources/abilities/peck.tres"
 	},
 	{
 		"name": "pvc",
@@ -462,7 +454,8 @@ class_name GearResource
 		"image": preload("res://assets/Art/GEAR/FOOT/foot_pbc.png"),
 		"attack": 3,
 		"defense": 4,
-		"armor": 5
+		"armor": 5,
+		"ability": "res://custom_resources/abilities/swipe.tres"
 	},
 	{
 		"name": "sticksnstones",
@@ -471,5 +464,6 @@ class_name GearResource
 		"attack": 5,
 		"defense": -1,
 	   	"armor": -1,
+		"ability": "res://custom_resources/abilities/taunt.tres"
 	}
 ]
