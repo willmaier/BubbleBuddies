@@ -34,7 +34,7 @@ signal swap_wing_texture(wing)
 func _ready():
 	broadcast()
 	
-var health: int = 100:
+# var health: int = 100: Merge conflict
 
 var health: int = 20:
 	set(value):
