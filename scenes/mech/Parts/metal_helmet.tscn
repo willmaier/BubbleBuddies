@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0jstbqjcs74w"]
+
+[ext_resource type="PackedScene" uid="uid://cid1c38wyqgog" path="res://scenes/mech/gear.tscn" id="1_mlc70"]
+[ext_resource type="Texture2D" uid="uid://cc03jktvtnu7k" path="res://assets/Art/GEAR/HELMET/helmet_metal.png" id="2_qym0p"]
+[ext_resource type="Resource" uid="uid://354alf7trns6" path="res://custom_resources/abilities/taunt.tres" id="3_mnghl"]
+
+[node name="Gear" instance=ExtResource("1_mlc70")]
+texture = ExtResource("2_qym0p")
+ability = ExtResource("3_mnghl")

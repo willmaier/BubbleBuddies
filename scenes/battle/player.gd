@@ -15,7 +15,7 @@ extends Node2D
 @onready var fuel_bar = $PlayerUI/Fuel
 
 
-@export var max_health: int = 100
+@export var max_health: int = 20
 
 signal target_chosen(target)
 
@@ -35,12 +35,15 @@ func _ready():
 	broadcast()
 	
 var health: int = 100:
+
+var health: int = 20:
 	set(value):
 		health = value
 		updateUI()
 
 func take_damage(value):
 	health -= value
+	print("Player's health is now: ", health)
 
 func heal(value):
 	health += value

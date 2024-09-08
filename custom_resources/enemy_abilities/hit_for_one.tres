@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=2 format=3 uid="uid://dxsriksdrrq1o"]
+
+[ext_resource type="Script" path="res://custom_resources/ability.gd" id="1_qc1yf"]
+
+[resource]
+script = ExtResource("1_qc1yf")
+name = "HitFor1"
+type = 0
+target = 1
+value = 1
+target_text = ""
+desc = ""

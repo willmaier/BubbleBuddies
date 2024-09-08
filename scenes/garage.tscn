@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bcebw4stk54tv"]
+[gd_scene load_steps=46 format=3 uid="uid://bcebw4stk54tv"]
 
 [ext_resource type="PackedScene" uid="uid://drnieg5ykp4a7" path="res://scenes/player/player.tscn" id="1_ak78x"]
 [ext_resource type="Script" path="res://scenes/garage/garage.gd" id="1_puq2h"]
@@ -17,6 +17,396 @@
 [ext_resource type="Script" path="res://scenes/garage/garage_item_attack.gd" id="31_i25fu"]
 [ext_resource type="Script" path="res://scenes/garage/garage_item_defence.gd" id="32_unlwj"]
 [ext_resource type="Script" path="res://scenes/garage/garage_item_armor.gd" id="33_muqf5"]
+[ext_resource type="Texture2D" uid="uid://dgxj3br46dff4" path="res://assets/Art/CHARACTERS/PORTRAITS/lilhelper.png" id="40_w3uyr"]
+[ext_resource type="Texture2D" uid="uid://bfmimttbch5vn" path="res://assets/textures/feather-removebg-preview.png" id="41_tfi6q"]
+
+[sub_resource type="Resource" id="Resource_7dnbk"]
+script = ExtResource("14_hqmqm")
+helmet_dictionary = {
+"base": {
+"armor": 1,
+"attack": 2,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("5_pm5ky"),
+"name": "base"
+},
+"halloween": {
+"armor": 1,
+"attack": 2,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("9_aie7a"),
+"name": "halloween"
+},
+"metal": {
+"armor": 5,
+"attack": 1,
+"category": "helmets",
+"defense": 5,
+"image": ExtResource("10_nxria"),
+"name": "metal"
+},
+"plushie": {
+"armor": 2,
+"attack": 5,
+"category": "helmets",
+"defense": 2,
+"image": ExtResource("11_i8wnd"),
+"name": "plushie"
+},
+"pot": {
+"armor": 5,
+"attack": 3,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("12_qei88"),
+"name": "pot"
+},
+"snowman": {
+"armor": -1,
+"attack": 5,
+"category": "helmets",
+"defense": -1,
+"image": ExtResource("13_5n8c6"),
+"name": "snowman"
+}
+}
+helmet_names = ["base", "halloween", "metal", "plushie", "pot", "snowman"]
+torso_dictionary = {
+"base": {
+"armor": 1,
+"attack": 2,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("7_vou3i"),
+"name": "base"
+},
+"bread": {
+"armor": 1,
+"attack": 2,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("16_ws103"),
+"name": "bread"
+},
+"cardboard": {
+"armor": 5,
+"attack": 1,
+"category": "torsos",
+"defense": 5,
+"image": ExtResource("17_4oji2"),
+"name": "cardboard"
+},
+"crystal": {
+"armor": 2,
+"attack": 5,
+"category": "torsos",
+"defense": 2,
+"image": ExtResource("18_nuun1"),
+"name": "crystal"
+},
+"metal": {
+"armor": 5,
+"attack": 3,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("19_vie4n"),
+"name": "metal"
+},
+"trash": {
+"armor": -1,
+"attack": 5,
+"category": "torsos",
+"defense": -1,
+"image": ExtResource("20_blf66"),
+"name": "trash"
+}
+}
+torso_names = ["base", "bread", "cardboard", "crystal", "metal", "trash"]
+wing_dictionary = {
+"base": {
+"armor": 1,
+"attack": 2,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("8_njkat"),
+"name": "base"
+},
+"buffalo": {
+"armor": 1,
+"attack": 2,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("22_1vgp2"),
+"name": "buffalo"
+},
+"crayon": {
+"armor": 1,
+"attack": 1,
+"category": "wings",
+"defense": 3,
+"image": ExtResource("23_lls7j"),
+"name": "crayon"
+},
+"icepop": {
+"armor": 2,
+"attack": 5,
+"category": "wings",
+"defense": 2,
+"image": ExtResource("24_gq8cj"),
+"name": "icepop"
+},
+"leaf": {
+"armor": 5,
+"attack": 3,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("25_agwoj"),
+"name": "leaf"
+},
+"metal": {
+"armor": -1,
+"attack": 5,
+"category": "wings",
+"defense": -1,
+"image": ExtResource("26_sqbg6"),
+"name": "metal"
+}
+}
+wing_names = ["base", "buffalo", "crayon", "icepop", "leaf", "metal"]
+foot_dictionary = {
+"base": {
+"armor": 1,
+"attack": 2,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("6_wn0x4"),
+"name": "base"
+},
+"bone": {
+"armor": 1,
+"attack": 2,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("3_a27ja"),
+"name": "bone"
+},
+"candy_cane": {
+"armor": 1,
+"attack": 1,
+"category": "feet",
+"defense": 3,
+"image": ExtResource("4_e4kbr"),
+"name": "candy_cane"
+},
+"metal": {
+"armor": 2,
+"attack": 5,
+"category": "feet",
+"defense": 2,
+"image": ExtResource("5_bkdyi"),
+"name": "metal"
+},
+"pvc": {
+"armor": 5,
+"attack": 3,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("6_h3kct"),
+"name": "pvc"
+},
+"sticksnstones": {
+"armor": -1,
+"attack": 5,
+"category": "feet",
+"defense": -1,
+"image": ExtResource("7_epavw"),
+"name": "sticksnstones"
+}
+}
+foot_names = ["base", "bone", "candy_cane", "metal", "pvc", "sticksnstones"]
+helmets_array = [{
+"armor": 1,
+"attack": 2,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("5_pm5ky"),
+"name": "base"
+}, {
+"armor": 1,
+"attack": 2,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("9_aie7a"),
+"name": "halloween"
+}, {
+"armor": 5,
+"attack": 1,
+"category": "helmets",
+"defense": 5,
+"image": ExtResource("10_nxria"),
+"name": "metal"
+}, {
+"armor": 2,
+"attack": 5,
+"category": "helmets",
+"defense": 2,
+"image": ExtResource("11_i8wnd"),
+"name": "plushie"
+}, {
+"armor": 5,
+"attack": 3,
+"category": "helmets",
+"defense": 4,
+"image": ExtResource("12_qei88"),
+"name": "pot"
+}, {
+"armor": -1,
+"attack": 5,
+"category": "helmets",
+"defense": -1,
+"image": ExtResource("13_5n8c6"),
+"name": "snowman"
+}]
+torso_array = [{
+"armor": 1,
+"attack": 2,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("7_vou3i"),
+"name": "base"
+}, {
+"armor": 1,
+"attack": 2,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("16_ws103"),
+"name": "bread"
+}, {
+"armor": 5,
+"attack": 1,
+"category": "torsos",
+"defense": 5,
+"image": ExtResource("17_4oji2"),
+"name": "cardboard"
+}, {
+"armor": 2,
+"attack": 5,
+"category": "torsos",
+"defense": 2,
+"image": ExtResource("18_nuun1"),
+"name": "crystal"
+}, {
+"armor": 5,
+"attack": 3,
+"category": "torsos",
+"defense": 4,
+"image": ExtResource("19_vie4n"),
+"name": "metal"
+}, {
+"armor": -1,
+"attack": 5,
+"category": "torsos",
+"defense": -1,
+"image": ExtResource("20_blf66"),
+"name": "trash"
+}]
+wings_array = [{
+"armor": 1,
+"attack": 2,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("8_njkat"),
+"name": "base"
+}, {
+"armor": 1,
+"attack": 2,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("22_1vgp2"),
+"name": "buffalo"
+}, {
+"armor": 1,
+"attack": 1,
+"category": "wings",
+"defense": 3,
+"image": ExtResource("23_lls7j"),
+"name": "crayon"
+}, {
+"armor": 2,
+"attack": 5,
+"category": "wings",
+"defense": 2,
+"image": ExtResource("24_gq8cj"),
+"name": "icepop"
+}, {
+"armor": 5,
+"attack": 3,
+"category": "wings",
+"defense": 4,
+"image": ExtResource("25_agwoj"),
+"name": "leaf"
+}, {
+"armor": -1,
+"attack": 5,
+"category": "wings",
+"defense": -1,
+"image": ExtResource("26_sqbg6"),
+"name": "metal"
+}]
+foot_array = [{
+"armor": 1,
+"attack": 2,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("6_wn0x4"),
+"name": "base"
+}, {
+"armor": 1,
+"attack": 2,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("3_a27ja"),
+"name": "bone"
+}, {
+"armor": 1,
+"attack": 1,
+"category": "feet",
+"defense": 3,
+"image": ExtResource("4_e4kbr"),
+"name": "candy_cane"
+}, {
+"armor": 2,
+"attack": 5,
+"category": "feet",
+"defense": 2,
+"image": ExtResource("5_bkdyi"),
+"name": "metal"
+}, {
+"armor": 5,
+"attack": 3,
+"category": "feet",
+"defense": 4,
+"image": ExtResource("6_h3kct"),
+"name": "pvc"
+}, {
+"armor": -1,
+"attack": 5,
+"category": "feet",
+"defense": -1,
+"image": ExtResource("7_epavw"),
+"name": "sticksnstones"
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuh0h"]
+size = Vector2(293, 184.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0xkx"]
+size = Vector2(250, 231)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygttg"]
+size = Vector2(119, 214)
 
 [node name="Garage" type="Node2D" groups=["GarageRoot"]]
 script = ExtResource("1_puq2h")
@@ -26,6 +416,7 @@ offset_right = 1148.0
 offset_bottom = 646.0
 texture = ExtResource("2_cvgoo")
 expand_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_ak78x")]
 process_mode = 3
@@ -56,8 +447,10 @@ text = "Save"
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pax12")
 autoplay = true
+metadata/_edit_lock_ = true
 
 [node name="GarageUICanvas" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TabContainer" type="TabContainer" parent="GarageUICanvas"]
 offset_right = 1152.0
@@ -354,6 +747,53 @@ offset_bottom = 96.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 script = ExtResource("33_muqf5")
 
+[node name="Mechanic" type="Area2D" parent="."]
+position = Vector2(130, 498)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mechanic"]
+position = Vector2(23, -36)
+shape = SubResource("RectangleShape2D_iuh0h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mechanic"]
+position = Vector2(-35, -53)
+scale = Vector2(0.316, 0.316)
+texture = ExtResource("40_w3uyr")
+
+[node name="MechanicPointer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(124, 242)
+rotation = 1.5708
+scale = Vector2(0.218685, 0.218685)
+texture = ExtResource("41_tfi6q")
+
+[node name="Bench" type="Area2D" parent="."]
+position = Vector2(994, 451)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bench"]
+position = Vector2(-17, 28.5)
+shape = SubResource("RectangleShape2D_b0xkx")
+
+[node name="BenchPointer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1001, 278)
+rotation = 1.5708
+scale = Vector2(0.218685, 0.218685)
+texture = ExtResource("41_tfi6q")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(-57, 494)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+shape = SubResource("RectangleShape2D_ygttg")
+
+[node name="Walls2" type="StaticBody2D" parent="."]
+position = Vector2(1191, 481)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls2"]
+shape = SubResource("RectangleShape2D_ygttg")
+
 [connection signal="clear_purchase_item_signal" from="." to="GarageUICanvas/TabContainer/Store/PurchaseOuter/PurchaseInner/ItemIcon" method="_on_garage_clear_purchase_item_signal"]
 [connection signal="clear_purchase_item_signal" from="." to="GarageUICanvas/TabContainer/Store/Stats/Name" method="_on_garage_clear_purchase_item_signal"]
 [connection signal="clear_purchase_item_signal" from="." to="GarageUICanvas/TabContainer/Store/Stats/Attack" method="_on_garage_clear_purchase_item_signal"]
@@ -375,3 +815,7 @@ script = ExtResource("33_muqf5")
 [connection signal="pressed" from="GarageUICanvas/TabContainer/Parts/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="GarageUICanvas/TabContainer/Store/Purchase" to="." method="_on_purchase_pressed"]
 [connection signal="item_clicked" from="GarageUICanvas/TabContainer/Store/PurchaseRect/PurchaseItemList" to="." method="_on_purchase_item_list_item_clicked"]
+[connection signal="body_entered" from="Mechanic" to="." method="_on_mechanic_body_entered"]
+[connection signal="body_exited" from="Mechanic" to="." method="_on_mechanic_body_exited"]
+[connection signal="body_entered" from="Bench" to="." method="_on_bench_body_entered"]
+[connection signal="body_exited" from="Bench" to="." method="_on_bench_body_exited"]

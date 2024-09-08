@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dylx5548fckm6"]
+[gd_scene load_steps=17 format=3 uid="uid://dylx5548fckm6"]
 
 [ext_resource type="Script" path="res://scenes/battle/player.gd" id="1_82cnu"]
 [ext_resource type="Texture2D" uid="uid://cstixvwogxchu" path="res://assets/textures/gear/torsos/torso_base.png" id="1_lg6n6"]
@@ -12,6 +12,19 @@
 [ext_resource type="Texture2D" uid="uid://dcysucfiqp4g0" path="res://assets/textures/fuel_bar200x200.png" id="7_cyitl"]
 [ext_resource type="Script" path="res://scenes/battle/player_wing.gd" id="8_b28mb"]
 [ext_resource type="Script" path="res://scenes/battle/player_legs.gd" id="10_yty4r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fb7c"]
+bg_color = Color(0.384314, 0.658824, 0.733333, 0.901961)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 25.0
+expand_margin_top = 25.0
+expand_margin_right = 25.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="Theme" id="Theme_cypwy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wxf5"]
 texture = ExtResource("6_keqo0")
@@ -56,12 +69,22 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_wwqy3")
 script = ExtResource("10_yty4r")
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = -300.0
+offset_top = -650.0
+offset_right = 350.0
+offset_bottom = -400.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7fb7c")
+
 [node name="PlayerUI" type="GridContainer" parent="."]
 offset_left = -300.0
-offset_top = 600.0
+offset_top = -600.0
 offset_right = -3.0
-offset_bottom = 658.0
+offset_bottom = -542.0
 scale = Vector2(2, 2)
+theme = SubResource("Theme_cypwy")
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
 columns = 5
 metadata/_edit_group_ = true
 
@@ -75,13 +98,15 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
 theme = SubResource("Theme_4ys76")
-value = 100.0
+max_value = 20.0
+value = 20.0
 show_percentage = false
 
 [node name="HP" type="Label" parent="PlayerUI"]
 layout_mode = 2
 theme = ExtResource("6_g32u0")
-text = "100"
+text = "20
+"
 horizontal_alignment = 1
 
 [node name="slash" type="Label" parent="PlayerUI"]
@@ -92,7 +117,8 @@ text = "/"
 [node name="MaxHP" type="Label" parent="PlayerUI"]
 layout_mode = 2
 theme = ExtResource("6_g32u0")
-text = "100"
+text = "20
+"
 horizontal_alignment = 1
 
 [node name="FuelText" type="Label" parent="PlayerUI"]

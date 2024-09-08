@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhtlvmgxf7uup"]
+
+[ext_resource type="Texture2D" uid="uid://ed0m61hbxf1n" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/IMG_9158.png" id="1_18thx"]
+[ext_resource type="Script" path="res://scenes/world/credits.gd" id="1_s27kp"]
+[ext_resource type="FontFile" uid="uid://j1hfudbakogb" path="res://assets/textures/Acme-Regular.ttf" id="3_1f1hw"]
+
+[sub_resource type="Gradient" id="Gradient_35j2v"]
+colors = PackedColorArray(0, 0, 0, 0.694118, 0.27451, 0.27451, 0.27451, 0.627451)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ncsnr"]
+gradient = SubResource("Gradient_35j2v")
+
+[node name="Credits" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_s27kp")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(593, 311.5)
+scale = Vector2(0.588384, 0.588384)
+texture = ExtResource("1_18thx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 2
+texture = SubResource("GradientTexture1D_ncsnr")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("3_1f1hw")
+theme_override_font_sizes/font_size = 16
+text = "Pecking Order
+
+Project Lead
+Walbo
+
+Design
+Walbo
+
+Programming
+Walbo
+Don Prolad
+Savi
+
+Art
+Cool Cactus
+Jay
+Christian
+Woffle
+
+Sound 
+Christopher
+Dakota
+
+Production
+Walbo
+Bernadine"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1f1hw")
+text = "Main Menu"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
