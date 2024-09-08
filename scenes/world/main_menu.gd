@@ -3,3 +3,7 @@ extends Node2D
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/world/overworld.tscn")
+
+
+func _on_credits_pressed():
+	get_tree().change_scene_to_file("res://scenes/world/credits.tscn")

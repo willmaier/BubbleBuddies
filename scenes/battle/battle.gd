@@ -1,11 +1,24 @@
 extends Node2D
 
-@onready var player = $Player
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
+func _process(_delta):
+	if Input.is_action_just_pressed("esc"):
+		$PauseMenu.show()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_ability_button_change_turn():
+	Globals.player_turn = false
+	print("it is enemy turn now")
+	
+	for enemy in $EnemyGroup.get_children():
+		if (is_instance_valid(enemy)):
+			enemy.enemy_target()
+			# replace with the timer below with the ability animation of the enemy
+			await get_tree().create_timer(3).timeout
+	#await enemy to end turn
+	print("player's turn!")
+	
+	if ($EnemyGroup.get_child_count() == 0):
+		$Victory.visible = true
+		print("WINNER")
+	Globals.player_turn = true
+	#enemy turn
+	#send signal to EnemyGroup and go through each child's ability?

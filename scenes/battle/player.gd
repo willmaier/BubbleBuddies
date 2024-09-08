@@ -1,21 +1,13 @@
 extends Node2D
 
-#@export var _player_resource : PlayerResource
-#@export var _gear_resource : GearResource
-
-@onready var _gear_resource = GearResource.new()
-
-@onready var playerLoadData = PlayerState.load_or_create()
-
-@onready var equipped_gear
+@export var _player_resource : PlayerResource
 
 @onready var hp_text = $PlayerUI/HP
 @onready var health_bar = $PlayerUI/Health
 @onready var fuel_text = $PlayerUI/Fuel2
 @onready var fuel_bar = $PlayerUI/Fuel
 
-
-@export var max_health: int = 100
+@export var max_health: int = 20
 
 signal target_chosen(target)
 
@@ -25,22 +17,14 @@ signal target_chosen(target)
 @export var is_frozen: bool = false
 
 
-signal swap_helmet_texture(helmet)
-signal swap_torso_texture(torso)
-signal swap_leg_texture(leg)
-signal swap_wing_texture(wing)
-
-
-func _ready():
-	broadcast()
-	
-var health: int = 100:
+var health: int = 20:
 	set(value):
 		health = value
 		updateUI()
 
 func take_damage(value):
 	health -= value
+	print("Player's health is now: ", health)
 
 func heal(value):
 	health += value
@@ -61,20 +45,3 @@ func _on_click_area_input_event(viewport, event, shape_idx):
 func player_chosen():
 	return self
 			
-			
-func change_player_images():
-	for item in playerLoadData.equipped_gear:
-		if item["category"] == "helmets":
-			emit_signal("swap_helmet_texture",item["image"])
-		if item["category"] == "torsos":
-			emit_signal("swap_torso_texture",item["image"])
-		if item["category"] == "wings":
-			emit_signal("swap_wing_texture",item["image"])
-		if item["category"] == "feet":
-			emit_signal("swap_leg_texture",item["image"])
-			
-func broadcast():
-	playerLoadData._equip_active_gear(_gear_resource)
-	playerLoadData._apply_buffs()
-	equipped_gear = playerLoadData.equipped_gear
-	change_player_images()

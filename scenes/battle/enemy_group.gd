@@ -19,6 +19,9 @@ func _ready():
 	
 	show_abilities()
 
+func recount():
+	enemies = get_children()
+
 func _process(_delta):
 	if not abilities.visible:
 		if Input.is_action_just_pressed("left"):
