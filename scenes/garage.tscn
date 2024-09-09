@@ -73,6 +73,7 @@ autoplay = true
 metadata/_edit_lock_ = true
 
 [node name="GarageUICanvas" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TabContainer" type="TabContainer" parent="GarageUICanvas"]
 offset_right = 1152.0

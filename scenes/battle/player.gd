@@ -21,10 +21,6 @@ signal target_chosen(target)
 @export var is_burning: bool = false
 @export var is_frozen: bool = false
 
-signal swap_helmet_texture(helmet)
-signal swap_torso_texture(torso)
-signal swap_leg_texture(leg)
-signal swap_wing_texture(wing)
 
 @onready var helmet = $Helmet
 @onready var torso = $Torso
@@ -67,16 +63,16 @@ func change_player_images():
 	for item in _player_load_data.equipped_gear:
 		if item["category"] == "helmets":
 			helmet.texture = item["image"]
-			#emit_signal("swap_helmet_texture",item["image"])
+			
 		if item["category"] == "torsos":
 			torso.texture = item["image"]
-			#emit_signal("swap_torso_texture",item["image"])
+			
 		if item["category"] == "wings":
 			wing.texture = item["image"]
-			#emit_signal("swap_wing_texture",item["image"])
+			
 		if item["category"] == "feet":
 			legs.texture = item["image"]
-			#emit_signal("swap_leg_texture",item["image"])
+			
 			
 func broadcast():
 	_player_load_data._equip_active_gear(_gear_resource)
