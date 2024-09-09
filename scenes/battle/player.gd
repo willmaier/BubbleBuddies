@@ -16,6 +16,7 @@ extends Node2D
 
 
 @export var max_health: int = 20
+@export var abilities: Array[Ability] = []
 
 signal target_chosen(target)
 
@@ -33,6 +34,13 @@ signal swap_wing_texture(wing)
 
 func _ready():
 	broadcast()
+	var index: int = 0
+	for i in equipped_gear:
+		abilities[index] = i.ability
+		#print("The ability for the ", index, " ", i.name, " ",i.category, " is: ",i.ability)
+		index+=1
+		#print(i.ability.name)
+	#print(abilities)
 	
 # var health: int = 100: Merge conflict
 

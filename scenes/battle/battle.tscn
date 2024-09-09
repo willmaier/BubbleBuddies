@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://bj0xsjw3x3v1y"]
+[gd_scene load_steps=14 format=3 uid="uid://bj0xsjw3x3v1y"]
 
-[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_5eka1"]
 [ext_resource type="PackedScene" uid="uid://fxjn3ggyo7mt" path="res://scenes/battle/enemy_group.tscn" id="1_8h2mb"]
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_pyt70"]
 [ext_resource type="PackedScene" uid="uid://dylx5548fckm6" path="res://scenes/battle/player.tscn" id="2_a7wio"]
@@ -12,7 +11,6 @@
 [ext_resource type="Resource" uid="uid://dbslncylmbquo" path="res://custom_resources/abilities/swipe.tres" id="5_nnjns"]
 [ext_resource type="Resource" uid="uid://354alf7trns6" path="res://custom_resources/abilities/taunt.tres" id="6_7sjea"]
 [ext_resource type="Resource" uid="uid://cf101e5p2ml13" path="res://custom_resources/abilities/eat_seed.tres" id="6_t3t6q"]
-[ext_resource type="Resource" uid="uid://btshqufrbiamn" path="res://custom_resources/abilities/buff.tres" id="6_wkl1a"]
 [ext_resource type="AudioStream" uid="uid://eseynrfkr7yv" path="res://assets/Audio/Music/BATTLE TIME Mix 08.25.024.wav" id="9_un654"]
 [ext_resource type="PackedScene" uid="uid://be1fyg430yaee" path="res://scenes/ui/pause_menu.tscn" id="14_mn6xe"]
 
@@ -28,7 +26,7 @@ texture = ExtResource("2_s2lo1")
 expand_mode = 1
 
 [node name="EnemyGroup" parent="." instance=ExtResource("1_8h2mb")]
-position = Vector2(625, 493)
+position = Vector2(625, 450)
 metadata/_edit_group_ = true
 
 [node name="Enemy" parent="EnemyGroup" index="0"]
@@ -43,17 +41,19 @@ move = ExtResource("5_8ebnl")
 [node name="Player" parent="." instance=ExtResource("2_a7wio")]
 position = Vector2(231, 444)
 scale = Vector2(0.5, 0.5)
+abilities = Array[Resource("res://custom_resources/ability.gd")]([null, null, null, null])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Abilities" type="HBoxContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(0, 100)
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -2.0
-offset_top = -54.0
+offset_top = -61.0
 offset_right = 562.0
-offset_bottom = -14.0
+offset_bottom = 39.0
 grow_vertical = 2
 script = ExtResource("3_k2f8n")
 metadata/_edit_group_ = true
@@ -61,6 +61,7 @@ metadata/_edit_group_ = true
 [node name="AbilityButton" parent="CanvasLayer/Abilities" instance=ExtResource("3_3he0t")]
 layout_mode = 2
 text = "PUNCH FOR 1"
+ability = ExtResource("6_t3t6q")
 
 [node name="AbilityButton2" parent="CanvasLayer/Abilities" instance=ExtResource("3_3he0t")]
 layout_mode = 2
@@ -76,11 +77,6 @@ ability = ExtResource("6_t3t6q")
 layout_mode = 2
 text = "APPLY WEAK"
 ability = ExtResource("6_7sjea")
-
-[node name="AbilityButton5" parent="CanvasLayer/Abilities" instance=ExtResource("3_3he0t")]
-layout_mode = 2
-text = "APPLY STRONG"
-ability = ExtResource("6_wkl1a")
 
 [node name="Overworld" type="Button" parent="."]
 offset_right = 8.0
@@ -108,7 +104,6 @@ visible = false
 [connection signal="change_turn" from="CanvasLayer/Abilities/AbilityButton2" to="." method="_on_ability_button_change_turn"]
 [connection signal="change_turn" from="CanvasLayer/Abilities/AbilityButton3" to="." method="_on_ability_button_change_turn"]
 [connection signal="change_turn" from="CanvasLayer/Abilities/AbilityButton4" to="." method="_on_ability_button_change_turn"]
-[connection signal="change_turn" from="CanvasLayer/Abilities/AbilityButton5" to="." method="_on_ability_button_change_turn"]
 [connection signal="pressed" from="Overworld" to="CanvasLayer/Abilities" method="_on_overworld_pressed"]
 
 [editable path="EnemyGroup"]

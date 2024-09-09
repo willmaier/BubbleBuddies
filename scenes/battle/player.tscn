@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dylx5548fckm6"]
+[gd_scene load_steps=20 format=3 uid="uid://dylx5548fckm6"]
 
 [ext_resource type="Script" path="res://scenes/battle/player.gd" id="1_82cnu"]
 [ext_resource type="Texture2D" uid="uid://cstixvwogxchu" path="res://assets/textures/gear/torsos/torso_base.png" id="1_lg6n6"]
@@ -71,16 +71,16 @@ script = ExtResource("10_yty4r")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_left = -300.0
-offset_top = -650.0
+offset_top = -550.0
 offset_right = 350.0
 offset_bottom = -400.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7fb7c")
 
 [node name="PlayerUI" type="GridContainer" parent="."]
 offset_left = -300.0
-offset_top = -600.0
-offset_right = -3.0
-offset_bottom = -542.0
+offset_top = -500.0
+offset_right = 3.0
+offset_bottom = -470.0
 scale = Vector2(2, 2)
 theme = SubResource("Theme_cypwy")
 theme_override_constants/h_separation = 10
@@ -122,12 +122,14 @@ text = "20
 horizontal_alignment = 1
 
 [node name="FuelText" type="Label" parent="PlayerUI"]
+visible = false
 layout_mode = 2
 theme = ExtResource("6_g32u0")
 text = "Fuel: "
 horizontal_alignment = 1
 
 [node name="Fuel" type="ProgressBar" parent="PlayerUI"]
+visible = false
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
 theme = SubResource("Theme_v0qfp")
@@ -135,17 +137,20 @@ value = 100.0
 show_percentage = false
 
 [node name="Fuel2" type="Label" parent="PlayerUI"]
+visible = false
 layout_mode = 2
 theme = ExtResource("6_g32u0")
 text = "100"
 horizontal_alignment = 1
 
 [node name="slash2" type="Label" parent="PlayerUI"]
+visible = false
 layout_mode = 2
 theme = ExtResource("6_g32u0")
 text = "/"
 
 [node name="MaxFuel" type="Label" parent="PlayerUI"]
+visible = false
 layout_mode = 2
 theme = ExtResource("6_g32u0")
 text = "100"

@@ -6,6 +6,12 @@ extends HBoxContainer
 # 1 -> HEAL
 # 2 -> SKILL
 
+func _ready():
+	for button in get_children():
+		button.ability = $"../../Player".abilities[button.get_index()]
+		print(button.ability.name)
+		button.text = button.ability.name
+
 func do_ability(target, type, value):
 	if Globals.player_turn:
 		print("player is attacking: ", target, " for: ", value)

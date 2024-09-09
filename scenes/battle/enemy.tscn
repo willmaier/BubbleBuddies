@@ -1,28 +1,29 @@
 [gd_scene load_steps=9 format=3 uid="uid://dgcph4lqfqoic"]
 
 [ext_resource type="Script" path="res://scenes/battle/enemy.gd" id="1_7lakh"]
-[ext_resource type="Texture2D" uid="uid://c17g0veycc708" path="res://icon.svg" id="1_knepa"]
-[ext_resource type="Texture2D" uid="uid://dkkajiu6feqrx" path="res://assets/textures/arrow.png" id="3_0jrxn"]
+[ext_resource type="Texture2D" uid="uid://qx0ruro2ttw2" path="res://assets/Art/CHARACTERS/PORTRAITS/sprite_pigeon_enemy.png" id="2_43las"]
+[ext_resource type="Texture2D" uid="uid://bfmimttbch5vn" path="res://assets/textures/feather-removebg-preview.png" id="3_tvm4w"]
 [ext_resource type="Texture2D" uid="uid://cxevjpioi2yob" path="res://assets/textures/weak.png" id="4_2hvca"]
 [ext_resource type="Texture2D" uid="uid://dk1180d6d6uam" path="res://assets/textures/strong.png" id="5_4ylvd"]
 [ext_resource type="Theme" uid="uid://bmxxtjvornsya" path="res://scenes/battle/player_ui_theme.tres" id="6_5ylm8"]
 [ext_resource type="AudioStream" uid="uid://sbhkvw37lwr8" path="res://assets/Audio/SFX/hit1.ogg" id="6_pac7o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljfmf"]
-size = Vector2(128, 132)
+size = Vector2(160, 343)
 
 [node name="Enemy" type="Node2D" groups=["Enemy"]]
 script = ExtResource("1_7lakh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_knepa")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_43las")
 
 [node name="Focus" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(2, -166)
-rotation = 1.5708
-scale = Vector2(0.0751953, 0.0751953)
-texture = ExtResource("3_0jrxn")
+position = Vector2(-75, -200)
+rotation = 0.872665
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_tvm4w")
 
 [node name="Status" type="HBoxContainer" parent="."]
 anchors_preset = 15
@@ -67,9 +68,9 @@ texture = ExtResource("4_2hvca")
 
 [node name="GridContainer" type="HBoxContainer" parent="."]
 offset_left = -50.0
-offset_top = 80.0
-offset_right = 63.0
-offset_bottom = 120.0
+offset_top = -250.0
+offset_right = 68.0
+offset_bottom = -210.0
 metadata/_edit_group_ = true
 
 [node name="HPText" type="Label" parent="GridContainer"]
@@ -103,7 +104,7 @@ horizontal_alignment = 1
 [node name="ClickArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
-position = Vector2(-1, -1)
+position = Vector2(1, -10.5)
 shape = SubResource("RectangleShape2D_ljfmf")
 
 [node name="SFX" type="Node" parent="."]

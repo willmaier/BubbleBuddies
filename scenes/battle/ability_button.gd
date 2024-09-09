@@ -8,6 +8,14 @@ var active: bool = false
 signal change_turn
 
 func _ready():
+	await $".."._ready()
+	if ability.type == 0:
+		icon = preload("res://assets/textures/Red-Attack_button.png")
+	if ability.type == 1:
+		icon = preload("res://assets/textures/Yellow-Heal_button.png")
+	if ability.type == 2:
+		icon = preload("res://assets/textures/Blue-Skill_button.png")
+	
 	tooltip_text = ability.name+"\n"+"Target(s): "+str(ability.target_text)+"\n"+"Damage: "+str(ability.value)+"\n"+ability.desc
 	
 
