@@ -1,47 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnpg31emln1u2"]
+[gd_scene load_steps=5 format=3 uid="uid://cnpg31emln1u2"]
 
-[ext_resource type="Texture2D" uid="uid://c17g0veycc708" path="res://icon.svg" id="1_n0ysn"]
+[ext_resource type="Script" path="res://scenes/world/overworld.gd" id="1_jh03t"]
+[ext_resource type="Texture2D" uid="uid://ru51htcf3xdk" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/IMG_9369.png" id="1_pho3d"]
 [ext_resource type="PackedScene" uid="uid://bch40v5urc3er" path="res://scenes/world/overworld_player.tscn" id="1_xeegi"]
 [ext_resource type="AudioStream" uid="uid://cl7ov46uquben" path="res://assets/Audio/Music/amb-park.ogg" id="3_gvibc"]
 
 [node name="Overworld" type="Node2D"]
+script = ExtResource("1_jh03t")
 
-[node name="Garage" type="Sprite2D" parent="."]
-position = Vector2(100, 300)
-texture = ExtResource("1_n0ysn")
-
-[node name="Shop" type="Sprite2D" parent="."]
-position = Vector2(500, 300)
-texture = ExtResource("1_n0ysn")
-
-[node name="Fight" type="Sprite2D" parent="."]
-position = Vector2(900, 300)
-texture = ExtResource("1_n0ysn")
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_pho3d")
+expand_mode = 1
 
 [node name="OverworldPlayer" parent="." instance=ExtResource("1_xeegi")]
-position = Vector2(500, 400)
+position = Vector2(748, 497)
+script = null
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_gvibc")
 autoplay = true
 
-[node name="Label" type="Label" parent="."]
-offset_left = 64.0
-offset_top = 199.0
-offset_right = 128.0
-offset_bottom = 222.0
-text = "GARAGE"
+[node name="Markers" type="Node" parent="."]
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 483.0
-offset_top = 202.0
-offset_right = 527.0
-offset_bottom = 225.0
-text = "SHOP"
+[node name="0" type="Marker2D" parent="Markers"]
+position = Vector2(745, 496)
 
-[node name="Label3" type="Label" parent="."]
-offset_left = 874.0
-offset_top = 186.0
-offset_right = 921.0
-offset_bottom = 209.0
-text = "FIGHT"
+[node name="1" type="Marker2D" parent="Markers"]
+position = Vector2(493, 496)
+
+[node name="2" type="Marker2D" parent="Markers"]
+position = Vector2(332, 493)
+
+[node name="3" type="Marker2D" parent="Markers"]
+position = Vector2(630, 347)
