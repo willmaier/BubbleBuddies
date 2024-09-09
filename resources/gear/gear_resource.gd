@@ -13,7 +13,7 @@ class_name GearResource
 		"attack": 2,
 		"defense": 4,
 		"armor": 1,
-		"ability": preload("res://custom_resources/abilities/peck.tres")
+		"ability": preload("res://custom_resources/abilities/buff.tres")
 	},
 	"halloween":{
 		"name": "halloween",
@@ -73,7 +73,7 @@ class_name GearResource
 		"attack": 2,
 		"defense": 4,
 		"armor": 1,
-		"ability": preload("res://custom_resources/abilities/peck.tres")
+		"ability": preload("res://custom_resources/abilities/taunt.tres")
 	},
 	"bread":{
 		"name": "bread",
@@ -133,7 +133,7 @@ class_name GearResource
 		"attack": 2,
 		"defense": 4,
 		"armor": 1,
-		"ability": preload("res://custom_resources/abilities/swipe.tres")
+		"ability": preload("res://custom_resources/abilities/chill.tres")
 	},
 	"buffalo":{
 		"name": "buffalo",
@@ -192,7 +192,7 @@ class_name GearResource
 		"attack": 2,
 		"defense": 4,
 		"armor": 1,
-		"ability": preload("res://custom_resources/abilities/eat_seed.tres")
+		"ability": preload("res://custom_resources/abilities/scorch.tres")
 	},
 	"bone":{
 		"name": "bone",

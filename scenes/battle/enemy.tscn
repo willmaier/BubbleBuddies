@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgcph4lqfqoic"]
+[gd_scene load_steps=11 format=3 uid="uid://dgcph4lqfqoic"]
 
 [ext_resource type="Script" path="res://scenes/battle/enemy.gd" id="1_7lakh"]
 [ext_resource type="Texture2D" uid="uid://qx0ruro2ttw2" path="res://assets/Art/CHARACTERS/PORTRAITS/sprite_pigeon_enemy.png" id="2_43las"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cxevjpioi2yob" path="res://assets/textures/weak.png" id="4_2hvca"]
 [ext_resource type="Texture2D" uid="uid://dk1180d6d6uam" path="res://assets/textures/strong.png" id="5_4ylvd"]
 [ext_resource type="Theme" uid="uid://bmxxtjvornsya" path="res://scenes/battle/player_ui_theme.tres" id="6_5ylm8"]
+[ext_resource type="Texture2D" uid="uid://c3c244awpj5pb" path="res://assets/textures/burning.png" id="6_kj264"]
 [ext_resource type="AudioStream" uid="uid://sbhkvw37lwr8" path="res://assets/Audio/SFX/hit1.ogg" id="6_pac7o"]
+[ext_resource type="Texture2D" uid="uid://bnfld73yhp8dj" path="res://assets/textures/frozen.png" id="7_mgyvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljfmf"]
 size = Vector2(160, 343)
@@ -57,14 +59,14 @@ visible = false
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("4_2hvca")
+texture = ExtResource("6_kj264")
 
 [node name="Frozen" type="TextureRect" parent="Status"]
 visible = false
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("4_2hvca")
+texture = ExtResource("7_mgyvi")
 
 [node name="GridContainer" type="HBoxContainer" parent="."]
 offset_left = -50.0

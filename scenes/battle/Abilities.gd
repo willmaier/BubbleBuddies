@@ -38,6 +38,13 @@ func do_ability(target, type, value):
 					print("applying strong effect!")
 					target.is_strong = true
 					
+				2: 
+					print("applying burn effect!")
+					target.is_burning = true
+				
+				3: 
+					print("applying freeze effect!")
+					target.is_frozen = true
 		# CHANGE TO ENEMY TURN
 	#Globals.player_turn = false
 

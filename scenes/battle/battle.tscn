@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bj0xsjw3x3v1y"]
+[gd_scene load_steps=15 format=3 uid="uid://bj0xsjw3x3v1y"]
 
 [ext_resource type="PackedScene" uid="uid://fxjn3ggyo7mt" path="res://scenes/battle/enemy_group.tscn" id="1_8h2mb"]
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_pyt70"]
@@ -9,9 +9,10 @@
 [ext_resource type="Resource" uid="uid://dxsriksdrrq1o" path="res://custom_resources/enemy_abilities/hit_for_one.tres" id="4_lgafp"]
 [ext_resource type="Resource" uid="uid://dxyg7korety3h" path="res://custom_resources/enemy_abilities/hit_self.tres" id="5_8ebnl"]
 [ext_resource type="Resource" uid="uid://dbslncylmbquo" path="res://custom_resources/abilities/swipe.tres" id="5_nnjns"]
-[ext_resource type="Resource" uid="uid://354alf7trns6" path="res://custom_resources/abilities/taunt.tres" id="6_7sjea"]
 [ext_resource type="Resource" uid="uid://cf101e5p2ml13" path="res://custom_resources/abilities/eat_seed.tres" id="6_t3t6q"]
 [ext_resource type="AudioStream" uid="uid://eseynrfkr7yv" path="res://assets/Audio/Music/BATTLE TIME Mix 08.25.024.wav" id="9_un654"]
+[ext_resource type="Resource" uid="uid://dxhcf17v1bx2a" path="res://custom_resources/abilities/chill.tres" id="11_1nd4d"]
+[ext_resource type="Resource" uid="uid://b14jvevkqn43w" path="res://custom_resources/abilities/scorch.tres" id="11_erh5i"]
 [ext_resource type="PackedScene" uid="uid://be1fyg430yaee" path="res://scenes/ui/pause_menu.tscn" id="14_mn6xe"]
 
 [node name="Battle" type="Node2D"]
@@ -71,12 +72,12 @@ ability = ExtResource("5_nnjns")
 [node name="AbilityButton3" parent="CanvasLayer/Abilities" instance=ExtResource("3_3he0t")]
 layout_mode = 2
 text = "HEAL FOR 1"
-ability = ExtResource("6_t3t6q")
+ability = ExtResource("11_1nd4d")
 
 [node name="AbilityButton4" parent="CanvasLayer/Abilities" instance=ExtResource("3_3he0t")]
 layout_mode = 2
 text = "APPLY WEAK"
-ability = ExtResource("6_7sjea")
+ability = ExtResource("11_erh5i")
 
 [node name="Overworld" type="Button" parent="."]
 offset_right = 8.0
