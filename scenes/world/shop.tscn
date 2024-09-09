@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmjeg0u3bu78t"]
+
+[ext_resource type="Script" path="res://scenes/world/shop.gd" id="1_pq1sa"]
+[ext_resource type="Texture2D" uid="uid://dr8tjrd3kd43w" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/shop.png" id="1_s8c3l"]
+[ext_resource type="Texture2D" uid="uid://daw1oh88g7qws" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/stands.png" id="2_2t7wb"]
+[ext_resource type="PackedScene" uid="uid://drnieg5ykp4a7" path="res://scenes/player/player.tscn" id="3_q6fvg"]
+[ext_resource type="Texture2D" uid="uid://clgqqmy4qck4e" path="res://assets/Art/CHARACTERS/SHOP/character_flea_shop.png" id="5_pkosj"]
+[ext_resource type="Texture2D" uid="uid://bfmimttbch5vn" path="res://assets/textures/feather-removebg-preview.png" id="6_36fna"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox8gv"]
+size = Vector2(121.25, 422)
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_pq1sa")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_s8c3l")
+expand_mode = 1
+
+[node name="Stands" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_2t7wb")
+expand_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("3_q6fvg")]
+position = Vector2(599, 512)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+
+[node name="ShoeFlea" type="Area2D" parent="."]
+position = Vector2(221, 411)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShoeFlea"]
+position = Vector2(-28, -9)
+shape = SubResource("RectangleShape2D_ox8gv")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShoeFlea"]
+position = Vector2(-29, -17)
+scale = Vector2(0.046, 0.046)
+texture = ExtResource("5_pkosj")
+
+[node name="ShoePointer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(238, 303)
+rotation = 1.5708
+scale = Vector2(0.210365, 0.210365)
+texture = ExtResource("6_36fna")
+
+[node name="ShoeFlea2" type="Area2D" parent="."]
+position = Vector2(612, 408)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShoeFlea2"]
+position = Vector2(-29, -4)
+shape = SubResource("RectangleShape2D_ox8gv")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShoeFlea2"]
+position = Vector2(-34.2, -15.5)
+scale = Vector2(0.046, 0.046)
+texture = ExtResource("5_pkosj")
+
+[node name="ShirtPointer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(590, 303)
+rotation = 1.5708
+scale = Vector2(0.210365, 0.210365)
+texture = ExtResource("6_36fna")
+
+[node name="HatPointer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(950, 303)
+rotation = 1.5708
+scale = Vector2(0.210365, 0.210365)
+texture = ExtResource("6_36fna")
+
+[node name="ShoeFlea3" type="Area2D" parent="."]
+position = Vector2(970, 407)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShoeFlea3"]
+position = Vector2(-44, -12)
+shape = SubResource("RectangleShape2D_ox8gv")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShoeFlea3"]
+position = Vector2(-34.8, -15)
+scale = Vector2(0.044, 0.044)
+texture = ExtResource("5_pkosj")
+
+[connection signal="body_entered" from="ShoeFlea" to="." method="_on_shoe_flea_body_entered"]
+[connection signal="body_exited" from="ShoeFlea" to="." method="_on_shoe_flea_body_exited"]
+[connection signal="body_entered" from="ShoeFlea2" to="." method="_on_shoe_flea_2_body_entered"]
+[connection signal="body_exited" from="ShoeFlea2" to="." method="_on_shoe_flea_2_body_exited"]
+[connection signal="body_entered" from="ShoeFlea3" to="." method="_on_shoe_flea_3_body_entered"]
+[connection signal="body_exited" from="ShoeFlea3" to="." method="_on_shoe_flea_3_body_exited"]

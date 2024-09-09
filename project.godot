@@ -24,12 +24,14 @@ Globals="*res://globals/globals.gd"
 
 directories/dch_directory={
 "cthulu": "res://addons/dialogic/characters/cthulu.dch",
+"flea": "res://addons/dialogic/characters/flea.dch",
 "john_johnson": "res://addons/dialogic/characters/john_johnson.dch",
 "mechanic": "res://addons/dialogic/characters/mechanic.dch"
 }
 directories/dtl_directory={
 "cthulu_scene_one": "res://addons/dialogic/characters/cthulu_scene_one.dtl",
-"first-timeline": "res://addons/dialogic/Resources/first-timeline.dtl"
+"first-timeline": "res://addons/dialogic/Resources/first-timeline.dtl",
+"flea": "res://addons/dialogic/Resources/flea.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://addons/dialogic/custom_style.tres"]
