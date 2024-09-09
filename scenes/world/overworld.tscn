@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnpg31emln1u2"]
+[gd_scene load_steps=6 format=3 uid="uid://cnpg31emln1u2"]
 
 [ext_resource type="Script" path="res://scenes/world/overworld.gd" id="1_jh03t"]
 [ext_resource type="Texture2D" uid="uid://ru51htcf3xdk" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/IMG_9369.png" id="1_pho3d"]
 [ext_resource type="PackedScene" uid="uid://bch40v5urc3er" path="res://scenes/world/overworld_player.tscn" id="1_xeegi"]
 [ext_resource type="AudioStream" uid="uid://cl7ov46uquben" path="res://assets/Audio/Music/amb-park.ogg" id="3_gvibc"]
+[ext_resource type="Script" path="res://scenes/world/save_loader.gd" id="5_ipau0"]
 
 [node name="Overworld" type="Node2D"]
 script = ExtResource("1_jh03t")
@@ -35,3 +36,8 @@ position = Vector2(332, 493)
 
 [node name="3" type="Marker2D" parent="Markers"]
 position = Vector2(630, 347)
+
+[node name="Utilities" type="Node" parent="."]
+
+[node name="SaveLoader" type="Node" parent="Utilities"]
+script = ExtResource("5_ipau0")
