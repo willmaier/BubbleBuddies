@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://si15e5e7sre1"
+path="res://.godot/imported/Main Menu Mix 09.03.024.alp.wav-329075b9820c3fc84f13df76ccfb3798.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Music/Main Menu Mix 09.03.024.alp.wav"
+dest_files=["res://.godot/imported/Main Menu Mix 09.03.024.alp.wav-329075b9820c3fc84f13df76ccfb3798.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,11 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0t5elbvkvvcp"]
+[gd_scene load_steps=6 format=3 uid="uid://d0t5elbvkvvcp"]
 
+[ext_resource type="Texture2D" uid="uid://d2rcq6f06rfmw" path="res://assets/textures/Red-Attack_button.png" id="1_hncor"]
 [ext_resource type="Script" path="res://scenes/battle/ability_button.gd" id="2_mymrt"]
 [ext_resource type="Resource" uid="uid://b6umrxca75e2i" path="res://custom_resources/abilities/peck.tres" id="3_srdft"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htb71"]
+bg_color = Color(0.384314, 0.647059, 0.705882, 1)
+
+[sub_resource type="Theme" id="Theme_n215t"]
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_htb71")
+
 [node name="AbilityButton" type="Button"]
+custom_minimum_size = Vector2(125, 125)
 offset_right = 75.0
 offset_bottom = 50.0
+theme = SubResource("Theme_n215t")
+icon = ExtResource("1_hncor")
+flat = true
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_mymrt")

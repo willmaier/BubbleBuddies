@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bch40v5urc3er"]
 
 [ext_resource type="Script" path="res://scenes/world/overworld_player.gd" id="1_ny3sx"]
-[ext_resource type="Texture2D" uid="uid://cw8603m3icj14" path="res://assets/Art/GEAR/HELMET/helmet_base.png" id="2_pbepq"]
+[ext_resource type="Texture2D" uid="uid://o8scw1p0cthc" path="res://assets/textures/player_icon.png" id="2_t3d0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ww3bq"]
 size = Vector2(110, 77)
@@ -11,7 +11,7 @@ script = ExtResource("1_ny3sx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.118462, 0.118462)
-texture = ExtResource("2_pbepq")
+texture = ExtResource("2_t3d0e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://c6vjl4u7auu0x"]
 
 [ext_resource type="Script" path="res://scenes/world/main_menu.gd" id="1_1mu6c"]
-[ext_resource type="Texture2D" uid="uid://ed0m61hbxf1n" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/IMG_9158.png" id="1_hnyjx"]
+[ext_resource type="Texture2D" uid="uid://b4cvxjeq6c3x0" path="res://assets/textures/menu.png" id="2_3dd58"]
 [ext_resource type="Texture2D" uid="uid://b22evuvqf18hj" path="res://assets/Art/CHARACTERS/PORTRAITS/mechanic_crow_neutral_portrait.png" id="2_kfsh2"]
 [ext_resource type="Texture2D" uid="uid://ymh3083og44h" path="res://assets/Art/CHARACTERS/PORTRAITS/secretary_bird_neutral_portrait.png" id="3_hvv1n"]
 [ext_resource type="Texture2D" uid="uid://ch2uprik48c3g" path="res://assets/Art/CHARACTERS/PORTRAITS/flea_neutral_portrait.png" id="4_qgt5g"]
-[ext_resource type="FontFile" uid="uid://di8thtr027a4a" path="res://assets/textures/Rowdies-Regular.ttf" id="5_1oaa8"]
-[ext_resource type="AudioStream" uid="uid://cl7ov46uquben" path="res://assets/Audio/Music/amb-park.ogg" id="7_f51me"]
+[ext_resource type="AudioStream" uid="uid://si15e5e7sre1" path="res://assets/Audio/Music/Main Menu Mix 09.03.024.alp.wav" id="7_mi5no"]
+[ext_resource type="Texture2D" uid="uid://trb5k5qoh3kq" path="res://assets/textures/logo.png" id="7_mnyc1"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_1mu6c")
@@ -14,22 +14,22 @@ script = ExtResource("1_1mu6c")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1148.0
 offset_bottom = 646.0
-texture = ExtResource("1_hnyjx")
+texture = ExtResource("2_3dd58")
 expand_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(110, 502)
+position = Vector2(161, 319)
 scale = Vector2(0.268571, 0.268571)
 texture = ExtResource("2_kfsh2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1012, 482)
+position = Vector2(1010, 330)
 scale = Vector2(0.268571, 0.268571)
 texture = ExtResource("3_hvv1n")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(892, 374.549)
-scale = Vector2(0.057143, 0.057143)
+position = Vector2(1097, 92)
+scale = Vector2(0.147143, 0.147143)
 texture = ExtResource("4_qgt5g")
 
 [node name="Play" type="Button" parent="."]
@@ -46,21 +46,14 @@ offset_right = 817.0
 offset_bottom = 588.0
 text = "Credits"
 
-[node name="Label" type="Label" parent="."]
-offset_left = 296.0
-offset_top = 127.0
-offset_right = 862.0
-offset_bottom = 329.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_1oaa8")
-theme_override_font_sizes/font_size = 72
-text = "Pecking 
-Order"
-horizontal_alignment = 1
-
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_f51me")
+stream = ExtResource("7_mi5no")
 autoplay = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(579, 184)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_mnyc1")
 
 [connection signal="pressed" from="Play" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

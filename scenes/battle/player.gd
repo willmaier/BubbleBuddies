@@ -6,6 +6,7 @@ extends Node2D
 @onready var _player_load_data = PlayerState.load_or_create()
 
 @onready var equipped_gear
+@export var abilities: Array[Ability] = []
 
 @onready var hp_text = $PlayerUI/HP
 @onready var health_bar = $PlayerUI/Health
@@ -35,6 +36,13 @@ var health: int = 20:
 
 func _ready():
 	broadcast()
+	var index: int = 0
+	for i in equipped_gear:
+		#print(i)
+		abilities[index] = i.ability
+		index+=1
+		#print(i.ability.name)
+	print(abilities)
 	
 func take_damage(value):
 	health -= value

@@ -59,18 +59,18 @@ Don Prolad
 Savi
 
 Art
-Cool Cactus
-Jay
-Christian
-Woffle
+M. \"Cactus\" Perez
+Nikki Taylor
+Christian Duran
+Arianna Corchado
 
 Sound 
-Christopher
-Dakota
+Christopher Jennings
+Dakota Bartish
 
 Production
 Walbo
-Bernadine"
+Bernadine Okoro"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]

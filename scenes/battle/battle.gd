@@ -17,8 +17,7 @@ func _on_ability_button_change_turn():
 	print("player's turn!")
 	
 	if ($EnemyGroup.get_child_count() == 0):
-		$Victory.visible = true
-		print("WINNER")
+		get_tree().change_scene_to_file("res://scenes/world/credits.tscn")
 	Globals.player_turn = true
 	#enemy turn
 	#send signal to EnemyGroup and go through each child's ability?

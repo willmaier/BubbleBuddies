@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://naruu4nkyyed"
+path="res://.godot/imported/Flea Market Music 2 09.08.024.wav-82a4edb2f1e497918886a5be1b32a11d.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Music/Flea Market Music 2 09.08.024.wav"
+dest_files=["res://.godot/imported/Flea Market Music 2 09.08.024.wav-82a4edb2f1e497918886a5be1b32a11d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

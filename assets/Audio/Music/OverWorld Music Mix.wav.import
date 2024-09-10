@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dyg5kgsw4gy6h"
+path="res://.godot/imported/OverWorld Music Mix.wav-7e21839e9a81c4831fbf1d7a3664ae32.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Music/OverWorld Music Mix.wav"
+dest_files=["res://.godot/imported/OverWorld Music Mix.wav-7e21839e9a81c4831fbf1d7a3664ae32.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

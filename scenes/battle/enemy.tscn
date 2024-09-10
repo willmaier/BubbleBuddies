@@ -1,37 +1,41 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgcph4lqfqoic"]
+[gd_scene load_steps=11 format=3 uid="uid://dgcph4lqfqoic"]
 
 [ext_resource type="Script" path="res://scenes/battle/enemy.gd" id="1_7lakh"]
-[ext_resource type="Texture2D" uid="uid://c17g0veycc708" path="res://icon.svg" id="1_knepa"]
-[ext_resource type="Texture2D" uid="uid://dkkajiu6feqrx" path="res://assets/textures/arrow.png" id="3_0jrxn"]
-[ext_resource type="Texture2D" uid="uid://cxevjpioi2yob" path="res://assets/textures/weak.png" id="4_2hvca"]
+[ext_resource type="Texture2D" uid="uid://dkxsypjdy5wwn" path="res://assets/Art/CHARACTERS/PORTRAITS/sprite_pigeon_enemy.png" id="2_1vw4h"]
+[ext_resource type="Texture2D" uid="uid://bfmimttbch5vn" path="res://assets/textures/feather-removebg-preview.png" id="3_6r1dp"]
+[ext_resource type="Texture2D" uid="uid://7yfgkw6paj1x" path="res://assets/textures/weakYES.png" id="4_ac5re"]
 [ext_resource type="Texture2D" uid="uid://dk1180d6d6uam" path="res://assets/textures/strong.png" id="5_4ylvd"]
 [ext_resource type="Theme" uid="uid://bmxxtjvornsya" path="res://scenes/battle/player_ui_theme.tres" id="6_5ylm8"]
+[ext_resource type="Texture2D" uid="uid://cn5nc8qok6mi7" path="res://assets/textures/burningYES.png" id="6_c14ng"]
 [ext_resource type="AudioStream" uid="uid://sbhkvw37lwr8" path="res://assets/Audio/SFX/hit1.ogg" id="6_pac7o"]
+[ext_resource type="Texture2D" uid="uid://cut1aeewfw11f" path="res://assets/textures/frozenYES.png" id="7_702og"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljfmf"]
-size = Vector2(128, 132)
+size = Vector2(128, 334)
 
 [node name="Enemy" type="Node2D" groups=["Enemy"]]
 script = ExtResource("1_7lakh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_knepa")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_1vw4h")
 
 [node name="Focus" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(2, -166)
-rotation = 1.5708
-scale = Vector2(0.0751953, 0.0751953)
-texture = ExtResource("3_0jrxn")
+position = Vector2(-71, -189)
+rotation = 0.872665
+scale = Vector2(0.229876, 0.229876)
+texture = ExtResource("3_6r1dp")
 
 [node name="Status" type="HBoxContainer" parent="."]
+layout_direction = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -404.0
-offset_top = 130.0
-offset_right = 408.0
-offset_bottom = 180.0
+offset_left = -2102.0
+offset_top = -250.0
+offset_right = 2106.0
+offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -42,7 +46,8 @@ visible = false
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("4_2hvca")
+texture = ExtResource("4_ac5re")
+expand_mode = 1
 
 [node name="Strong" type="TextureRect" parent="Status"]
 visible = false
@@ -50,26 +55,29 @@ clip_contents = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("5_4ylvd")
+expand_mode = 1
 
 [node name="Burning" type="TextureRect" parent="Status"]
 visible = false
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("4_2hvca")
+texture = ExtResource("6_c14ng")
+expand_mode = 1
 
 [node name="Frozen" type="TextureRect" parent="Status"]
 visible = false
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("4_2hvca")
+texture = ExtResource("7_702og")
+expand_mode = 1
 
 [node name="GridContainer" type="HBoxContainer" parent="."]
 offset_left = -50.0
-offset_top = 80.0
-offset_right = 63.0
-offset_bottom = 120.0
+offset_top = -300.0
+offset_right = 68.0
+offset_bottom = -260.0
 metadata/_edit_group_ = true
 
 [node name="HPText" type="Label" parent="GridContainer"]
@@ -103,7 +111,7 @@ horizontal_alignment = 1
 [node name="ClickArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
-position = Vector2(-1, -1)
+position = Vector2(-1, -15)
 shape = SubResource("RectangleShape2D_ljfmf")
 
 [node name="SFX" type="Node" parent="."]

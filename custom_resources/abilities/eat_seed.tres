@@ -8,5 +8,5 @@ name = "Eat Seed"
 type = 1
 target = 0
 value = 1
-target_text = ""
-desc = ""
+target_text = "Self"
+desc = "Restore some health with a beak full of seeds"

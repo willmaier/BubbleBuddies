@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmjeg0u3bu78t"]
+[gd_scene load_steps=9 format=3 uid="uid://dmjeg0u3bu78t"]
 
 [ext_resource type="Script" path="res://scenes/world/shop.gd" id="1_pq1sa"]
 [ext_resource type="Texture2D" uid="uid://dr8tjrd3kd43w" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/shop.png" id="1_s8c3l"]
 [ext_resource type="Texture2D" uid="uid://daw1oh88g7qws" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/stands.png" id="2_2t7wb"]
 [ext_resource type="PackedScene" uid="uid://drnieg5ykp4a7" path="res://scenes/player/player.tscn" id="3_q6fvg"]
 [ext_resource type="Texture2D" uid="uid://clgqqmy4qck4e" path="res://assets/Art/CHARACTERS/SHOP/character_flea_shop.png" id="5_pkosj"]
+[ext_resource type="AudioStream" uid="uid://naruu4nkyyed" path="res://assets/Audio/Music/Flea Market Music 2 09.08.024.wav" id="5_x0vx6"]
 [ext_resource type="Texture2D" uid="uid://bfmimttbch5vn" path="res://assets/textures/feather-removebg-preview.png" id="6_36fna"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ox8gv"]
@@ -29,6 +30,8 @@ expand_mode = 1
 position = Vector2(599, 512)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_x0vx6")
+autoplay = true
 
 [node name="ShoeFlea" type="Area2D" parent="."]
 position = Vector2(221, 411)

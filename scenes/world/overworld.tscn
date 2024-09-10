@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/world/overworld.gd" id="1_jh03t"]
 [ext_resource type="Texture2D" uid="uid://ru51htcf3xdk" path="res://assets/Art/ENVIRONMENTS & BACKGROUNDS/IMG_9369.png" id="1_pho3d"]
 [ext_resource type="PackedScene" uid="uid://bch40v5urc3er" path="res://scenes/world/overworld_player.tscn" id="1_xeegi"]
-[ext_resource type="AudioStream" uid="uid://cl7ov46uquben" path="res://assets/Audio/Music/amb-park.ogg" id="3_gvibc"]
+[ext_resource type="AudioStream" uid="uid://dyg5kgsw4gy6h" path="res://assets/Audio/Music/OverWorld Music Mix.wav" id="4_lttaj"]
 [ext_resource type="Script" path="res://scenes/world/save_loader.gd" id="5_ipau0"]
 
 [node name="Overworld" type="Node2D"]
@@ -20,7 +20,7 @@ position = Vector2(748, 497)
 script = null
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_gvibc")
+stream = ExtResource("4_lttaj")
 autoplay = true
 
 [node name="Markers" type="Node" parent="."]
