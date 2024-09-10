@@ -1,8 +1,12 @@
 extends Node2D
 
 #RESOURCES
-@export var _gear_resource : GearResource
-@export var _player_resource : PlayerResource
+#@export var _gear_resource : GearResource
+#@export var _player_resource : PlayerResource
+
+@onready var _gear_resource = GearResource.new()
+@onready var _play_load_data = PlayerState.load_or_create()
+
 #DYNAMIC SCENE/COMPONENTS
 @onready var purchase_slot = preload("res://scenes/garage/garage_item_slot.tscn")
 @onready var select_slot = preload("res://scenes/garage/garage_select_item_slot.tscn")
@@ -23,29 +27,23 @@ extends Node2D
 
 enum ItemSelectionType {HELMET,FEET,TORSOS,WINGS}
 
-#MOVE TO PLAYER RESOURCE OR AUTOLOAD SINGLETON
 @onready var player_inventory = [
-	_player_resource.helmet_inventory,
-	_player_resource.feet_inventory,
-	_player_resource.torso_inventory,
-	_player_resource.wing_inventory
+	_play_load_data.helmet_inventory,
+	_play_load_data.feet_inventory,
+	_play_load_data.torso_inventory,
+	_play_load_data.wing_inventory
 ]
 
-@onready var default_mech_helmet = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Helmet
-@onready var default_mech_legs = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Legs
-@onready var default_mech_wings = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Wing
-@onready var default_mech_torso = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player/Torso
+@onready var player = $GarageUICanvas/TabContainer/Parts/MechDisplayArea/Player
 
-@onready var mech_torso = default_mech_torso
-@onready var mech_helmet = default_mech_helmet
-@onready var mech_wings = default_mech_wings
-@onready var mech_legs = default_mech_legs
 
 #SIGNALS
 signal purchase_item_signal(item)
 signal clear_purchase_item_signal
+signal already_purchased_or_empty(warning)
 
 signal selected_item_signal(item)
+signal empty_selected_item(warning)
 
 var purchase_item = {}
 var selected_item = {}
@@ -122,25 +120,51 @@ func equip_selected_item(item):
 	selected_item = item
 	emit_signal("selected_item_signal", item)
 	
+func is_item_purchased(category, purchased_item):
+	var found_items = player_inventory[category].filter(func(item): 
+		if item["name"] == purchased_item["name"]:
+			return true
+		else:
+			return false
+	)
+	
+	return found_items.is_empty()
+	
+func purchase(category):
+	return func(item):
+		if !is_item_purchased(category, item):
+			already_purchased_or_empty.emit("Already Purchased")
+			clear_purchase_item_signal.emit()
+		else:
+			player_inventory[category].append(item)
+			clear_purchase_item_signal.emit()
+			
+var purchase_helmet = purchase(ItemSelectionType.HELMET)
+var purchase_feet = purchase(ItemSelectionType.FEET)
+var purchase_torsos = purchase(ItemSelectionType.TORSOS)
+var purchase_wings = purchase(ItemSelectionType.WINGS)
+	
 func _on_purchase_pressed():
-	if purchase_item["category"] == "helmets":
-		player_inventory[ItemSelectionType.HELMET].append(purchase_item)
-		emit_signal("clear_purchase_item_signal")
-		purchase_item = {}
+	if purchase_item == {}:
+		already_purchased_or_empty.emit("Can't purchase an empty item")
+	else:
+		if purchase_item["category"] == "helmets":
+			purchase_helmet.call(purchase_item)
 		
-	elif purchase_item["category"] == "feet":
-		player_inventory[ItemSelectionType.FEET].append(purchase_item)
-		emit_signal("clear_purchase_item_signal")
-		purchase_item = {}
+		elif purchase_item["category"] == "feet":
+			purchase_feet.call(purchase_item)
 		
-	elif purchase_item["category"] == "torsos":
-		player_inventory[ItemSelectionType.TORSOS].append(purchase_item)
-		emit_signal("clear_purchase_item_signal")
-		purchase_item = {}
+		elif purchase_item["category"] == "torsos":
+			purchase_torsos.call(purchase_item)
+			
+		elif purchase_item["category"] == "wings":
+			purchase_wings.call(purchase_item)
+			
+		else:
+			already_purchased_or_empty.emit("Can't purchase an empty item")
 		
-	elif purchase_item["category"] == "wings":
-		player_inventory[ItemSelectionType.WINGS].append(purchase_item)
-		emit_signal("clear_purchase_item_signal")
+		PlayerState.write_state(_play_load_data)
+		PlayerState.save_player_data()
 		purchase_item = {}
 	
 
@@ -163,3 +187,30 @@ func _on_bench_body_exited(body):
 	$BenchPointer.visible = false
 	at_bench = false
 
+func swap_gear(item):
+	var parts = player.get_children()
+	if item["category"] == "torsos":
+		parts[0].texture = item["image"]
+		
+	if item["category"] == "helmets":
+		parts[1].texture = item["image"]
+
+	if item["category"] == "wings":
+		parts[2].texture = item["image"]
+
+	if item["category"] == "feet":
+		parts[3].texture = item["image"]
+	
+	_play_load_data.swap_player_item(item)
+
+
+func _on_swapper_button_pressed():
+	if selected_item == {}:
+		empty_selected_item.emit("No item selected")
+	else:
+		swap_gear(selected_item)
+
+
+func _on_save_pressed():
+	PlayerState.write_state(_play_load_data)
+	PlayerState.save_player_data()
