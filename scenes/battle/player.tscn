@@ -32,6 +32,7 @@ size = Vector2(439, 462)
 
 [node name="Player" type="Node2D" groups=["Player"]]
 script = ExtResource("1_82cnu")
+abilities = Array[Resource("res://custom_resources/ability.gd")]([null, null, null, null])
 metadata/_edit_group_ = true
 
 [node name="Torso" type="Sprite2D" parent="." groups=["MechParts"]]

@@ -49,3 +49,7 @@ func _on_shoe_flea_3_body_entered(body):
 func _on_shoe_flea_3_body_exited(body):
 	at_hats = false
 	$HatPointer.visible = false
+
+
+func _on_overworld_pressed():
+	get_tree().change_scene_to_file("res://scenes/world/overworld.tscn")

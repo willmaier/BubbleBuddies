@@ -90,9 +90,17 @@ position = Vector2(-34.8, -15)
 scale = Vector2(0.044, 0.044)
 texture = ExtResource("5_pkosj")
 
+[node name="Overworld" type="Button" parent="."]
+offset_left = -3.0
+offset_top = 5.0
+offset_right = 311.0
+offset_bottom = 36.0
+text = "Overworld"
+
 [connection signal="body_entered" from="ShoeFlea" to="." method="_on_shoe_flea_body_entered"]
 [connection signal="body_exited" from="ShoeFlea" to="." method="_on_shoe_flea_body_exited"]
 [connection signal="body_entered" from="ShoeFlea2" to="." method="_on_shoe_flea_2_body_entered"]
 [connection signal="body_exited" from="ShoeFlea2" to="." method="_on_shoe_flea_2_body_exited"]
 [connection signal="body_entered" from="ShoeFlea3" to="." method="_on_shoe_flea_3_body_entered"]
 [connection signal="body_exited" from="ShoeFlea3" to="." method="_on_shoe_flea_3_body_exited"]
+[connection signal="pressed" from="Overworld" to="." method="_on_overworld_pressed"]

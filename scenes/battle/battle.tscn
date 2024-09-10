@@ -40,7 +40,6 @@ move = ExtResource("4_lgafp")
 [node name="Player" parent="." instance=ExtResource("2_a7wio")]
 position = Vector2(231, 444)
 scale = Vector2(0.5, 0.5)
-abilities = Array[Resource("res://custom_resources/ability.gd")]([null, null, null, null])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
